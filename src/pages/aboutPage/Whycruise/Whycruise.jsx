@@ -1,5 +1,5 @@
 import Text from "./Text";
-import Image from "../../assets/Whycruise/SERENITYDREAM.jpg";
+import Image from "../../../assets/Whycruise/SERENITYDREAM.jpg";
 
 const Whycruise = () => {
   return (

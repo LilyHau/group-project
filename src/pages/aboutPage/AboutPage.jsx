@@ -6,7 +6,9 @@ import Whycruiseinfo from "./Whycruiseinfo";
 
 const AboutPage = () => {
   return (
-    <div>
+    <div
+      style={{ backgroundColor: "#edfaff", minHeight: "100vh", width: "100%" }}
+    >
       <Abouthero />
       <Whycruise />
       <Whycruiseinfo />

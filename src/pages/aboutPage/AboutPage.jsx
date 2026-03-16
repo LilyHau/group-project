@@ -1,7 +1,18 @@
 import React from "react";
+import Abouthero from "../../components/Abouthero";
+import Ourstory from "../../components/Ourstory/Ourstory";
+import Whycruise from "../../components/Whycruise/Whycruise";
+import Whycruiseinfo from "../../components/Whycruiseinfo";
 
 const AboutPage = () => {
-  return <div>123123545645644848asdasdasdasdsd</div>;
+  return (
+    <div>
+      <Abouthero />
+      <Whycruise />
+      <Whycruiseinfo />
+      <Ourstory />
+    </div>
+  );
 };
 
 export default AboutPage;

@@ -149,6 +149,20 @@ const Accommodations = () => {
               >
                 {item.desc}
               </p>
+              <Link
+                to="/"
+                style={{
+                  textDecoration: "none",
+                  color: hoveredIndex === index ? "#4272B6" : "#000",
+                  fontWeight: "bold",
+                  fontSize: "16px",
+                  display: "flex",
+                  alignItems: "center",
+                  transition: "color 0.2s",
+                }}
+              >
+                View Now →
+              </Link>
             </div>
           </div>
         ))}

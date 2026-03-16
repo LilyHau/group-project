@@ -9,9 +9,11 @@ const Layout = () => {
       <header>
         <nav className={styles.nav}>
           <Navbar />
-          {/* <a href="/">Home</a>
+          <a href="/">Home</a>
           <a href="/about">About</a>
-          <a href="/cruises">Our Cruises</a> */}
+          <a href="/cruises">Our Cruises</a>
+          <a href="/onboard">OnboardThrills</a>
+          <a href="/exclusive">ExclusiveMerch</a>
         </nav>
       </header>
 

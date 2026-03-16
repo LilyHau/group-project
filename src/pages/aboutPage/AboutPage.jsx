@@ -1,8 +1,8 @@
 import React from "react";
-import Abouthero from "../../components/Abouthero";
-import Ourstory from "../../components/Ourstory/Ourstory";
-import Whycruise from "../../components/Whycruise/Whycruise";
-import Whycruiseinfo from "../../components/Whycruiseinfo";
+import Abouthero from "./Abouthero";
+import Ourstory from "./Ourstory/Ourstory";
+import Whycruise from "./Whycruise/Whycruise";
+import Whycruiseinfo from "./Whycruiseinfo";
 
 const AboutPage = () => {
   return (

@@ -15,6 +15,8 @@ const Layout = () => {
           <a href="/onboard">OnboardThrills</a>
           <a href="/exclusive">ExclusiveMerch</a>
           <a href="/FAQSection">FAQSection</a>
+          <a href="/shop">Shop</a>
+          <a href="/cart">Cart</a>
         </nav>
       </header>
 

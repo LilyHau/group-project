@@ -1,6 +1,6 @@
-import Card1 from "./card/Card1";
-import Card2 from "./card/Card2";
-import Card3 from "./card/Card3";
+import Card1 from "./cards/Card1";
+import Card2 from "./cards/Card2";
+import Card3 from "./cards/Card3";
 
 const ExperiencesSection = () => {
   return (

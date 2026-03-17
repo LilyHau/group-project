@@ -1,6 +1,6 @@
-import { clothes } from "../../../date.js";
-import { merch } from "../../../date.js";
-import { trinkets } from "../../../date.js";
+import { clothes } from "../../../data.js";
+import { merch } from "../../../data.js";
+import { trinkets } from "../../../data.js";
 import styles from "./Shop.module.css";
 import { toast } from "react-toastify";
 

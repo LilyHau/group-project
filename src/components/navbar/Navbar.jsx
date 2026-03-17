@@ -1,50 +1,70 @@
-import { Link } from "react-router-dom";
-import styles from "./Navbar.module.css";
 import Logo from "../../assets/navbar/OP cruise logo.png";
+import burger from "../../assets/navbar/menu-burger.png";
+import CartIcon from "../../assets/navbar/CartIcon.svg";
+import { Link } from "react-router-dom";
+import styles from './Navbar.module.css';
+import { useState } from "react";
 
-function Navbar() {
+const Navbar = ({cartItems}) => {
+  const [isActive, setIsActive] = useState(false);
+  const toggleHandler = () => {
+    setIsActive(!isActive);
+  };
   return (
-    <>
+    <div>
       <span className={styles.blueBlock}></span>
-      <nav className={styles.logIn}>
-        <div className={styles.logInList}>
-          <a className={styles.logInListFirst}>
-            <Link to="/">FAQ</Link>
-          </a>
-          <a>
-            <Link to="/cruises">My Account</Link>
-          </a>
-        </div>
-      </nav>
-      <nav className={styles.navbar}>
-        <img src={Logo} alt="logo" />
-        <div className={styles.NavbarListItems}>
-          <Link to="/">
-            <span className={styles.hoverUnderlineAnimation}>About</span>
-          </Link>
-          <Link to="/about">
-            <span className={styles.hoverUnderlineAnimation}>Our Cruises</span>
-          </Link>
-          <Link to="/onboard">
-            <span className={styles.hoverUnderlineAnimation}>
-              Onboard Thrills
+          <nav className={styles.logIn}>
+            <div className={styles.logInList}>
+              <a className={styles.faq}><Link to="/">FAQ</Link></a>
+              <a><Link to="/about">My Account</Link></a>
+            </div>
+          </nav>
+      <div className={styles.navbar}>
+        <Link to="/"><img className={styles.logo} src={Logo} alt="logo" /></Link>
+        <ul className={styles.navbarListItems}>
+          <Link to="/about"><li className={styles.hoverUnderlineAnimation}>About</li></Link>
+          <li className={styles.dropdown}>
+            <a className={styles.hoverUnderlineAnimation}>Our Cruises</a>
+            <ul className={styles.dropdownContent}>
+              <li><Link to="/about">Ships Overview</Link></li>
+              <li><Link to="/about">Ocean Explorer</Link></li>
+              <li><Link to="/about">Sea Guardian</Link></li>
+              <li><Link to="/about">Serenity Dream</Link></li>
+            </ul>
+          </li><li className={styles.dropdown}>
+            <a className={styles.hoverUnderlineAnimation}>Onboard Thrills</a>
+            <ul className={styles.dropdownContent}>
+              <li><Link to="/about">Activities Overview</Link></li>
+              <li><Link to="/about">Entertainment</Link></li>
+              <li><Link to="/about">Dining</Link></li>
+              <li><Link to="/about">Recreation</Link></li>
+            </ul>
+          </li>
+          <Link to="/"><li className={styles.hoverUnderlineAnimation}>Exclusive Merch</li></Link>
+        </ul>
+        <div className={styles.navbarBuyItems}>
+          <span className={styles.cartIcon}>
+            <Link to="/Cart"><img className={styles.cartLink} src={CartIcon} alt="cart icon" />{cartItems.length > 0 && <p>{cartItems.length}</p>}</Link>
             </span>
-          </Link>
-          <Link to="/cruises">
-            <span className={styles.hoverUnderlineAnimation}>
-              Exclusive Merch
+            <span>
+              <Link to="/about" className={styles.planBtn}>Start Planning</Link>
             </span>
-          </Link>
+            <nav className={styles.mobileMenu}>
+            <div className={styles.mobileMenuToggle}>
+              <img src={burger} alt="menu" onClick={toggleHandler}/>
+            </div>
+            <div className={`${styles.mobileNavLinks} ${isActive ? styles.active : ''}`}>
+              <ul>
+              <Link to="/"><li>About</li></Link>
+              <Link to="/about"><li>Our Cruises</li></Link>
+              <Link to="/"><li>Onboard Thrills</li></Link>
+              <Link to="/about"><li>Exclusive Merch</li></Link></ul>
+            </div>
+          </nav>
         </div>
-        <div className={styles.NavbarBuyItems}>
-          <Link to="/"></Link>
-          <span>
-            <Link to="/about">Start Planning</Link>
-          </span>
-        </div>
-      </nav>
-    </>
+      </div>
+    </div>
   );
-}
+};
 
 export default Navbar;

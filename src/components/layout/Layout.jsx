@@ -3,12 +3,12 @@ import styles from "./Layout.module.scss";
 import Navbar from "../navbar/Navbar";
 import RunningText from "../footer/RunningText";
 
-const Layout = () => {
+const Layout = ({cartItems}) => {
   return (
     <>
       <header>
         <nav className={styles.nav}>
-          <Navbar />
+          <Navbar cartItems={cartItems}/>
           <a href="/">Home</a>
           <a href="/about">About</a>
           <a href="/cruises">Our Cruises</a>
@@ -19,11 +19,9 @@ const Layout = () => {
           <a href="/cart">Cart</a>
         </nav>
       </header>
-
       <main>
         <Outlet />
       </main>
-
       <footer>
         <RunningText />
         <p>© 2024 Your App</p>

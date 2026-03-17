@@ -11,12 +11,60 @@ import SERENITYDREAM from "./pages/ourCruisesPage/Cruises/SERENITYDREAM";
 import FAQSection from "./pages/homePage/FAQ/FAQSection";
 import Shop from "./pages/shopPage/Shop";
 import Cart from "./pages/cartPage/Cart";
+import { useState, useEffect } from "react";
 
 function App() {
+    const cartItemsFromLocalStorage =
+  JSON.parse(localStorage.getItem("cartItems")) || [];
+  const [cartItems, setCartItems] =
+  useState(cartItemsFromLocalStorage);
+  useEffect(() => {localStorage.setItem("cartItems", JSON.stringify(cartItems));},
+  [cartItems]);
+  const handleAddToCart = (product)=>{
+    const itemExists = cartItems.find((item)=>item.id ===product.id);
+    if(itemExists){
+      setCartItems(cartItems.map((cartItem)=>{
+        return cartItem.id === product.id ?
+        {...itemExists, quantity: itemExists.quantity + 1} : cartItem;
+      }));
+    } else{
+      setCartItems([...cartItems,{...product,quantity:1}]);
+    }
+  };
+  const handleIncrease = (product) => {
+    const itemExists = cartItems.find((item) => item.id === product.id);
+    if (itemExists) {
+      setCartItems(
+        cartItems.map((singleItem) =>
+          singleItem.id === product.id
+            ? { ...itemExists, quantity: itemExists.quantity + 1 }
+            : singleItem
+        )
+      );
+    }
+  };
+  const handleDecrease = (product)=>{
+    const selectedItem = cartItems.find((item)=>item.id===product.id);
+    if(selectedItem.quantity === 1){
+      setCartItems(
+        cartItems.filter((oneItem)=>oneItem.id !== selectedItem.id));
+    } else{
+      setCartItems(
+        cartItems.map((singleItem)=>
+        singleItem.id === product.id ?
+        {...selectedItem,quantity: selectedItem.quantity - 1} : singleItem
+      ));
+    }
+  };
+  const handleRemoveItem = (product)=>{
+    setCartItems(cartItems.filter((oneItem)=>
+      oneItem.id !== product.id
+    ));
+  };
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout cartItems={cartItems}/>}>
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="cruises" element={<OurCruisesPage />} />
@@ -26,8 +74,19 @@ function App() {
           <Route path="SEAGUARDIAN" element={<SEAGUARDIAN />} />
           <Route path="SERENITYDREAM" element={<SERENITYDREAM />} />
           <Route path="FAQSection" element={<FAQSection />} />
-          <Route path="shop" element={<Shop />} />
-          <Route path="cart" element={<Cart />} />
+          <Route
+            path="shop"
+            element={<Shop handleAddToCart = {handleAddToCart}/>}
+          />
+          <Route
+            path="cart"
+            element={<Cart
+            cartItems={cartItems}
+            handleIncrease={handleIncrease}
+            handleDecrease={handleDecrease}
+            handleRemoveItem={handleRemoveItem}/>
+            }
+          />
         </Route>
       </Routes>
     </BrowserRouter>

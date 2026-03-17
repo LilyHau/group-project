@@ -17,54 +17,114 @@
   gap: 1rem;
   font-size: 1rem;
   color: black;
+  a:hover{
+    scale: 1.03;
+  }
 }
-.logInListFirst{
+.faq{
   color: var(--text-gray);
 }
-.logInListFirst:hover{
-  scale: 1.03;
-}
 .navbar {
-  width: 100%;
-  height: 8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5rem;
-  img{
-    width: 20rem;
-  }
+  height: 8rem;
+  border-radius: 5px;
+  padding: 0 1rem;
 }
-.NavbarListItems{
+.logo {
+  width: 18rem;
+}
+.navbarListItems{
+  position: relative;
   width: 50%;
   display: flex;
   justify-content: space-evenly;
   gap: 1rem;
   color: var(--text-gray);
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   a span:hover{
     scale: 1.04;
   }
-}
-.NavbarBuyItems{
-  display: flex;
-  justify-content: space-around;
-  width: 20%;
-  span{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--background-blue);
-    font-size: 1.3rem;
-    color: var(--white);
-    border-radius: 8px;
-    padding: 0.2rem 1rem;
-  }
-  span:hover{
-    opacity: 0.7;
+  li:hover{
     cursor: pointer;
-    box-shadow: var(--box-shadow-hover);
   }
+}
+.dropdownContent {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: var(--footer-blue);
+    min-width: 160px;
+    box-shadow: var(--box-shadow-hover);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li:first-child{
+      border-bottom: 2px solid var(--background-gray);
+      font-weight: 600;
+    }
+}
+
+.dropdownContent li a {
+    color: var(--black);
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownContent li a:hover {
+    background-color: #abe8fc;
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
+.navbarBuyItems{
+  display: flex;
+  align-items: center;
+}
+.mobileMenu{
+  display: none;
+}
+.cartIcon {
+  position: relative;
+}
+.cartIcon:hover {
+  opacity: 0.8;
+}
+.cartIcon p {
+  background-color: var(--sd-main);
+  border-radius: 50%;
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  right: -3px;
+  text-align: center;
+  top: -5px;
+  width: 20px;
+}
+.cartLink {
+  text-decoration: none;
+}
+.planBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-blue);
+  font-size: 1.2rem;
+  color: var(--white);
+  border-radius: 8px;
+  padding: 0.2rem 0.5rem;
+  margin-left: 0.2rem;
+}
+.planBtn:hover{
+  opacity: 0.7;
+  cursor: pointer;
+  box-shadow: var(--box-shadow-hover);
+  color: var(--white);
 }
 
 .hoverUnderlineAnimation,.logInListFirst {
@@ -90,4 +150,69 @@
 .hoverUnderlineAnimation:hover::after,.logInListFirst:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+@media (max-width:992px) {
+  .logo {
+    width: 11.8rem;
+  }
+  .navbarListItems{
+    width: 60%;
+    gap: 1rem;
+    font-size: 1rem;
+  }
+  .planBtn{
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+  }
+}
+@media (max-width:768px) {
+  .navbarListItems{
+    display: none;
+  }
+  .navbarBuyItems{
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+  }
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+  }
+  .mobileMenuToggle img{
+    width: 3.2rem;
+    opacity: 0.8;
+  }
+  .mobileMenuToggle:hover{
+    cursor: pointer;
+    opacity: 0.6;
+  }
+  .mobileNavLinks{
+    text-align: center;
+    position: absolute;
+    top: 10rem;
+    right: 0.3rem;
+    background-color: var(--footer-blue);
+    min-width: 160px;
+    box-shadow: var(--box-shadow-hover);
+    z-index: 1;
+    list-style: none;
+    transition: transform 0.3s ease;
+    transform: translateX(120%);
+    li{
+      font-size: 1.2rem;
+      border-bottom: 2px solid var(--background-gray);
+      font-weight: 600;
+    }
+    li:hover {
+    background-color: #abe8fc;
+}
+  }
+  .mobileNavLinks.active {
+    transform: translateX(0);
+  }
 }

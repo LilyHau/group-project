@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Image from "../../assets/Cruises/cruisesum.png";
 import Image1 from "../../assets/Cruises/OE.PNG";
 import Image2 from "../../assets/Cruises/SD.PNG";
@@ -58,44 +59,50 @@ const OurCruisesPage = () => {
         >
           {/* Item 1 */}
           <div style={{ textAlign: "center", color: "white" }}>
-            <img src={Image1} style={thumbStyle} alt="Ocean Explorer" />
-            <p
-              style={{
-                fontSize: "3rem",
-                marginTop: "10px",
-                color: "black",
-              }}
-            >
-              OCEAN Explorer
-            </p>
+            <Link to="/Cruises/OCEANEXPLORER">
+              <img src={Image1} style={thumbStyle} alt="Ocean Explorer" />
+              <p
+                style={{
+                  fontSize: "3rem",
+                  marginTop: "10px",
+                  color: "black",
+                }}
+              >
+                OCEAN Explorer
+              </p>
+            </Link>
           </div>
 
           {/* Item 2 */}
           <div style={{ textAlign: "center", color: "white" }}>
-            <img src={Image3} style={thumbStyle} alt="Sea Guardian" />
-            <p
-              style={{
-                fontSize: "3rem",
-                marginTop: "10px",
-                color: "black",
-              }}
-            >
-              SEA Guardian
-            </p>
+            <Link to="/Cruises/SEAGUARDIAN">
+              <img src={Image3} style={thumbStyle} alt="Sea Guardian" />
+              <p
+                style={{
+                  fontSize: "3rem",
+                  marginTop: "10px",
+                  color: "black",
+                }}
+              >
+                SEA Guardian
+              </p>
+            </Link>
           </div>
 
           {/* Item 3 */}
           <div style={{ textAlign: "center", color: "white" }}>
-            <img src={Image2} style={thumbStyle} alt="Serenity Dream" />
-            <p
-              style={{
-                fontSize: "3rem",
-                marginTop: "10px",
-                color: "black",
-              }}
-            >
-              Serenity Dream
-            </p>
+            <Link to="/Cruises/SERENITYDREAM">
+              <img src={Image2} style={thumbStyle} alt="Serenity Dream" />
+              <p
+                style={{
+                  fontSize: "3rem",
+                  marginTop: "10px",
+                  color: "black",
+                }}
+              >
+                Serenity Dream
+              </p>
+            </Link>
           </div>
         </div>
       </div>

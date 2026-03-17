@@ -14,18 +14,21 @@ const Accommodations = () => {
       title: "2 adults",
       cn: "De Luxe Room",
       desc: "from $756* a night",
+      link: "/",
     },
     {
       img: CRUISEluxrysuite2,
       title: "2 adults | 1 children below 7",
       cn: "De Luxe Sea View",
       desc: "from $1016* a night",
+      link: "/",
     },
     {
       img: CRUISEluxrysuiteforfamily,
       title: "4 adults | 2 children below 7",
       cn: "The Wellhall Family Suite",
       desc: "from $1650* a night",
+      link: "/",
     },
   ];
 
@@ -150,7 +153,7 @@ const Accommodations = () => {
                 {item.desc}
               </p>
               <Link
-                to="/"
+                to={item.link}
                 style={{
                   textDecoration: "none",
                   color: hoveredIndex === index ? "#4272B6" : "#000",

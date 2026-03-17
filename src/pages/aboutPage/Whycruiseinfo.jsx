@@ -1,12 +1,12 @@
 import React from "react";
 
-// Updated Card Style: Removed white background and shadow to match image
+// Updated Card Style: Scaled up by 200%
 const cardStyle = {
   flex: "1",
-  minWidth: "250px",
-  maxWidth: "350px",
-  padding: "10px",
-  backgroundColor: "transparent", // Matches the light blue background
+  minWidth: "500px", // Doubled from 250px
+  maxWidth: "700px", // Doubled from 350px
+  padding: "20px", // Doubled from 10px
+  backgroundColor: "transparent",
   textAlign: "left",
 };
 
@@ -15,9 +15,9 @@ const Whycruiseinfo = () => {
     <div
       style={{
         width: "100%",
-        maxWidth: "2300px",
+        maxWidth: "4600px", // Doubled from 2300px
         margin: "0 auto",
-        padding: "80px 40px",
+        padding: "160px 80px", // Doubled from 80px 40px
         backgroundColor: "#EDFAFF",
         fontFamily: "'Inter', sans-serif",
         display: "flex",
@@ -26,29 +26,40 @@ const Whycruiseinfo = () => {
       }}
     >
       {/* Top Header Section */}
-      <div style={{ textAlign: "center", width: "100%", marginBottom: "60px" }}>
+      <div
+        style={{ textAlign: "center", width: "100%", marginBottom: "120px" }}
+      >
         <h1
           style={{
             fontFamily: '"Joti One", cursive',
-            fontSize: "clamp(40px, 6vw, 70px)",
+            fontSize: "clamp(80px, 12vw, 140px)", // Doubled from 40px/70px
             margin: "0",
             display: "flex",
             alignItems: "baseline",
             justifyContent: "center",
-            gap: "15px",
+            gap: "30px", // Doubled from 15px
           }}
         >
-          <span style={{ color: "#0077b6" }}>MORE</span>
-          <span style={{ fontWeight: "300", fontSize: "0.7em", color: "#333" }}>
+          <span style={{ color: "#43c5ff" }}>MORE</span>
+          <span
+            style={{
+              fontFamily: "Inter",
+              fontWeight: "300",
+              fontSize: "0.7em",
+              color: "#333",
+            }}
+          >
             than just sailing ship
           </span>
         </h1>
 
-        <div style={{ maxWidth: "700px", margin: "40px auto 0 auto" }}>
+        <div style={{ maxWidth: "1400px", margin: "80px auto 0 auto" }}>
+          {" "}
+          {/* Doubled margin/maxWidth */}
           <p
             style={{
               fontStyle: "italic",
-              fontSize: "1.2rem",
+              fontSize: "2.4rem", // Doubled from 1.2rem
               lineHeight: "1.6",
               color: "#444",
             }}
@@ -64,18 +75,26 @@ const Whycruiseinfo = () => {
       <div
         style={{
           display: "flex",
-          gap: "50px",
+          gap: "100px", // Doubled from 50px
           justifyContent: "center",
           flexWrap: "wrap",
           width: "100%",
-          marginTop: "40px",
+          marginTop: "80px", // Doubled from 40px
         }}
       >
         <div style={cardStyle}>
-          <h4 style={{ fontWeight: "bold", marginBottom: "15px" }}>
+          <h4
+            style={{
+              fontWeight: "bold",
+              marginBottom: "30px",
+              fontSize: "2rem",
+            }}
+          >
             No Compromise: Adventure and <br /> Sustainability Go Hand in Hand
           </h4>
-          <p style={{ fontSize: "0.95rem", color: "#555", lineHeight: "1.5" }}>
+          <p style={{ fontSize: "1.9rem", color: "#555", lineHeight: "1.5" }}>
+            {" "}
+            {/* Doubled from 0.95rem */}
             We don’t just talk about protecting the ocean—we live it. Our ships
             run on low-emission fuel, our shore excursions use plastic-free
             beaches.
@@ -83,10 +102,16 @@ const Whycruiseinfo = () => {
         </div>
 
         <div style={cardStyle}>
-          <h4 style={{ fontWeight: "bold", marginBottom: "15px" }}>
+          <h4
+            style={{
+              fontWeight: "bold",
+              marginBottom: "30px",
+              fontSize: "2rem",
+            }}
+          >
             Connect People With Nature
           </h4>
-          <p style={{ fontSize: "0.95rem", color: "#555", lineHeight: "1.5" }}>
+          <p style={{ fontSize: "1.9rem", color: "#555", lineHeight: "1.5" }}>
             Unlike generic cruise lines, every vessel in our fleet is designed
             for a specific way to engage with the sea—so you never have to
             choose between thrill, impact, or calm.
@@ -94,12 +119,18 @@ const Whycruiseinfo = () => {
         </div>
 
         <div style={cardStyle}>
-          <h4 style={{ fontWeight: "bold", marginBottom: "15px" }}>
+          <h4
+            style={{
+              fontWeight: "bold",
+              marginBottom: "30px",
+              fontSize: "2rem",
+            }}
+          >
             Small Groups, Big Connections—
             <br />
             With the Ocean and Each Other
           </h4>
-          <p style={{ fontSize: "0.95rem", color: "#555", lineHeight: "1.5" }}>
+          <p style={{ fontSize: "1.9rem", color: "#555", lineHeight: "1.5" }}>
             We keep our guest numbers small so you can skip the crowds and savor
             every moment: expert-led dives with max 15 people.
           </p>

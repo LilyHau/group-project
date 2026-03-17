@@ -1,5 +1,5 @@
 import styles from "./Card1.module.css";
-import Button from "../../components/buttons/Button";
+import Button from "../buttons/Button";
 import { Link } from "react-router-dom";
 
 const Card1 = () => {

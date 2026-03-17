@@ -1,4 +1,4 @@
-import FixedButton from "../../components/buttons/FixedButton";
+import FixedButton from "./buttons/FixedButton";
 import Hero from "./Hero";
 import CruiseSection from "./CruiseSection";
 import WaterShadow from "./WaterShadow";

@@ -1,0 +1,22 @@
+.hero{
+  width: 100%;
+  position: relative;
+  height: 16rem;
+  padding: 3rem 0;
+  position: relative;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(../../assets/OnboardThrills/big\ guy.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    z-index: -1;
+    border-radius: 30px;
+}
+.info{
+  font-family: ;
+}

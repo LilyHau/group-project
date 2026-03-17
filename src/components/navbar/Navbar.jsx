@@ -25,7 +25,7 @@ function Navbar() {
           <Link to="/about">
             <span className={styles.hoverUnderlineAnimation}>Our Cruises</span>
           </Link>
-          <Link to="/">
+          <Link to="/onboard">
             <span className={styles.hoverUnderlineAnimation}>
               Onboard Thrills
             </span>

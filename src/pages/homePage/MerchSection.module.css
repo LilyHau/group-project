@@ -3,12 +3,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 0 100px;
+  padding: 40px 0 150px;
+  margin: 0;
+  width: 100%;
   background-image: url(../../assets/homePage/merchbackground.webp);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   object-fit: cover;
-  border: solid red;
 }
 
 .title {
@@ -29,12 +30,54 @@
 }
 
 a.link {
-  padding: 0px 90px;
+  padding: 0px 100px;
   color: var(--white);
   background: linear-gradient(to right, #1c81d9, #1f2b70);
-  box-shadow: 5 5 rgba(0, 0, 0, 0.5) 5px;
+  box-shadow: 0px -3px 0px 1px rgba(0, 0, 0, 0.6);
   text-transform: uppercase;
   font-weight: 500;
   font-size: 2.3rem;
   border-radius: var(--card-radius);
+  transition: all 0.3s ease;
+
+  &:hover {
+    scale: 0.95;
+  }
+}
+
+@media (max-width: 992px) {
+  .section {
+    padding: 20px 0 100px;
+  }
+
+  .title {
+    h2 {
+      font-size: 3.8rem;
+    }
+  }
+  a.link {
+    padding: 0px 80px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 20px 0 70px;
+  }
+
+  .title {
+    h2 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  a.link {
+    padding: 0px 60px;
+    font-size: 1.3rem;
+  }
 }

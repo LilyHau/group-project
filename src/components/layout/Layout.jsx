@@ -2,13 +2,14 @@ import { Outlet } from "react-router-dom";
 import styles from "./Layout.module.scss";
 import Navbar from "../navbar/Navbar";
 import RunningText from "../footer/RunningText";
+import Footer from "../footer/Footer";
 
-const Layout = ({cartItems}) => {
+const Layout = ({ cartItems }) => {
   return (
     <>
       <header>
         <nav className={styles.nav}>
-          <Navbar cartItems={cartItems}/>
+          <Navbar cartItems={cartItems} />
           <a href="/">Home</a>
           <a href="/about">About</a>
           <a href="/cruises">Our Cruises</a>
@@ -24,7 +25,8 @@ const Layout = ({cartItems}) => {
       </main>
       <footer>
         <RunningText />
-        <p>© 2024 Your App</p>
+        <Footer />
+        <p>© 2026 Ocean Park</p>
       </footer>
     </>
   );

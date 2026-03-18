@@ -1,11 +1,12 @@
 .background {
-  background-color: var(--footer-blue);
+  padding-bottom: 80px;
+  background-color: var(--body-blue);
 }
 .section {
   width: 80%;
   height: 28rem;
   border-radius: 5px;
-  margin: 4rem auto;
+  margin: 0rem auto;
   background: var(--body-blue);
   background-image:
     url(../../assets/homePage/B\ &W\ .png), url(../../assets/homePage/Sub.png);

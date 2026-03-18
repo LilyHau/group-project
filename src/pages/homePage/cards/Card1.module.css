@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 520px;
+  height: 500px;
   padding: 25px 25px 15px;
   background: var(--body-green);
 }
@@ -36,5 +36,47 @@
     height: 100%;
     object-fit: cover;
     background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 992px) {
+  .card {
+    height: 420px;
+  }
+  .content {
+    margin-left: 10px;
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
+
+  .image {
+    width: 55%;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    height: 350px;
+  }
+  .content {
+    margin-left: 0px;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .image {
+    width: 60%;
   }
 }

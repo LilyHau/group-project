@@ -31,9 +31,23 @@ const Footer = () => {
           <Link to="/SEAGUARDIAN">Sea Giardian</Link>
           <Link to="/SERENITYDREAM">Serenity Dream</Link>
         </div>
+        <div className={styles.bar}>
+          <form action="" method="post" className={styles.form}>
+            <input
+              type="email"
+              name="email"
+              id=""
+              placeholder="Email Address"
+              required
+            />
+            {/* <button>SUBSCRIBE</button> */}
+            <input type="submit" value="SUBSCRIBE" />
+          </form>
+        </div>
       </div>
+
       <div className={styles.bottom}>
-        <p>© 2026 Ocean Park</p>
+        <p>© 2026 Ocean Park. All rights reserved.</p>
       </div>
     </section>
   );

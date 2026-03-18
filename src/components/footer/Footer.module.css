@@ -1,0 +1,14 @@
+.section {
+  width: 100%;
+  /* padding: 180px auto; */
+  border: solid red;
+  background: var(--footer-blue);
+}
+
+.container {
+  /* padding: 80px auto; */
+  display: flex;
+  gap: 40px;
+  /* line-height: 1.8; */
+  border: solid blue;
+}

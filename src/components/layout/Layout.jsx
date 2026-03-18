@@ -26,7 +26,6 @@ const Layout = ({ cartItems }) => {
       <footer>
         <RunningText />
         <Footer />
-        <p>© 2026 Ocean Park</p>
       </footer>
     </>
   );

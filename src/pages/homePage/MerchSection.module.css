@@ -1,4 +1,25 @@
-.section1 {
-  padding: 50px 0;
-  background: var(--body-blue);
+.section {
+  padding: 40px 0;
+  background-image: url(../../assets/homePage/merchbackground.webp);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  object-fit: cover;
+  border: solid red;
+}
+
+.title {
+  margin: 50px 0 40px;
+  text-align: center;
+  line-height: 1.3;
+
+  h2 {
+    font-family: "Joti One", sans-serif;
+    font-size: 5rem;
+    font-weight: 500;
+  }
+
+  p {
+    color: var(--text-gray);
+    font-size: 1.2rem;
+  }
 }

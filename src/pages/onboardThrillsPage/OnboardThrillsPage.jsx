@@ -2,6 +2,9 @@ import styles from "./OnboardThrillsPage.module.css";
 import sg from "../../assets/homePage/SEA-GUARDIAN.jpg";
 import oe from "../../assets/homePage/OCEAN-EXPLORER.jpg";
 import sd from "../../assets/homePage/SERENITY-DREAM.jpg";
+import zone from "../../assets/OnboardThrills/activity.png";
+import pools from "../../assets/OnboardThrills/pool.png";
+import yoga from "../../assets/OnboardThrills/yoga.png";
 import { Link } from "react-router-dom";
 
 const OnboardThrillsPage = () => {
@@ -33,7 +36,7 @@ const OnboardThrillsPage = () => {
           <h3>Family-Friendly Activity Zones</h3>
           <p>Let kids play in tide pool-themed climbing areas and pirate laser tag arenas, while adults enjoy quiet spa treatments with sea-sourced products.</p>
           </div>
-          <img src={sg} alt="" />
+          <img src={zone} alt="" />
         </div>
         <p>Balance adventure with calm—recharge your mind and body with ocean-inspired wellness and leisure activities.</p>
         <div className={styles.recreationCard}>
@@ -41,14 +44,14 @@ const OnboardThrillsPage = () => {
           <h3>Eco-Friendly Pool & Water Play</h3>
           <p>Splash in our sustainably filtered wave pools, with gentle swells for little ones and bigger breaks for thrill-seekers.</p>
           </div>
-          <img src={oe} alt="" />
+          <img src={pools} alt="" />
         </div>
         <div className={styles.recreationCard}>
           <div className={styles.cardContent}>
           <h3>Ocean-View Yoga & Meditation</h3>
           <p>Practice yoga at sunrise or sunset on the deck, with the sound of waves as your backdrop, or join guided meditation sessions focused on mindfulness.</p>
           </div>
-          <img src={sd} alt="" />
+          <img src={yoga} alt="" />
         </div>
       </div>
     </div>

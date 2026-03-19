@@ -1,41 +1,27 @@
 import Image from "../../assets/homePage/swimming_fish.gif";
 import styles from "./RunningText.module.css";
 
-const RunningText = ({
-  text = "Connect People With Nature",
-  text1 = "讓你我融入大自然",
-  imgUrl = Image,
-  speed = 15,
-}) => {
+const RunningText = () => {
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.movingTrack}
-      style={{ animationDuration: `${speed}s` }}
+      style={{ animationDuration: `15s` }}
       >
         <div className={styles.textGroup}>
           <span className={styles.mainText}>
-            {text}
+            Connect People With Nature
             </span>
           <span className={styles.subText}>
-            {text1}
+            讓你我融入大自然
             </span>
         </div>
         <img className={styles.image}
-          src={imgUrl}
+          src={Image}
           alt="icon"/>
       </div>
     </div>
   );
 };
 
-export default function App() {
-  return (
-    <RunningText
-      text="Connect People With Nature"
-      text1="讓你我融入大自然"
-      imgUrl={Image}
-      speed={12}
-    />
-  );
-}
+export default RunningText;

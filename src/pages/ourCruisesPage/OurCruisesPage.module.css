@@ -1,0 +1,139 @@
+.heroContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.heroImage {
+  width: 100%;
+  display: block;
+  min-height: 400px;
+  object-fit: cover;
+}
+
+.joinButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: #02a6f4;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.thumbWrapper {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+  z-index: 5;
+  width: 60%;
+  justify-content: center;
+}
+.thumbItem:first-child{
+  color: var(--oe-main);
+}
+.thumbItem:nth-child(2){
+  color: var(--sg-main);
+}
+.thumbItem:last-child{
+  color: var(--sd-main);
+}
+.thumbItem {
+  text-align: center;
+}
+
+.thumbImage {
+  width: 80%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: bottom;
+  border-radius: 10px;
+  max-width: 100%;
+}
+.thumbImage:hover{
+  box-shadow: var(--box-shadow);
+}
+
+.thumbText {
+  font-size: 1rem;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.dividerLine {
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .joinButton {
+    font-size: 1rem;
+  }
+
+  .thumbWrapper {
+    gap: 15px;
+    bottom: 20px;
+  }
+
+  .thumbImage {
+  width: 70%;
+  }
+
+  .thumbText {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .heroImage {
+    height: auto;
+  }
+
+  .joinButton {
+    position: relative;
+    top: -9rem;
+    left: 0;
+    transform: none;
+    margin: 20px auto;
+    display: block;
+    width: fit-content;
+    font-size: 2rem;
+  }
+
+  .thumbWrapper {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .thumbImage {
+    width: 90vw;
+    height: 31rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .thumbText {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+}

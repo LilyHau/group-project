@@ -7,8 +7,10 @@
   margin: 0;
   width: 100%;
   background-image: url(../../assets/homePage/merchbackground.webp);
+  background-color: var(--body-blue);
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  background-position: center;
   object-fit: cover;
 }
 

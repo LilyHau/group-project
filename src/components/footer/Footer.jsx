@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.bar}>
-        <form action="" method="post" className={styles.form}>
+        <form action="" method="" className={styles.form}>
           <input
             type="email"
             name="email"
@@ -50,9 +50,9 @@ const Footer = () => {
           {/* <input type="submit" value="SUBSCRIBE" /> */}
         </form>
         <div className="icon">
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-linkedin-in"></i>
-          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-instagram fa-xl"></i>
+          <i class="fa-brands fa-linkedin-in fa-xl"></i>
+          <i class="fa-brands fa-x-twitter fa-xl"></i>
         </div>
       </div>
       <div className={styles.bottom}>

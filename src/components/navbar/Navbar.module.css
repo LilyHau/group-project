@@ -1,10 +1,10 @@
-.blueBlock{
+.blueBlock {
   display: block;
   width: 100%;
   height: 1rem;
   background-color: var(--background-blue);
 }
-.logIn{
+.logIn {
   height: 3rem;
   background-color: var(--background-gray);
   display: flex;
@@ -12,16 +12,16 @@
   align-items: center;
   padding-right: 2rem;
 }
-.logInList{
+.logInList {
   display: flex;
   gap: 1rem;
   font-size: 1rem;
   color: black;
-  a:hover{
+  a:hover {
     scale: 1.03;
   }
 }
-.faq{
+.faq {
   color: var(--text-gray);
 }
 .navbar {
@@ -35,7 +35,7 @@
 .logo {
   width: 18rem;
 }
-.navbarListItems{
+.navbarListItems {
   position: relative;
   width: 50%;
   display: flex;
@@ -43,53 +43,53 @@
   gap: 1rem;
   color: var(--text-gray);
   font-size: 1.1rem;
-  a span:hover{
+  a span:hover {
     scale: 1.04;
   }
-  li:hover{
+  li:hover {
     cursor: pointer;
   }
 }
-.navbarListItems>li{
+.navbarListItems > li {
   color: var(--text-gray);
 }
 .dropdownContent {
-    display: none;
-    position: absolute;
-    top: 100%;
-    background-color: var(--footer-blue);
-    min-width: 160px;
-    box-shadow: var(--box-shadow-hover);
-    z-index: 9999;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    li:first-child{
-      border-bottom: 2px solid var(--background-gray);
-      font-weight: 600;
-    }
+  display: none;
+  position: absolute;
+  top: 100%;
+  background-color: var(--footer-blue);
+  min-width: 160px;
+  box-shadow: var(--box-shadow-hover);
+  z-index: 9999;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li:first-child {
+    border-bottom: 2px solid var(--background-gray);
+    font-weight: 600;
+  }
 }
 
 .dropdownContent li a {
-    color: var(--black);
-    padding: 0.8rem 1rem;
-    text-decoration: none;
-    display: block;
+  color: var(--black);
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  display: block;
 }
 
 .dropdownContent li a:hover {
-    background-color: #abe8fc;
+  background-color: #abe8fc;
 }
 
 .dropdown:hover .dropdownContent {
-    display: block;
+  display: block;
 }
 
-.navbarBuyItems{
+.navbarBuyItems {
   display: flex;
   align-items: center;
 }
-.mobileMenu{
+.mobileMenu {
   display: none;
 }
 .cartIcon {
@@ -112,7 +112,7 @@
 .cartLink {
   text-decoration: none;
 }
-.planBtn{
+.planBtn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,21 +123,23 @@
   padding: 0.2rem 0.5rem;
   margin-left: 0.2rem;
 }
-.planBtn:hover{
+.planBtn:hover {
   opacity: 0.7;
   cursor: pointer;
   box-shadow: var(--box-shadow-hover);
   color: var(--white);
 }
 
-.hoverUnderlineAnimation,.logInListFirst {
+.hoverUnderlineAnimation,
+.logInListFirst {
   position: relative;
   text-decoration: none;
   display: inline-block;
 }
 
-.hoverUnderlineAnimation::after,.logInListFirst::after {
-  content: '';
+.hoverUnderlineAnimation::after,
+.logInListFirst::after {
+  content: "";
   position: absolute;
   display: block;
   width: 100%;
@@ -150,20 +152,21 @@
   transition: transform 0.3s ease-out;
 }
 
-.hoverUnderlineAnimation:hover::after,.logInListFirst:hover::after {
+.hoverUnderlineAnimation:hover::after,
+.logInListFirst:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-@media (max-width:992px) {
+@media (max-width: 992px) {
   .logo {
     width: 11.8rem;
   }
-  .navbarListItems{
+  .navbarListItems {
     width: 60%;
     gap: 1rem;
     font-size: 1rem;
   }
-  .planBtn{
+  .planBtn {
     width: 5rem;
     display: flex;
     justify-content: center;
@@ -171,11 +174,11 @@
     font-size: 1rem;
   }
 }
-@media (max-width:768px) {
-  .navbarListItems{
+@media (max-width: 768px) {
+  .navbarListItems {
     display: none;
   }
-  .navbarBuyItems{
+  .navbarBuyItems {
     width: 70%;
     display: flex;
     justify-content: flex-end;
@@ -186,15 +189,15 @@
     display: flex;
     flex-direction: column;
   }
-  .mobileMenuToggle img{
+  .mobileMenuToggle img {
     width: 3.2rem;
     opacity: 0.8;
   }
-  .mobileMenuToggle:hover{
+  .mobileMenuToggle:hover {
     cursor: pointer;
     opacity: 0.6;
   }
-  .mobileNavLinks{
+  .mobileNavLinks {
     text-align: center;
     position: absolute;
     top: 10rem;
@@ -206,14 +209,14 @@
     list-style: none;
     transition: transform 0.3s ease;
     transform: translateX(120%);
-    li{
+    li {
       font-size: 1.2rem;
       border-bottom: 2px solid var(--background-gray);
       font-weight: 600;
     }
     li:hover {
-    background-color: #abe8fc;
-}
+      background-color: #abe8fc;
+    }
   }
   .mobileNavLinks.active {
     transform: translateX(0);

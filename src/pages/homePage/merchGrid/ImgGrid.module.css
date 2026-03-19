@@ -99,3 +99,40 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 992px) {
+  .grid {
+    max-width: 950px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    max-width: 750px;
+    gap: 15px;
+  }
+
+  .tshirt {
+    height: 340px;
+  }
+  .turtle {
+    height: 180px;
+  }
+  .cap {
+    height: 280px;
+  }
+  .coffee {
+    height: 280px;
+    margin-top: -100px;
+  }
+  .keychain {
+    height: 340px;
+  }
+  .bear {
+    height: 300px;
+    margin-top: -135px;
+  }
+  .ship {
+    height: 180px;
+  }
+}

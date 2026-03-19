@@ -7,7 +7,7 @@
 
 .container {
   display: flex;
-  height: 160px;
+  height: 180px;
   width: 100%;
 }
 
@@ -55,6 +55,7 @@
   border: 1px solid purple;
   border-radius: var(--card-radius);
   overflow: hidden;
+
   input {
     padding: 15px 40px;
     border: none;

@@ -1,94 +1,229 @@
-/* --- PAGE WRAPPER --- */
+/* --- Global Page Wrapper --- */
 .pageContainer {
   background-color: #e3f8ff;
   padding: 40px 20px;
   min-height: 100vh;
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
 }
 
 .mainTitle {
   text-align: center;
   color: #5bc0de;
-  font-family:
-    "Irish Grover", cursive; /* Ensure this font is imported in your HTML/JS */
-  font-size: 2.5rem;
+  font-family: "Irish Grover", cursive;
+  font-size: 2.8rem;
   margin-bottom: 40px;
 }
 
-/* --- GRID LAYOUT --- */
+/* --- Layout --- */
 .mainLayout {
   display: grid;
   grid-template-columns: 1fr 380px;
   gap: 30px;
-  max-width: 1300px;
+  max-width: 1250px;
   margin: 0 auto;
 }
 
-/* --- SECTION STYLING --- */
+/* --- Form Sections --- */
 .formSection {
   background: #ffffff;
   padding: 30px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .sectionTitle {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
+  margin-bottom: 20px;
   color: #333;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #f0f0f0;
-  padding-bottom: 10px;
 }
 
-/* --- INPUTS & SELECTS --- */
-.inputField,
-.inputGrid input,
-.paxGrid input,
-.paxGrid select {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+/* --- Activities Section (Specific Style) --- */
+.activityGroup {
+  margin-bottom: 20px;
+}
+
+.activityGroupTitle {
   font-size: 1rem;
-  transition:
-    border-color 0.2s,
-    box-shadow 0.2s;
-  box-sizing: border-box;
+  font-weight: 700;
+  color: #444;
+  margin-bottom: 10px;
+  display: block;
 }
 
-.inputField:focus,
-.paxGrid input:focus {
-  outline: none;
-  border-color: #5bc0de;
-  box-shadow: 0 0 0 3px rgba(91, 192, 222, 0.2);
+.activityRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
 }
 
-.inputGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+.activityRow:last-child {
+  border-bottom: none;
 }
 
-/* --- PASSENGER INFO GRID --- */
-.passengerBox {
-  border: 1px solid #edf2f7;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 25px;
-  background-color: #fcfdfe;
+.activityLabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  flex: 1;
 }
 
-.paxHeader {
-  color: #5bc0de;
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 1.1rem;
-  border-left: 5px solid #5bc0de;
+.activityLabel input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.activityInfoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.activityName {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.activitySubText {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 2px;
+}
+
+.activityPrice {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #555;
+  white-space: nowrap;
   padding-left: 15px;
 }
 
+/* --- Stateroom Cards --- */
+.cabinCard {
+  display: flex;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 15px;
+  gap: 20px;
+}
+
+.cabinImg {
+  width: 130px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* --- Buttons (Match Proceed to Confirm Payment) --- */
+.confirmBtn {
+  background-color: #5bc0de;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  width: 100%;
+  max-width: 300px; /* For the 'Add/Proceed' buttons in main form */
+  border-radius: 50px; /* Pill shape */
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: block;
+  margin: 20px 0;
+}
+
+.confirmBtnFull {
+  background-color: #5bc0de;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  width: 100%;
+  max-width: 100%; /* For sidebar payment */
+  border-radius: 50px; /* Pill shape */
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: block;
+  margin: 20px 0;
+}
+
+.disabledBtn {
+  background-color: #cbd5e0;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 50px;
+  cursor: not-allowed;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* --- Sidebar: Summary & Payment --- */
+.sidebar {
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.summaryBox,
+.policyBox,
+.paymentBox {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.summaryRoomItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.summaryThumb {
+  width: 65px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.sumRoomImg {
+  padding-top: 10px;
+  width: 130px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800;
+  color: #5bc0de;
+  font-size: 1.4rem;
+  padding-top: 15px;
+  border-top: 2px solid #5bc0de;
+}
+
+/* --- Passenger Forms --- */
 .paxGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -99,186 +234,13 @@
   grid-column: span 2;
 }
 
-/* --- EMAIL VALIDATION STYLES --- */
-.emailWrapper {
-  grid-column: span 1;
-}
-
-.inputError {
-  border-color: #d9534f !important;
-  background-color: #fff8f8;
-}
-
-.errorText {
-  color: #d9534f;
-  font-size: 0.8rem;
-  margin-top: 5px;
-  display: block;
-}
-
-/* --- CABIN CARDS --- */
-.cabinList {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.cabinCard {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 15px;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  transition: transform 0.2s;
-}
-
-.cabinImg {
-  width: 120px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.cabinInfo {
-  flex: 1;
-}
-
-/* --- BUTTONS --- */
-.nextBtn,
-.confirmBtn {
-  background-color: #5bc0de;
-  color: white;
-  border: none;
-  padding: 16px;
-  width: 100%;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  margin-top: 20px;
-}
-
-.nextBtn:hover,
-.confirmBtn:hover {
-  background-color: #46b8da;
-}
-
-.disabledBtn {
-  background-color: #cbd5e0;
-  color: #718096;
-  border: none;
-  padding: 16px;
-  width: 100%;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  cursor: not-allowed;
-  margin-top: 20px;
-}
-
-/* --- SIDEBAR SUMMARY --- */
-.sidebar {
-  position: sticky;
-  top: 20px;
-  height: fit-content;
-}
-
-.summaryBox {
-  background: #ffffff;
-  padding: 25px;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.summaryRow {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 12px;
-  font-size: 0.95rem;
-  color: #4a5568;
-}
-
-.totalRow {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #5bc0de;
-}
-
-/* --- MODAL POPUP --- */
-.modalOverlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  backdrop-filter: blur(4px);
-}
-
-.modal {
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
-  text-align: center;
-  max-width: 450px;
-  width: 90%;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-.modalBtn {
-  background-color: #5bc0de;
-  color: white;
-  border: none;
-  padding: 12px 50px;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-/* --- MEDIA QUERIES --- */
-
-/* Tablet & Large Mobile */
+/* --- Responsive --- */
 @media (max-width: 992px) {
   .mainLayout {
     grid-template-columns: 1fr;
   }
-
   .sidebar {
     position: static;
-    order: -1; /* Puts summary at the top on mobile if desired */
-    margin-bottom: 30px;
-  }
-}
-
-/* Mobile Devices */
-@media (max-width: 768px) {
-  .paxGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .fullWidth {
-    grid-column: span 1;
-  }
-
-  .inputGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .cabinCard {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .pageContainer {
-    padding: 20px 10px;
+    order: -1;
   }
 }

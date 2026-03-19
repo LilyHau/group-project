@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CruiseBookingPageOE.module.css";
 
+// --- IMAGE IMPORTS ---
+import CRUISEregular from "../../../assets/Cruises/CRUISEregularsuitewithnoseaview.jpg";
+import CRUISEluxrysuite2 from "../../../assets/Cruises/CRUISEluxrysuite2.jpg";
+import CRUISEluxrysuiteforfamily from "../../../assets/Cruises/CRUISEluxrysuiteforfamily4people.jpg";
+
 const CruiseBookingPageOE = () => {
   // --- 1. STATE MANAGEMENT ---
   const [step, setStep] = useState(1);
@@ -11,9 +16,9 @@ const CruiseBookingPageOE = () => {
     view: 0,
     suite: 0,
   });
+  const [selectedActivities, setSelectedActivities] = useState([]);
   const [insurance, setInsurance] = useState(0);
   const [passengers, setPassengers] = useState([]);
-  const [paymentMethod, setPaymentMethod] = useState("");
   const [paymentDetails, setPaymentDetails] = useState({
     cardName: "",
     cardNumber: "",
@@ -22,32 +27,48 @@ const CruiseBookingPageOE = () => {
   });
   const [showModal, setShowModal] = useState(false);
 
-  // --- 2. CONFIG & CALCULATIONS ---
+  // --- 2. CONFIGURATION ---
   const NIGHTS = 7;
   const cabinTypes = [
     {
       id: "deluxe",
       name: "Deluxe Cabin",
+      info: "Sleeps 2 Adults",
+      info2: "250 sq ft",
       price: 600,
       capacity: 2,
-      img: "https://placeholder.com",
+      img: CRUISEregular,
     },
     {
       id: "view",
       name: "Deluxe Sea View Cabin",
+      info: "Sleeps 2 Adults",
+      info2: "300 sq ft",
       price: 799,
       capacity: 2,
-      img: "https://placeholder.com",
+      img: CRUISEluxrysuite2,
     },
     {
       id: "suite",
       name: "The Wall Hall Family Suite",
+      info: "Sleeps 2 Adults + 2 Child (≤7)",
+      info2: "528 sq ft",
       price: 1299,
       capacity: 4,
-      img: "https://placeholder.com",
+      img: CRUISEluxrysuiteforfamily,
     },
   ];
 
+  const activityList = [
+    { id: "cert", name: "Adult Dive Certification Courses", price: 450 },
+    { id: "padi", name: "PADI Open Water Dive Course", price: 600 },
+    { id: "junior_sub", name: "ADI Bubbleblower Course", price: 200 },
+    { id: "junior_bio", name: "Junior Snorkel Workshop", price: 320 },
+    { id: "blue_hole", name: "Blue Hole Exploration Dive", price: 250 },
+    { id: "gen_bio", name: "General Marine Workshop", price: 300 },
+  ];
+
+  // --- 3. CALCULATIONS ---
   const totalPeople = Number(party.adults) + Number(party.children);
   const currentCapacity =
     selectedCabins.deluxe * 2 +
@@ -55,6 +76,17 @@ const CruiseBookingPageOE = () => {
     selectedCabins.suite * 4;
   const isCapacityMet = currentCapacity >= totalPeople && totalPeople > 0;
 
+  const cabinSubtotal =
+    selectedCabins.deluxe * 600 * NIGHTS +
+    selectedCabins.view * 799 * NIGHTS +
+    selectedCabins.suite * 1299 * NIGHTS;
+  const activitiesTotal = selectedActivities.reduce(
+    (sum, id) => sum + (activityList.find((a) => a.id === id)?.price || 0),
+    0,
+  );
+  const grandTotal = cabinSubtotal + activitiesTotal + insurance;
+
+  // --- 4. VALIDATION ---
   useEffect(() => {
     setPassengers((prev) =>
       Array.from(
@@ -80,7 +112,6 @@ const CruiseBookingPageOE = () => {
     );
   }, [totalPeople]);
 
-  // --- 3. VALIDATION ---
   const validateEmail = (email) =>
     /@(gmail\.com|icloud\.com|hotmail\.com)$/i.test(email);
 
@@ -102,19 +133,12 @@ const CruiseBookingPageOE = () => {
         validateEmail(p.email),
     );
 
-  const isPaymentComplete =
-    paymentDetails.cardName &&
+  const isPaymentReady =
     paymentDetails.cardNumber.length >= 13 &&
-    paymentDetails.expiry &&
-    paymentDetails.cvv.length >= 3;
+    paymentDetails.cvv.length >= 3 &&
+    isPaxInfoComplete;
 
-  const cabinSubtotal =
-    selectedCabins.deluxe * 600 * NIGHTS +
-    selectedCabins.view * 799 * NIGHTS +
-    selectedCabins.suite * 1299 * NIGHTS;
-  const grandTotal = cabinSubtotal + insurance;
-
-  // --- 4. HANDLERS ---
+  // --- 5. HANDLERS ---
   const handleRoomChange = (id, val) =>
     setSelectedCabins((prev) => ({
       ...prev,
@@ -125,8 +149,6 @@ const CruiseBookingPageOE = () => {
     updated[i] = { ...updated[i], [field]: val };
     setPassengers(updated);
   };
-  const handlePayChange = (field, val) =>
-    setPaymentDetails((prev) => ({ ...prev, [field]: val }));
 
   return (
     <div className={styles.pageContainer}>
@@ -144,11 +166,8 @@ const CruiseBookingPageOE = () => {
               }}
             >
               <option value="">-- Choose Dates --</option>
-              <option value="Jan 24 - Jan 31, 2027">
-                Jan 24 - Jan 31, 2027
-              </option>
-              <option value="Feb 15 - Feb 22, 2027">
-                Feb 15 - Feb 22, 2027
+              <option value="Jan 24, 2027 - Jan 31, 2027">
+                Jan 24, 2027 - Jan 31, 2027
               </option>
             </select>
           </section>
@@ -183,51 +202,83 @@ const CruiseBookingPageOE = () => {
           {step >= 3 && (
             <section className={styles.formSection}>
               <h3 className={styles.sectionTitle}>2. Select Stateroom Type*</h3>
-              <p className={styles.infoAlert}>
-                Party: {totalPeople} | Capacity: {currentCapacity}
-              </p>
-              {cabinTypes.map((c) => (
-                <div key={c.id} className={styles.cabinCard}>
-                  <img src={c.img} className={styles.cabinImg} alt={c.name} />
-                  <div className={styles.cabinInfo}>
-                    <strong>{c.name}</strong>
-                    <span>
-                      ${c.price}/nt (Fits {c.capacity})
-                    </span>
+              <div className={styles.cabinList}>
+                {cabinTypes.map((c) => (
+                  <div key={c.id} className={styles.cabinCard}>
+                    <img src={c.img} className={styles.cabinImg} alt={c.name} />
+                    <div className={styles.cabinInfo}>
+                      <strong>{c.name}</strong>
+                      <span className={styles.subInfo}>
+                        {c.info} | {c.info2}
+                      </span>
+                      <span className={styles.priceHighlight}>
+                        ${c.price} USD / night
+                      </span>
+                    </div>
+                    <input
+                      type="number"
+                      min="0"
+                      value={selectedCabins[c.id]}
+                      onChange={(e) => handleRoomChange(c.id, e.target.value)}
+                    />
                   </div>
-                  <input
-                    type="number"
-                    min="0"
-                    value={selectedCabins[c.id]}
-                    onChange={(e) => handleRoomChange(c.id, e.target.value)}
-                  />
-                </div>
-              ))}
-              {isCapacityMet ? (
-                <button className={styles.nextBtn} onClick={() => setStep(4)}>
-                  Next Step
+                ))}
+              </div>
+              {isCapacityMet && (
+                <button
+                  className={styles.confirmBtn}
+                  onClick={() => setStep(4)}
+                >
+                  Proceed to Activities
                 </button>
-              ) : (
-                <p className={styles.errorHint}>Need more rooms.</p>
               )}
             </section>
           )}
 
-          {/* STEP 4: INSURANCE */}
+          {/* STEP 4: ACTIVITIES & INSURANCE */}
           {step >= 4 && (
-            <section className={styles.formSection}>
-              <h3 className={styles.sectionTitle}>4. Travel Insurance*</h3>
-              <select
-                className={styles.inputField}
-                onChange={(e) => {
-                  setInsurance(Number(e.target.value));
-                  setStep(5);
-                }}
-              >
-                <option value="0">No Insurance</option>
-                <option value="250">Basic ($250)</option>
-              </select>
-            </section>
+            <>
+              <section className={styles.formSection}>
+                <h3 className={styles.sectionTitle}>
+                  3. Additional Activities & Dive Courses
+                </h3>
+                {activityList.map((act) => (
+                  <div key={act.id} className={styles.rowItem}>
+                    <label>
+                      <input
+                        type="checkbox"
+                        onChange={() =>
+                          setSelectedActivities((prev) =>
+                            prev.includes(act.id)
+                              ? prev.filter((a) => a !== act.id)
+                              : [...prev, act.id],
+                          )
+                        }
+                      />{" "}
+                      {act.name}
+                    </label>
+                    <span>${act.price} USD</span>
+                  </div>
+                ))}
+              </section>
+
+              <section className={styles.formSection}>
+                <h3 className={styles.sectionTitle}>
+                  4. Optional Basic Travel Insurance
+                </h3>
+                <select
+                  className={styles.inputField}
+                  onChange={(e) => {
+                    setInsurance(Number(e.target.value));
+                    setStep(5);
+                  }}
+                >
+                  <option value="0">No Insurance</option>
+                  <option value="250">Basic Coverage ($250)</option>
+                  <option value="500">Premium Coverage ($500)</option>
+                </select>
+              </section>
+            </>
           )}
 
           {/* STEP 5: PASSENGER INFO */}
@@ -235,11 +286,10 @@ const CruiseBookingPageOE = () => {
             <section className={styles.formSection}>
               <h3 className={styles.sectionTitle}>5. Passenger Information*</h3>
               {passengers.map((p, i) => (
-                <div key={i} className={styles.passengerBox}>
+                <div key={i} className={styles.paxBox}>
                   <h4 className={styles.paxHeader}>Passenger #{i + 1}</h4>
                   <div className={styles.paxGrid}>
                     <select
-                      value={p.title}
                       onChange={(e) =>
                         handlePaxChange(i, "title", e.target.value)
                       }
@@ -267,14 +317,13 @@ const CruiseBookingPageOE = () => {
                       }
                     />
                     <select
-                      value={p.gender}
                       onChange={(e) =>
                         handlePaxChange(i, "gender", e.target.value)
                       }
                     >
                       <option value="">Gender</option>
-                      <option value="M">Male</option>
-                      <option value="F">Female</option>
+                      <option value="M">M</option>
+                      <option value="F">F</option>
                     </select>
                     <input
                       type="date"
@@ -308,7 +357,7 @@ const CruiseBookingPageOE = () => {
                       }
                     />
                     <input
-                      placeholder="Zip"
+                      placeholder="Zip Code"
                       onChange={(e) =>
                         handlePaxChange(i, "zip", e.target.value)
                       }
@@ -319,7 +368,7 @@ const CruiseBookingPageOE = () => {
                         handlePaxChange(i, "phone", e.target.value)
                       }
                     />
-                    <div className={styles.emailWrapper}>
+                    <div className={styles.emailCol}>
                       <input
                         placeholder="Email"
                         className={
@@ -332,7 +381,7 @@ const CruiseBookingPageOE = () => {
                         }
                       />
                       {p.email && !validateEmail(p.email) && (
-                        <small className={styles.errorText}>
+                        <small className={styles.errorLabel}>
                           Gmail/iCloud/Hotmail only
                         </small>
                       )}
@@ -340,108 +389,117 @@ const CruiseBookingPageOE = () => {
                   </div>
                 </div>
               ))}
-              <button
-                className={
-                  isPaxInfoComplete ? styles.nextBtn : styles.disabledBtn
-                }
-                disabled={!isPaxInfoComplete}
-                onClick={() => setStep(6)}
-              >
-                Go to Payment
-              </button>
-            </section>
-          )}
-
-          {/* STEP 6: PAYMENT DETAILS */}
-          {step >= 6 && (
-            <section className={styles.formSection}>
-              <h3 className={styles.sectionTitle}>8. COMPLETE YOUR BOOKING</h3>
-              <div className={styles.paymentMethods}>
-                <label onClick={() => setPaymentMethod("card")}>
-                  <input
-                    type="radio"
-                    name="pay"
-                    checked={paymentMethod === "card"}
-                    readOnly
-                  />{" "}
-                  💳 Credit / Debit Card
-                </label>
-              </div>
-
-              {paymentMethod === "card" && (
-                <div className={styles.cardDetailsBox}>
-                  <h4 className={styles.subHeader}>Card Information</h4>
-                  <div className={styles.paxGrid}>
-                    <input
-                      placeholder="Cardholder Name"
-                      className={styles.fullWidth}
-                      onChange={(e) =>
-                        handlePayChange("cardName", e.target.value)
-                      }
-                    />
-                    <input
-                      placeholder="Card Number (16 Digits)"
-                      className={styles.fullWidth}
-                      maxLength="16"
-                      onChange={(e) =>
-                        handlePayChange("cardNumber", e.target.value)
-                      }
-                    />
-                    <input
-                      placeholder="MM/YY"
-                      onChange={(e) =>
-                        handlePayChange("expiry", e.target.value)
-                      }
-                    />
-                    <input
-                      placeholder="CVV"
-                      maxLength="4"
-                      onChange={(e) => handlePayChange("cvv", e.target.value)}
-                    />
-                  </div>
-                  <button
-                    className={
-                      isPaymentComplete ? styles.confirmBtn : styles.disabledBtn
-                    }
-                    disabled={!isPaymentComplete}
-                    onClick={() => setShowModal(true)}
-                  >
-                    CONFIRM PAYMENT (${grandTotal.toLocaleString()})
-                  </button>
-                </div>
-              )}
             </section>
           )}
         </div>
 
-        {/* SIDEBAR SUMMARY */}
+        {/* --- SIDEBAR --- */}
         <aside className={styles.sidebar}>
+          <div className={styles.policyBox}>
+            <h4>Cancellation Policy</h4>
+            <div className={styles.policyRow}>
+              <span>120+ days before departure:</span>
+              <span>Full refund</span>
+            </div>
+            <div className={styles.policyRow}>
+              <span>60-119 days before departure:</span>
+              <span>75% refund</span>
+            </div>
+            <div className={styles.policyRow}>
+              <span>&lt;30 days before departure:</span>
+              <span>No refund</span>
+            </div>
+          </div>
+
           <div className={styles.summaryBox}>
             <h3>Booking Summary</h3>
-            <p>Dates: {dates || "---"}</p>
-            <hr />
-            {Object.entries(selectedCabins).map(
-              ([id, qty]) =>
-                qty > 0 && (
-                  <div key={id} className={styles.summaryRow}>
+            <p className={styles.summaryCruise}>
+              7 Night: OCEAN EXPLORER Cruise
+            </p>
+            <p className={styles.summaryDates}>{dates || "Select Dates"}</p>
+            <hr className={styles.divider} />
+
+            {Object.entries(selectedCabins).map(([id, qty]) => {
+              if (qty <= 0) return null;
+              const cabin = cabinTypes.find((c) => c.id === id);
+              return (
+                <div key={id} className={styles.sumRoomItem}>
+                  <img
+                    src={cabin.img}
+                    className={styles.sumRoomImg}
+                    alt={cabin.name}
+                  />
+                  <div className={styles.sumRoomInfo}>
                     <span>
-                      {qty}x {cabinTypes.find((c) => c.id === id).name}
+                      {qty}x {cabin.name}
                     </span>
-                    <span>
-                      $
-                      {(
-                        cabinTypes.find((c) => c.id === id).price *
-                        NIGHTS *
-                        qty
-                      ).toLocaleString()}
+                    <span className={styles.priceText}>
+                      ${(cabin.price * NIGHTS * qty).toLocaleString()}
                     </span>
                   </div>
-                ),
-            )}
+                </div>
+              );
+            })}
+
+            <div className={styles.summaryRow}>
+              <span>
+                Guests ({party.adults}A, {party.children}C)
+              </span>
+              <span>Incl.</span>
+            </div>
+            <div className={styles.summaryRow}>
+              <span>Activities Subtotal</span>
+              <span>${activitiesTotal.toLocaleString()}</span>
+            </div>
+            <div className={styles.summaryRow}>
+              <span>Insurance</span>
+              <span>${insurance}</span>
+            </div>
+            <hr className={styles.divider} />
             <div className={styles.totalRow}>
-              <span>TOTAL:</span>
+              <span>TOTAL AMOUNT</span>
               <span>${grandTotal.toLocaleString()}</span>
             </div>
+          </div>
+
+          <div className={styles.paymentBox}>
+            <h4>COMPLETE YOUR BOOKING</h4>
+            <div className={styles.payGrid}>
+              <input
+                placeholder="Card Number"
+                className={styles.fullWidth}
+                onChange={(e) =>
+                  setPaymentDetails({
+                    ...paymentDetails,
+                    cardNumber: e.target.value,
+                  })
+                }
+              />
+              <input
+                placeholder="MM/YY"
+                onChange={(e) =>
+                  setPaymentDetails({
+                    ...paymentDetails,
+                    expiry: e.target.value,
+                  })
+                }
+              />
+              <input
+                placeholder="CVV"
+                onChange={(e) =>
+                  setPaymentDetails({ ...paymentDetails, cvv: e.target.value })
+                }
+              />
+            </div>
+            <button
+              className={
+                isPaymentReady ? styles.confirmBtn : styles.disabledBtn
+              }
+              disabled={!isPaymentReady}
+              onClick={() => setShowModal(true)}
+            >
+              Confirm Booking
+            </button>
           </div>
         </aside>
       </div>
@@ -449,10 +507,8 @@ const CruiseBookingPageOE = () => {
       {showModal && (
         <div className={styles.modalOverlay}>
           <div className={styles.modal}>
-            <h2>Payment Successful!</h2>
-            <p>
-              Your cruise booking is confirmed. Check your email for details.
-            </p>
+            <h2>Success!</h2>
+            <p>Booking Confirmed.</p>
             <button
               className={styles.modalBtn}
               onClick={() => (window.location.href = "/next")}

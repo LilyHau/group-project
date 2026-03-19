@@ -13,7 +13,7 @@ const Subscribe = () => {
             <input
               className={styles.input}
               type="email"
-              placeholder="     Enter your email"
+              placeholder="  Enter your email"
             />
             <button className={styles.button}>SUBSCRIBE</button>
           </form>

@@ -1,4 +1,5 @@
 import Image from "../../assets/homePage/swimming_fish.gif";
+import styles from "./RunningText.module.css";
 
 const RunningText = ({
   text = "Connect People With Nature",
@@ -6,74 +7,23 @@ const RunningText = ({
   imgUrl = Image,
   speed = 15,
 }) => {
-  const moveKeyframes = `
-    @keyframes moveLeftFull {
-      0% { transform: translateX(100vw); }
-      100% { transform: translateX(-100%); }
-    }
-  `;
 
   return (
-    <div
-      style={{
-        background: "#f7f7f7",
-        padding: "100px 0",
-        overflow: "hidden",
-        width: "100%",
-      }}
-    >
-      <style>{moveKeyframes}</style>
-
-      <div
-        style={{
-          display: "inline-flex",
-          flexDirection: "row",
-          alignItems: "center",
-          animation: `moveLeftFull ${speed}s linear infinite`,
-          whiteSpace: "nowrap",
-          color: "#118da8",
-          padding: "40px 0",
-          gap: "80px",
-        }}
+    <div className={styles.wrapper}>
+      <div className={styles.movingTrack}
+      style={{ animationDuration: `${speed}s` }}
       >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <span
-            style={{
-              fontSize: "150px",
-              fontWeight: "bold",
-              fontFamily: "Joti One, sans-serif",
-              lineHeight: "1.1",
-            }}
-          >
+        <div className={styles.textGroup}>
+          <span className={styles.mainText}>
             {text}
-          </span>
-          <span
-            style={{
-              fontSize: "80px",
-              fontWeight: "normal",
-              marginTop: "10px",
-            }}
-          >
+            </span>
+          <span className={styles.subText}>
             {text1}
-          </span>
+            </span>
         </div>
-        <img
+        <img className={styles.image}
           src={imgUrl}
-          alt="icon"
-          style={{
-            height: "220px",
-            width: "auto",
-            borderRadius: "20px",
-            objectFit: "contain",
-          }}
-        />
+          alt="icon"/>
       </div>
     </div>
   );

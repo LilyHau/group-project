@@ -71,8 +71,29 @@ input:focus {
     right,
     5% 50%;
   background-size: 30%, 30%;
+}.invite {
+  h2 {
+    font-size: 1.8rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  .input::placeholder {
+    font-size: 1rem;
+  }
 }
 }
 @media (max-width:768px) {
+  .invite {
+  h2 {
+    font-size: 1.6rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+  .input::placeholder {
+    font-size: 0.9rem;
+  }
+}
 }
 

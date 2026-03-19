@@ -103,6 +103,31 @@
 @media (max-width: 992px) {
   .grid {
     max-width: 950px;
+    gap: 20px;
+  }
+
+  .tshirt {
+    height: 410px;
+  }
+  .turtle {
+    height: 240px;
+  }
+  .cap {
+    height: 320px;
+  }
+  .coffee {
+    height: 320px;
+    margin-top: -80px;
+  }
+  .keychain {
+    height: 410px;
+  }
+  .bear {
+    height: 360px;
+    margin-top: -170px;
+  }
+  .ship {
+    height: 240px;
   }
 }
 

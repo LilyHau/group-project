@@ -49,8 +49,8 @@ a:active {
   color: inherit;
   text-decoration: none;
 }
-i{
-  color: var(--text-gray)
+i {
+  color: var(--text-gray);
 }
 ul {
   list-style: none;

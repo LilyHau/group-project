@@ -49,14 +49,14 @@ const Footer = () => {
           <button>SUBSCRIBE</button>
           {/* <input type="submit" value="SUBSCRIBE" /> */}
         </form>
-        <div className="icon">
+        <div className={styles.icon}>
           <i class="fa-brands fa-instagram fa-xl"></i>
           <i class="fa-brands fa-linkedin-in fa-xl"></i>
           <i class="fa-brands fa-x-twitter fa-xl"></i>
         </div>
       </div>
       <div className={styles.bottom}>
-        <p>© 2026 Ocean Park. All rights reserved.</p>
+        <p>© 2026 Ocean Park HK Cruise Line. All rights reserved.</p>
       </div>
     </section>
   );

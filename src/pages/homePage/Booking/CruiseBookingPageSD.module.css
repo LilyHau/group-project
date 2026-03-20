@@ -1,0 +1,341 @@
+/* --- Global Page Wrapper --- */
+.pageContainer {
+  background-color: #ffe9ab;
+  padding: 40px 20px;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+}
+
+.mainTitle {
+  text-align: center;
+  color: #d57878;
+  font-family: "Irish Grover", cursive;
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+}
+
+/* --- Layout --- */
+.mainLayout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 30px;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* --- Form Sections --- */
+.formSection {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sectionTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* --- Activities Section (Specific Style) --- */
+.activityGroup {
+  margin-bottom: 20px;
+}
+
+.activityGroupTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #444;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.activityRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.activityRow:last-child {
+  border-bottom: none;
+}
+
+.activityLabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.activityLabel input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.activityInfoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.activityName {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.activitySubText {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 2px;
+}
+
+.activityPrice {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #555;
+  white-space: nowrap;
+  padding-left: 15px;
+}
+
+/* --- Stateroom Cards --- */
+.cabinCard {
+  display: flex;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 15px;
+  gap: 20px;
+}
+
+.cabinImg {
+  width: 130px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* --- Buttons (Match Proceed to Confirm Payment) --- */
+.confirmBtn {
+  background-color: #b57878;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  width: 100%;
+  max-width: 300px; /* For the 'Add/Proceed' buttons in main form */
+  border-radius: 50px; /* Pill shape */
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: block;
+  margin: 20px 0;
+}
+.modalConfirmBtn {
+  display: block; /* Required for auto margins to work */
+  margin: 20px auto; /* Centering: 20px top/bottom, auto left/right */
+
+  background-color: #d57878;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+  /* Removed align-items: center; as it only applies to flex/grid containers */
+}
+.confirmBtnFull {
+  background-color: #d57878;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  width: 100%;
+  max-width: 100%; /* For sidebar payment */
+  border-radius: 50px; /* Pill shape */
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: block;
+  margin: 20px 0;
+}
+
+.disabledBtn {
+  background-color: #ffe9ab;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 50px;
+  cursor: not-allowed;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* --- Sidebar: Summary & Payment --- */
+.sidebar {
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.summaryBox,
+.policyBox,
+.paymentBox {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.summaryRoomItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.summaryThumb {
+  width: 65px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.sumRoomImg {
+  padding-top: 10px;
+  width: 130px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800;
+  color: #d57878;
+  font-size: 1.4rem;
+  padding-top: 15px;
+  border-top: 2px solid #d57878;
+}
+
+/* --- Passenger Forms --- */
+.paxGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.fullWidth {
+  grid-column: span 2;
+}
+/* Dark background that covers the whole screen */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75); /* Dim the background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Higher than any sidebar or header */
+  backdrop-filter: blur(4px); /* Modern blur effect */
+}
+
+/* The actual white box */
+.modalWindow {
+  background: white;
+  width: 90%;
+  max-width: 420px;
+  border-radius: 24px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: modalPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.successCircle {
+  width: 70px;
+  height: 70px;
+  background: #d57878;
+  color: white;
+  font-size: 35px;
+  line-height: 70px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+.modalBody h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.modalBody p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.modalOkBtn {
+  background: #d57878;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 14px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modalOkBtn:hover {
+  background: #d57878;
+  transform: translateY(-2px);
+}
+
+/* Animation for the "Pop" effect */
+@keyframes modalPop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .mainLayout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+    order: -1;
+  }
+}

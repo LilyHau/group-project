@@ -9,6 +9,7 @@ import SDsum1 from "../../../assets/SERENITYDREAM/SDsum1.png";
 import SDsum2 from "../../../assets/SERENITYDREAM/SDsum2.png";
 import SDfooter from "../../../assets/SERENITYDREAM/SDfooter.png";
 import styles from "./SERENITYDREAM.module.css";
+import { useNavigate } from "react-router-dom";
 
 const SERENITYDREAM = () => {
   const thumbStyle = {
@@ -39,6 +40,7 @@ const SERENITYDREAM = () => {
     objectFit: "contain",
     padding: "5px",
   };
+  const navigate = useNavigate();
 
   return (
     <div style={{ position: "relative", width: "100%", overflow: "hidden" }}>
@@ -55,6 +57,7 @@ const SERENITYDREAM = () => {
             style={{ ...btnStyle("#d28d8d"), marginTop: 0 }} // Force remove the old margin
             onMouseOver={(e) => (e.target.style.backgroundColor = "#d28d76")}
             onMouseOut={(e) => (e.target.style.backgroundColor = "#d28d8d")}
+            onClick={() => navigate("/CruiseBookingPageSD")}
           >
             JOIN NOW
           </button>

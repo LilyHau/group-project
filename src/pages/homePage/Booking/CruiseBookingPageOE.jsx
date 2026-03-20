@@ -504,14 +504,20 @@ const CruiseBookingPageOE = () => {
         </aside>
       </div>
 
+      {/* --- POPUP MODAL WINDOW --- */}
       {showModal && (
         <div className={styles.modalOverlay}>
-          <div className={styles.modal}>
-            <h2>Success!</h2>
-            <p>Booking Confirmed.</p>
+          <div className={styles.modalContent}>
+            <div className={styles.modalIcon}>✅</div>
+            <h2>Booking Confirmed!</h2>
+            <p>
+              Thank you for choosing <strong>OCEAN EXPLORER</strong>. A
+              confirmation email with your itinerary has been sent to your
+              primary guest.
+            </p>
             <button
               className={styles.modalBtn}
-              onClick={() => (window.location.href = "/next")}
+              onClick={() => (window.location.href = "/dashboard")} // Jump to next page
             >
               OK
             </button>

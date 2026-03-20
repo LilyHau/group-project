@@ -517,7 +517,7 @@ const CruiseBookingPageOE = () => {
             </p>
             <button
               className={styles.modalBtn}
-              onClick={() => (window.location.href = "/dashboard")} // Jump to next page
+              onClick={() => (window.location.href = "/shop")} // Jump to next page
             >
               OK
             </button>

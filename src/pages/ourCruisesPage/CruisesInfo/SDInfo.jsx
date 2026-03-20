@@ -24,7 +24,7 @@ const SDInfo = () => {
       <div className={styles.infoContainer}>
         <section className={styles.overview}>
           <Overview {...sdOverview} key={sdOverview.id}/>
-          <Link to="/CruiseBookingPageOE"><a>JOIN NOW</a></Link>
+          <Link to="/CruiseBookingPageSD"><a>JOIN NOW</a></Link>
         </section>
         <section className={styles.inclusion}>
           <h2>What's Included in the Price of an Serenity Dream Cruise</h2>

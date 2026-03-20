@@ -24,7 +24,7 @@ const SGInfo = () => {
       <div className={styles.infoContainer}>
         <section className={styles.overview}>
           <Overview {...sgOverview} key={sgOverview.id}/>
-          <Link to="/CruiseBookingPageOE"><a>JOIN NOW</a></Link>
+          <Link to="/CruiseBookingPageSG"><a>JOIN NOW</a></Link>
         </section>
         <section className={styles.inclusion}>
           <h2>What's Included in the Price of an Sea Guardian Cruise</h2>

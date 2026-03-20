@@ -159,7 +159,7 @@ const CruiseBookingPageOE = () => {
           <h1>OCEAN EXPLORER</h1>
           <h2>海洋探索號</h2>
           <p>Dive into the Deep, Touch the Abyss</p>
-          <Link to="/oeInfo"><a href="">More Info</a></Link>
+          <Link to="/oeInfo"><a>More Info</a></Link>
         </div>
       </div>
     </div>

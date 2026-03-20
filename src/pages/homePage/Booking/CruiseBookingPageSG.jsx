@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CruiseBookingPageSG.module.css";
+import { Link } from "react-router-dom";
 
 // --- IMAGE IMPORTS ---
 import CRUISEregular from "../../../assets/Cruises/CRUISEregularsuitewithnoseaview.jpg";
@@ -151,6 +152,17 @@ const CruiseBookingPageSG = () => {
   };
 
   return (
+    <>
+      <div className={styles.heroContainer}>
+        <div className={styles.heroContent}>
+          <div className={styles.ovalEffect}>
+          <h1>SEA GUARDIAN</h1>
+          <h2>海洋保育號</h2>
+          <p>A Covenant of Coexistence Between Humans and the Sea</p>
+          <Link to="/sgInfo"><a>More Info</a></Link>
+        </div>
+        </div>
+      </div>
     <div className={styles.pageContainer}>
       <h1 className={styles.mainTitle}>Your Custom Cruise Booking</h1>
       <div className={styles.mainLayout}>
@@ -537,6 +549,7 @@ const CruiseBookingPageSG = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

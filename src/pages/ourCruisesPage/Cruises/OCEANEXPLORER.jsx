@@ -27,14 +27,7 @@ const OCEANEXPLORER = () => {
         <div className={styles.content}>
           <h1 className={styles.title}>OCEAN EXPLORER</h1>
           <p className={styles.chineseTitle}>海洋探索號</p>
-
-<<<<<<< Updated upstream
-          <p className={styles.tagline}>
-            Dive into the Deep,
-            <br />
-            Touch the Abyss
-          </p>
-=======
+        </div>
       {/* 2. Content Overlay Container (Moves everything to the left side) */}
       <div
         style={{
@@ -68,7 +61,6 @@ const OCEANEXPLORER = () => {
             JOIN NOW
           </Link>
           <Link to="/oeInfo"
-          <Link to="/oeInfo"
             style={btnStyle("#175490")}
             onMouseOver={(e) => (e.target.style.backgroundColor = "#0d3a66")} // Darker shade for More Info
             onMouseOut={(e) => (e.target.style.backgroundColor = "#175490")}
@@ -76,7 +68,6 @@ const OCEANEXPLORER = () => {
             MORE INFO
           </Link>
         </div>
->>>>>>> Stashed changes
 
           <div className={styles.btnRow}>
             <button

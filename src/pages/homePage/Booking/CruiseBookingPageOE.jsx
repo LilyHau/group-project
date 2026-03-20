@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CruiseBookingPageOE.module.css";
+import { Link } from "react-router-dom";
 
 // --- IMAGE IMPORTS ---
 import CRUISEregular from "../../../assets/Cruises/CRUISEregularsuitewithnoseaview.jpg";
@@ -151,6 +152,17 @@ const CruiseBookingPageOE = () => {
   };
 
   return (
+    <>
+    <div className={styles.heroContainer}>
+      <div className={styles.heroContent}>
+        <div className={styles.ovalEffect}>
+          <h1>OCEAN EXPLORER</h1>
+          <h2>海洋探索號</h2>
+          <p>Dive into the Deep, Touch the Abyss</p>
+          <Link to="/oeInfo"><a href="">More Info</a></Link>
+        </div>
+      </div>
+    </div>
     <div className={styles.pageContainer}>
       <h1 className={styles.mainTitle}>Your Custom Cruise Booking</h1>
       <div className={styles.mainLayout}>
@@ -537,6 +549,7 @@ const CruiseBookingPageOE = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

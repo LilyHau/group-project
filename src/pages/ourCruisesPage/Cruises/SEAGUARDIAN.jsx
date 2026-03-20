@@ -54,21 +54,21 @@ const SEAGUARDIAN = () => {
         <div className={styles.herooverlayunit}>
           {/* Buttons Row */}
           <div className={styles.btnrow}>
-            <button
+            <Link to="/CruiseBookingPageOE"><button
               style={btnStyle("#4caf50")}
               onMouseOver={(e) => (e.target.style.backgroundColor = "#4caf42")} // Darker shade for Join Now
               onMouseOut={(e) => (e.target.style.backgroundColor = "#4caf50")}
               onClick={() => navigate("/CruiseBookingPageSG")}
             >
               JOIN NOW
-            </button>
-            <button
+            </button></Link>
+            <Link to="/sgInfo"><button
               style={btnStyle("#c0dfb1")}
               onMouseOver={(e) => (e.target.style.backgroundColor = "#4caf50")} // Darker shade for More Info
               onMouseOut={(e) => (e.target.style.backgroundColor = "#c0dfb1")}
             >
               MORE INFO
-            </button>
+            </button></Link>
           </div>
           <div className={styles.thumbcontainer}>
             <Link to="/OCEANEXPLORER">

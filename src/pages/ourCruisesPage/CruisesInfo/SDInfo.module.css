@@ -1,0 +1,208 @@
+.heroContainer{
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background:
+  url('../../../assets/Cruises/SD-Logo.png') no-repeat top left / 200px 200px,
+  url('../../../assets//Cruises/SD-ship.png') no-repeat right / 300px,
+  var(--sd-main);
+}
+.heroContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  h1{
+    font-family: "Joti One";
+    font-size: 4rem;
+  }
+  h2{
+    transform: translateX(-10rem);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  p{
+    font-size: 1.5rem;
+  }
+  a{
+    background-color: #d28d8d;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    font-weight: 500;
+  }
+}
+.ovalEffect {
+    width: 120%;
+    height: 120%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+.infoContainer{
+  max-width: 1400px;
+  width: 70%;
+  margin: 2rem 20% 2rem 10%;
+}
+.overview{
+  position: relative;
+  border-bottom: 1px solid var(--sd-main);
+  h2{
+    font-weight: 300;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  p{
+    font-size: 1.5rem;
+  }
+  p:nth-child(4){
+    margin-top: 3rem;
+  }
+  p:nth-child(5){
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  span{
+    font-size: 2rem;
+  }
+  a{
+    background-color: #d28d8d;
+    color: var(--white);
+    padding: 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 15px;
+    position: fixed;
+    top: 40%;
+    right: 5%;
+    z-index: 9999;
+  }
+}
+.inclusion{
+  margin-top: 2rem;
+  h2{
+    color: #d8b98f;
+    margin-bottom: 1rem;
+  }
+  ul{
+    margin-left: 0.5rem;
+    span{
+      font-size: 1rem;
+    }
+  }
+}
+.itinerary{
+  margin-top: 2rem;
+  h2{
+    color: #d8b98f;
+    margin-bottom: 1rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+  th, td {
+    border: 1px solid var(--black);
+    padding: 8px;
+    text-align: center;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+}
+.details{
+  margin-top: 2rem;
+}
+.details :global .detailsCardContainer{
+  padding: 1rem;
+  border: 1px solid var(--black);
+  margin-bottom: 1rem;
+  line-height: normal;
+  background-color: #fffff8;
+  h2{
+    color: #d8b98f;
+    margin-bottom: 1rem;
+  }
+  p{
+    margin-top: 1rem;
+  }
+  ul{
+    margin-left: 0.5rem;
+  }
+}
+.disclaimer{
+  width: 70%;
+  margin-left: 10%;
+  margin-bottom: 2rem;
+  line-height: normal;
+  font-size: 0.8rem;
+}
+@media (max-width: 992px) {
+  .heroContent {
+    h1 { font-size: 3rem; }
+    h2 {
+      transform: translateX(0);
+      font-size: 1.25rem;
+      text-align: center;
+    }
+  }
+
+  .infoContainer {
+    width: 90%;
+    margin: 2rem auto;
+  }
+  .overview a {
+    top: 25%;
+    right: 5%;
+  }
+
+  .disclaimer {
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+@media (max-width: 768px) {
+  .heroContainer {
+    height: auto;
+    padding: 3rem 1rem;
+  }
+
+  .heroContent {
+    h1 { font-size: 2.2rem; }
+    p { font-size: 1.1rem; }
+  }
+
+  .infoContainer {
+    width: 95%;
+    margin: 1.5rem auto;
+  }
+
+  .overview {
+    h2 { font-size: 1.8rem; }
+    p { font-size: 1.1rem; }
+    span { font-size: 1.5rem; }
+  }
+  .itinerary {
+    overflow-x: auto;
+    table {
+      min-width: 500px;
+      font-size: 0.9rem;
+    }
+  }
+  .details :global .detailsCardContainer {
+    padding: 0.8rem;
+  }
+}

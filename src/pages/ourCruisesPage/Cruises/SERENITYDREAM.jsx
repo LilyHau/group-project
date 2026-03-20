@@ -53,21 +53,21 @@ const SERENITYDREAM = () => {
       <div className={styles.herooverlayunit}>
         {/* Buttons Row (Top) */}
         <div className={styles.btnRow}>
-          <button
+          <Link to="/CruiseBookingPageOE"><button
             style={{ ...btnStyle("#d28d8d"), marginTop: 0 }} // Force remove the old margin
             onMouseOver={(e) => (e.target.style.backgroundColor = "#d28d76")}
             onMouseOut={(e) => (e.target.style.backgroundColor = "#d28d8d")}
             onClick={() => navigate("/CruiseBookingPageSD")}
           >
             JOIN NOW
-          </button>
-          <button
+          </button></Link>
+          <Link to="/sdInfo"><button
             style={{ ...btnStyle("#f7d77e"), marginTop: 0 }} // Force remove the old margin
             onMouseOver={(e) => (e.target.style.backgroundColor = "#e5c566")}
             onMouseOut={(e) => (e.target.style.backgroundColor = "#f7d77e")}
           >
             MORE INFO
-          </button>
+          </button></Link>
         </div>
 
         {/* Thumbs container (Bottom) */}

@@ -14,8 +14,14 @@ import Cart from "./pages/cartPage/Cart";
 import { useState, useEffect } from "react";
 import ScrollToTop from "../ScrollToTop";
 import CruiseBookingPageOE from "./pages/homePage/Booking/CruiseBookingPageOE";
+<<<<<<< Updated upstream
 import CruiseBookingPageSG from "./pages/homePage/Booking/CruiseBookingPageSG";
 import CruiseBookingPageSD from "./pages/homePage/Booking/CruiseBookingPageSD";
+=======
+import OEInfo from "./pages/ourCruisesPage/CruisesInfo/OEInfo";
+import SGInfo from "./pages/ourCruisesPage/CruisesInfo/SGInfo";
+import SDInfo from "./pages/ourCruisesPage/CruisesInfo/SDInfo";
+>>>>>>> Stashed changes
 
 function App() {
   const cartItemsFromLocalStorage =
@@ -78,6 +84,9 @@ function App() {
           <Route path="about" element={<AboutPage />} />
           <Route path="cruises" element={<OurCruisesPage />} />
           <Route path="onboard" element={<OnboardThrillsPage />} />
+          <Route path="oeInfo" element={<OEInfo />} />
+          <Route path="sgInfo" element={<SGInfo />} />
+          <Route path="sdInfo" element={<SDInfo />} />
           <Route path="exclusive" element={<ExclusiveMerchPage />} />
           <Route path="OCEANEXPLORER" element={<OCEANEXPLORER />} />
           <Route path="SEAGUARDIAN" element={<SEAGUARDIAN />} />

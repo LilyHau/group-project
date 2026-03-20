@@ -28,11 +28,54 @@ const OCEANEXPLORER = () => {
           <h1 className={styles.title}>OCEAN EXPLORER</h1>
           <p className={styles.chineseTitle}>海洋探索號</p>
 
+<<<<<<< Updated upstream
           <p className={styles.tagline}>
             Dive into the Deep,
             <br />
             Touch the Abyss
           </p>
+=======
+      {/* 2. Content Overlay Container (Moves everything to the left side) */}
+      <div
+        style={{
+          position: "absolute",
+          top: "15%",
+          left: "10%",
+          marginTop: "-550px", // 1. Moves the entire block up by 400px
+          color: "white",
+          zIndex: 10,
+          fontFamily: "sans-serif",
+        }}
+      >
+        {/* Buttons Row */}
+        <div
+          style={{
+            display: "flex",
+            gap: "40px", // 2. Increased gap for the zoom look
+            marginBottom: "80px",
+          }}
+        >
+          <Link
+            to="/CruiseBookingPageOE"
+            style={{
+              ...btnStyle("#5ca4bc"),
+              display: "inline-block",
+              textDecoration: "none",
+            }}
+            onMouseOver={(e) => (e.target.style.backgroundColor = "#4a8ba1")}
+            onMouseOut={(e) => (e.target.style.backgroundColor = "#5ca4bc")}
+          >
+            JOIN NOW
+          </Link>
+          <Link to="/oeInfo"
+            style={btnStyle("#175490")}
+            onMouseOver={(e) => (e.target.style.backgroundColor = "#0d3a66")} // Darker shade for More Info
+            onMouseOut={(e) => (e.target.style.backgroundColor = "#175490")}
+          >
+            MORE INFO
+          </Link>
+        </div>
+>>>>>>> Stashed changes
 
           <div className={styles.btnRow}>
             <button

@@ -14,6 +14,7 @@ import Cart from "./pages/cartPage/Cart";
 import { useState, useEffect } from "react";
 import ScrollToTop from "../ScrollToTop";
 import CruiseBookingPageOE from "./pages/homePage/Booking/CruiseBookingPageOE";
+import CruiseBookingPageSG from "./pages/homePage/Booking/CruiseBookingPageSG";
 
 function App() {
   const cartItemsFromLocalStorage =
@@ -81,6 +82,7 @@ function App() {
           <Route path="SEAGUARDIAN" element={<SEAGUARDIAN />} />
           <Route path="SERENITYDREAM" element={<SERENITYDREAM />} />
           <Route path="CruiseBookingPageOE" element={<CruiseBookingPageOE />} />
+          <Route path="CruiseBookingPageSG" element={<CruiseBookingPageSG />} />
           <Route path="FAQSection" element={<FAQSection />} />
           <Route
             path="shop"

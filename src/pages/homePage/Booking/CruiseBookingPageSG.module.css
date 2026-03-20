@@ -1,6 +1,6 @@
 /* --- Global Page Wrapper --- */
 .pageContainer {
-  background-color: #e3f8ff;
+  background-color: #e1fff8;
   padding: 40px 20px;
   min-height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -9,7 +9,7 @@
 
 .mainTitle {
   text-align: center;
-  color: #5bc0de;
+  color: #4caf50;
   font-family: "Irish Grover", cursive;
   font-size: 2.8rem;
   margin-bottom: 40px;
@@ -122,7 +122,7 @@
 
 /* --- Buttons (Match Proceed to Confirm Payment) --- */
 .confirmBtn {
-  background-color: #5bc0de;
+  background-color: #4caf50;
   color: white;
   border: none;
   padding: 15px 30px;
@@ -141,7 +141,7 @@
   display: block; /* Required for auto margins to work */
   margin: 20px auto; /* Centering: 20px top/bottom, auto left/right */
 
-  background-color: #5bc0de;
+  background-color: #4caf50;
   color: white;
   border: none;
   padding: 15px 30px;
@@ -156,7 +156,7 @@
   /* Removed align-items: center; as it only applies to flex/grid containers */
 }
 .confirmBtnFull {
-  background-color: #5bc0de;
+  background-color: #4caf50;
   color: white;
   border: none;
   padding: 15px 30px;
@@ -173,7 +173,7 @@
 }
 
 .disabledBtn {
-  background-color: #cbd5e0;
+  background-color: #e1fff8;
   color: #fff;
   border: none;
   padding: 15px 30px;
@@ -234,10 +234,10 @@
   display: flex;
   justify-content: space-between;
   font-weight: 800;
-  color: #5bc0de;
+  color: #4caf50;
   font-size: 1.4rem;
   padding-top: 15px;
-  border-top: 2px solid #5bc0de;
+  border-top: 2px solid #4caf50;
 }
 
 /* --- Passenger Forms --- */
@@ -280,7 +280,7 @@
 .successCircle {
   width: 70px;
   height: 70px;
-  background: #5bc0de;
+  background: #4caf50;
   color: white;
   font-size: 35px;
   line-height: 70px;
@@ -301,7 +301,7 @@
 }
 
 .modalOkBtn {
-  background: #5bc0de;
+  background: #4caf50;
   color: white;
   border: none;
   width: 100%;
@@ -314,7 +314,7 @@
 }
 
 .modalOkBtn:hover {
-  background: #46b8da;
+  background: #4caf50;
   transform: translateY(-2px);
 }
 

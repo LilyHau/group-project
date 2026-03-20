@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import styles from "./CruiseBookingPageOE.module.css";
+import styles from "./CruiseBookingPageSG.module.css";
 
 // --- IMAGE IMPORTS ---
 import CRUISEregular from "../../../assets/Cruises/CRUISEregularsuitewithnoseaview.jpg";
 import CRUISEluxrysuite2 from "../../../assets/Cruises/CRUISEluxrysuite2.jpg";
 import CRUISEluxrysuiteforfamily from "../../../assets/Cruises/CRUISEluxrysuiteforfamily4people.jpg";
 
-const CruiseBookingPageOE = () => {
+const CruiseBookingPageSG = () => {
   // --- 1. STATE MANAGEMENT ---
   const [step, setStep] = useState(1);
   const [dates, setDates] = useState("");
@@ -518,7 +518,7 @@ const CruiseBookingPageOE = () => {
             <div className={styles.modalBody}>
               <h2>Booking Confirmed!</h2>
               <p>
-                Thank you for choosing <strong>OCEAN EXPLORER</strong>.<br />A
+                Thank you for choosing <strong>SEA GUARDIAN</strong>.<br />A
                 confirmation email with your itinerary has been sent to your
                 primary guest.
               </p>
@@ -540,4 +540,4 @@ const CruiseBookingPageOE = () => {
   );
 };
 
-export default CruiseBookingPageOE;
+export default CruiseBookingPageSG;

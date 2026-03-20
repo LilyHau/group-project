@@ -12,6 +12,7 @@ import SGimgb from "../../../assets/SEAGUARDIAN/SGR2.jpg";
 import SGimgc from "../../../assets/SEAGUARDIAN/SGR1.jpg";
 import SGfooter from "../../../assets/SEAGUARDIAN/SGfooter.png";
 import styles from "./SEAGUARDIAN.module.css";
+import { useNavigate } from "react-router-dom";
 
 const SEAGUARDIAN = () => {
   const thumbStyle = {
@@ -42,6 +43,7 @@ const SEAGUARDIAN = () => {
 
     padding: "5px",
   };
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -56,6 +58,7 @@ const SEAGUARDIAN = () => {
               style={btnStyle("#4caf50")}
               onMouseOver={(e) => (e.target.style.backgroundColor = "#4caf42")} // Darker shade for Join Now
               onMouseOut={(e) => (e.target.style.backgroundColor = "#4caf50")}
+              onClick={() => navigate("/CruiseBookingPageSG")}
             >
               JOIN NOW
             </button>

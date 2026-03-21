@@ -25,13 +25,13 @@ const OCEANEXPLORER = () => {
       {/* Hero Overlay */}
       <section className={styles.heroContainer}>
         <div className={styles.content}>
-          <h1 className={styles.title}>Serenity Dream</h1>
-          <p className={styles.chineseTitle}>海洋悠享號</p>
+          <h1 className={styles.title}>OCEAN EXPLORER</h1>
+          <p className={styles.chineseTitle}>海洋探索號</p>
 
           <p className={styles.tagline}>
-            A Luxury Resort Floating
+            Dive into the Deep,
             <br />
-            on the Sea
+            Touch the Abyss
           </p>
 
           <div className={styles.btnRow}>

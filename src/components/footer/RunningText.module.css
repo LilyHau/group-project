@@ -45,39 +45,20 @@
 
 @media (max-width: 992px) {
   .wrapper {
-    padding: 60px 0;
-  }
-  .movingTrack {
-    gap: 40px;
-  }
+  padding: 2rem 0;
+}
   .mainText {
-    font-size: 100px;
-  }
-  .subText {
-    font-size: 50px;
-  }
-  .image {
-    height: 150px;
-  }
+  font-size: 2.5rem;
+}
 }
 
 @media (max-width: 768px) {
   .wrapper {
-    padding: 40px 0;
-  }
-  .movingTrack {
-    gap: 30px;
-  }
+  padding: 1.5rem 0;
+}
   .mainText {
-    font-size: 60px;
-  }
-  .subText {
-    font-size: 30px;
-  }
-  .image {
-    height: 100px;
-    border-radius: 10px;
-  }
+  font-size: 2.2rem;
+}
 }
 
 @keyframes moveLeftFull {

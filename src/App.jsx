@@ -18,6 +18,8 @@ import CruiseBookingPageSD from "./pages/homePage/Booking/CruiseBookingPageSD";
 import OEInfo from "./pages/ourCruisesPage/CruisesInfo/OEInfo";
 import SGInfo from "./pages/ourCruisesPage/CruisesInfo/SGInfo";
 import SDInfo from "./pages/ourCruisesPage/CruisesInfo/SDInfo";
+import Onboardactivities from "./pages/ourCruisesPage/Onboard";
+import DiningShop from "../src/pages/ourCruisesPage/DiningShop";
 
 function App() {
   const cartItemsFromLocalStorage =
@@ -93,6 +95,8 @@ function App() {
           <Route path="CruiseBookingPageSG" element={<CruiseBookingPageSG />} />
           <Route path="CruiseBookingPageSD" element={<CruiseBookingPageSD />} />
           <Route path="FAQSection" element={<FAQSection />} />
+          <Route path="Onboardactivities" element={<Onboardactivities />} />
+          <Route path="DiningShop" element={<DiningShop />} />
           <Route
             path="shop"
             element={<Shop handleAddToCart={handleAddToCart} />}

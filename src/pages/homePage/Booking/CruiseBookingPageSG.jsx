@@ -61,6 +61,7 @@ const CruiseBookingPageSG = () => {
   ];
 
   const activityList = [
+    { id: "No", name: "No actovoty", price: 0 },
     { id: "cert", name: "Adult Dive Certification Courses", price: 450 },
     { id: "padi", name: "PADI Open Water Dive Course", price: 600 },
     { id: "junior_sub", name: "ADI Bubbleblower Course", price: 200 },
@@ -495,17 +496,16 @@ const CruiseBookingPageSG = () => {
               <h4>COMPLETE YOUR BOOKING</h4>
               <div className={styles.payGrid}>
                 <input
+                  type="text"
                   placeholder="Card Number"
                   className={styles.fullWidth}
-                  onChange={(e) =>
-                    setPaymentDetails({
-                      ...paymentDetails,
-                      cardNumber: e.target.value,
-                    })
-                  }
+                  // Added value prop to make it a controlled component
+                  value={paymentDetails.cardNumber}
+                  onChange={handleCardChange}
                 />
                 <input
                   placeholder="MM/YY"
+                  value={paymentDetails.expiry}
                   onChange={(e) =>
                     setPaymentDetails({
                       ...paymentDetails,
@@ -515,12 +515,13 @@ const CruiseBookingPageSG = () => {
                 />
                 <input
                   placeholder="CVV"
-                  onChange={(e) =>
-                    setPaymentDetails({
-                      ...paymentDetails,
-                      cvv: e.target.value,
-                    })
-                  }
+                  value={paymentDetails.cvv}
+                  onChange={(e) => {
+                    const val = e.target.value.replace(/\D/g, "");
+                    if (val.length <= 4) {
+                      setPaymentDetails({ ...paymentDetails, cvv: val });
+                    }
+                  }}
                 />
               </div>
               <button

@@ -6,29 +6,15 @@ import Image3 from "../../assets/Cruises/SG.webp";
 import Line from "../../assets/Cruises/Line.png";
 import Accommodations from "../ourCruisesPage/Accommodations";
 import styles from "./OurCruisesPage.module.css";
-<<<<<<< Updated upstream
-=======
-import Onboardactivities from "./Onboardactivities";
->>>>>>> Stashed changes
+import Onboardactivities from "../ourCruisesPage/Onboardactivities";
+import DiningShop from "../ourCruisesPage/DiningShop";
 
 const OurCruisesPage = () => {
   return (
     <div>
       <div className={styles.heroContainer}>
-<<<<<<< Updated upstream
         <img src={Image} className={styles.heroImage} alt="Cruise Hero" />
         <div className={styles.thumbWrapper}>
-=======
-        {/* 1. Main Hero Image */}
-        <img src={Image} className={styles.heroImage} alt="Cruise Hero" />
-
-        {/* 2. Join Now Button - Exactly Centred */}
-        <button className={styles.joinButton}>Join Now</button>
-
-        {/* 3. Bottom Images - Centred horizontally at the bottom of the hero */}
-        <div className={styles.thumbWrapper}>
-          {/* Item 1 */}
->>>>>>> Stashed changes
           <div className={styles.thumbItem}>
             <Link to="/OCEANEXPLORER">
               <img
@@ -39,11 +25,6 @@ const OurCruisesPage = () => {
               <p className={styles.thumbText}>Ocean Explorer</p>
             </Link>
           </div>
-<<<<<<< Updated upstream
-=======
-
-          {/* Item 2 */}
->>>>>>> Stashed changes
           <div className={styles.thumbItem}>
             <Link to="/SEAGUARDIAN">
               <img
@@ -54,11 +35,6 @@ const OurCruisesPage = () => {
               <p className={styles.thumbText}>Sea Guardian</p>
             </Link>
           </div>
-<<<<<<< Updated upstream
-=======
-
-          {/* Item 3 */}
->>>>>>> Stashed changes
           <div className={styles.thumbItem}>
             <Link to="/SERENITYDREAM">
               <img
@@ -76,6 +52,7 @@ const OurCruisesPage = () => {
       </div>
       <Onboardactivities />
       <Accommodations />
+      <DiningShop />
     </div>
   );
 };

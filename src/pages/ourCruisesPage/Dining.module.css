@@ -1,0 +1,91 @@
+.container {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #f0f7ff; /* Matching your previous theme */
+  text-align: center;
+}
+
+.mainTitle {
+  font-size: 3.5rem;
+  font-family: "Brush Script MT", cursive; /* Or a similar handwritten font */
+  color: #333;
+  margin-bottom: 60px;
+}
+
+.highlight {
+  position: relative;
+}
+
+.highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  right: -10px;
+  width: 100px;
+  height: 20px;
+  background-color: #7dd3f7;
+  opacity: 0.6;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.cardWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  padding: 0 5%;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+  width: 320px;
+  height: 450px;
+  border-radius: 160px; /* This creates the pill/oval shape */
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8; /* Makes image slightly faded like the reference */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2); /* Light white tint */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardTitle {
+  color: #000;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Mobile responsive - stack them on small screens */
+@media (max-width: 768px) {
+  .cardWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 280px;
+    height: 400px;
+  }
+}

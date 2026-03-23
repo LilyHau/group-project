@@ -1,8 +1,8 @@
-.onboardThrills{
+.onboardThrills {
   background-color: var(--body-blue);
   padding-bottom: 15rem;
 }
-.hero{
+.hero {
   width: 100%;
   height: 16rem;
   padding: 3rem 0;
@@ -15,18 +15,18 @@
   z-index: 0;
 }
 .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url(../../assets/OnboardThrills/big\ guy.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.8;
-    z-index: -1;
-    border-radius: 30px;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(../../assets/OnboardThrills/big\ guy.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  z-index: -1;
+  border-radius: 30px;
 }
-.info{
+.info {
   width: 80%;
   margin: 0 auto;
   display: grid;
@@ -35,7 +35,7 @@
   padding: 2rem 0;
   position: relative;
 }
-.info h2{
+.info h2 {
   font-family: "Irish Grover";
   font-size: 1.5rem;
   font-weight: bold;
@@ -47,42 +47,42 @@
   font-size: 2.5rem;
   padding-right: 3rem;
 }
-.infoDescription{
+.infoDescription {
   padding-right: 1rem;
   font-weight: 400;
   font-size: 1.5rem;
-  p{
+  p {
     margin: 1rem 0;
   }
 }
-.infoImage img{
+.infoImage img {
   width: 100%;
-  aspect-ratio:4/3;
+  aspect-ratio: 4/3;
   border-radius: 10px;
   max-height: 15rem;
   max-width: 20rem;
 }
-.infoImage img:first-child{
+.infoImage img:first-child {
   transform: translateX(-2rem);
 }
-.infoImage img:nth-child(2){
+.infoImage img:nth-child(2) {
   transform: translateX(4rem);
 }
-.infoLinks{
+.infoLinks {
   font-size: 1.1rem;
   color: var(--text-gray);
   display: flex;
   flex-wrap: nowrap;
-  li:first-child{
+  li:first-child {
     padding-right: 1rem;
   }
-  li:last-child{
+  li:last-child {
     padding-left: 1rem;
   }
 }
-.exploration{
+.exploration {
   width: 100%;
-  border-top: 1px solid var(--black) ;
+  border-top: 1px solid var(--black);
   padding: 5rem;
   h2 {
     font-family: "Joti One";
@@ -102,39 +102,39 @@
     background-color: #6fdbff;
     border-radius: 50%;
     z-index: -1;
-}
-  p{
+  }
+  p {
     margin-bottom: 2rem;
     font-size: 1rem;
   }
 }
-.explorationCardContainer{
+.explorationCardContainer {
   display: flex;
   gap: 1rem;
 }
-.explorationCard{
+.explorationCard {
   width: 33%;
-  h3{
+  h3 {
     font-weight: 500;
     margin-bottom: 0.5rem;
     line-height: normal;
   }
-  p{
+  p {
     line-height: normal;
     font-size: 0.9rem;
   }
-  img{
+  img {
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
   }
 }
-.conservation{
-  border-top: 1px solid var(--black) ;
+.conservation {
+  border-top: 1px solid var(--black);
   width: 100%;
   padding: 5rem;
 }
-.conservationContainer{
+.conservationContainer {
   width: 90%;
   max-width: 1200px;
   display: flex;
@@ -143,7 +143,7 @@
   gap: 4rem;
   margin-bottom: 2rem;
 }
-.conservationContent{
+.conservationContent {
   width: 40%;
   h2 {
     font-family: "Joti One";
@@ -164,39 +164,39 @@
     border-radius: 50%;
     z-index: -1;
   }
-  p{
+  p {
     font-size: 1rem;
   }
 }
-.conservationCardContainer{
+.conservationCardContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.conservationCard{
+.conservationCard {
   display: flex;
   gap: 1rem;
   line-height: normal;
-  .conservationInfo{
+  .conservationInfo {
     flex-grow: 1;
     width: 50%;
-    h3{
+    h3 {
       font-weight: 500;
       margin-bottom: 0.5rem;
     }
-    p{
+    p {
       font-size: 0.9rem;
     }
   }
-  img{
+  img {
     height: 12rem;
     aspect-ratio: 1.5/1;
     object-fit: cover;
   }
 }
-.adventure{
-  border-top: 1px solid var(--black) ;
+.adventure {
+  border-top: 1px solid var(--black);
   width: 100%;
   padding: 3rem;
   margin: 0 auto;
@@ -223,25 +223,25 @@
     border-radius: 50%;
     z-index: -1;
   }
-  p{
+  p {
     font-size: 1rem;
   }
 }
-.adventureContainer{
+.adventureContainer {
   margin: 2rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   gap: 1rem;
-  img{
+  img {
     width: 100%;
     aspect-ratio: 2/1;
     object-fit: cover;
   }
-  figcaption{
+  figcaption {
     font-size: 0.8rem;
   }
-  p{
+  p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -249,42 +249,42 @@
     font-size: 4rem;
     text-align: center;
   }
-  p:first-of-type{
+  p:first-of-type {
     color: #61c0df;
     text-shadow:
-    1px 1px 0 black,
-    -1px 1px 0 black,
-    1px -1px 0 black,
-    -1px -1px 0 black;
+      1px 1px 0 black,
+      -1px 1px 0 black,
+      1px -1px 0 black,
+      -1px -1px 0 black;
   }
-  p:nth-of-type(2){
+  p:nth-of-type(2) {
     color: #379969;
     text-shadow:
-    1px 1px 0 black,
-    -1px 1px 0 black,
-    1px -1px 0 black,
-    -1px -1px 0 black;
+      1px 1px 0 black,
+      -1px 1px 0 black,
+      1px -1px 0 black,
+      -1px -1px 0 black;
   }
-  p:nth-of-type(3){
+  p:nth-of-type(3) {
     color: #38619d;
     text-shadow:
-    1px 1px 0 black,
-    -1px 1px 0 black,
-    1px -1px 0 black,
-    -1px -1px 0 black;
+      1px 1px 0 black,
+      -1px 1px 0 black,
+      1px -1px 0 black,
+      -1px -1px 0 black;
   }
-  p:last-of-type{
+  p:last-of-type {
     line-height: normal;
     color: #515151;
     text-shadow:
-    1px 1px 0 black,
-    -1px 1px 0 black,
-    1px -1px 0 black,
-    -1px -1px 0 black;
+      1px 1px 0 black,
+      -1px 1px 0 black,
+      1px -1px 0 black,
+      -1px -1px 0 black;
   }
 }
-.recreation{
-  border-top: 1px solid var(--black) ;
+.recreation {
+  border-top: 1px solid var(--black);
   width: 100%;
   padding: 2rem;
   margin: 0 auto;
@@ -314,7 +314,7 @@
     z-index: -1;
   }
 }
-.cardContainer{
+.cardContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 1.5rem;
@@ -322,12 +322,12 @@
   padding: 1rem;
   height: 30rem;
 }
-.cardContainer .recreationCard:last-child{
+.cardContainer .recreationCard:last-child {
   height: 30rem;
   transform: translateY(-10rem);
 }
-.cardContainer>p{
-  font-family: 'Joti One';
+.cardContainer > p {
+  font-family: "Joti One";
   font-weight: 100;
   font-size: 1.8rem;
   line-height: 120%;
@@ -335,7 +335,7 @@
   align-items: start;
   letter-spacing: -0.02em;
 }
-.recreationCard{
+.recreationCard {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -344,166 +344,166 @@
   overflow: hidden;
   background: rgba(0, 0, 0, 0.05);
   border-radius: 16px;
-  img{
+  img {
     width: 100%;
     object-fit: scale-down;
   }
 }
 
-.cardContent{
+.cardContent {
   flex: none;
   align-self: stretch;
   flex-grow: 1;
   padding: 1rem;
-  h3{
+  h3 {
     font-size: 1.2rem;
   }
-  p{
+  p {
     color: var(--text-gray);
     font-size: 1rem;
   }
 }
 
-@media (max-width:992px) {
-  .info{
+@media (max-width: 992px) {
+  .info {
     grid-template-columns: 1fr 1fr;
   }
-  .hero{
+  .hero {
     font-size: 2rem;
   }
-  .info h2{
+  .info h2 {
     font-size: 2rem;
   }
-  .infoDescription{
+  .infoDescription {
     font-size: 1.3rem;
   }
-  .infoLinks{
+  .infoLinks {
     font-size: 1rem;
-    li:first-child{
+    li:first-child {
       padding-right: 0.5rem;
     }
-    li:last-child{
+    li:last-child {
       padding-left: 0.5rem;
     }
   }
-  .conservationCard{
-  img{
-    height: 10rem;
+  .conservationCard {
+    img {
+      height: 10rem;
+    }
   }
-}
-.conservationContent{
-  h2 {
-    font-size: 2.3rem;
+  .conservationContent {
+    h2 {
+      font-size: 2.3rem;
+    }
+    h2::after {
+      left: 7rem;
+      width: 7rem;
+    }
   }
-  h2::after {
-    left: 7rem;
-    width: 7rem;
-  }
-}
-  .recreation h2 span{
+  .recreation h2 span {
     font-size: 2.2rem;
   }
-  .cardContainer>p{
+  .cardContainer > p {
     font-size: 1.5rem;
   }
-  .cardContent{
-    h3{
+  .cardContent {
+    h3 {
       font-size: 1rem;
     }
-    p{
+    p {
       font-size: 0.9rem;
     }
   }
-  .cardContainer .recreationCard:last-child .cardContent p{
+  .cardContainer .recreationCard:last-child .cardContent p {
     margin-top: 1rem;
   }
 }
-@media (max-width:768px) {
-  .hero{
+@media (max-width: 768px) {
+  .hero {
     font-size: 1.5rem;
   }
-  .info h2{
+  .info h2 {
     font-size: 1.7rem;
   }
-  .infoDescription{
+  .infoDescription {
     font-size: 1.1rem;
   }
-    .infoLinks{
+  .infoLinks {
     font-size: 0.8rem;
   }
-  .recreation h2 span{
+  .recreation h2 span {
     font-size: 2rem;
   }
-  .cardContainer>p{
+  .cardContainer > p {
     font-size: 1.3rem;
   }
-  .exploration{
-  h2 {
-    font-size: 2rem;
+  .exploration {
+    h2 {
+      font-size: 2rem;
+    }
+    h2::after {
+      left: 25rem;
+      width: 5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
   }
-  h2::after {
-    left: 25rem;
-    width: 5rem;
-}
-  p{
-    font-size: 1rem;
-  }
-}
-.explorationCard{
-  h3{
-    font-size: 0.9rem;
-  }
-  p{
-    font-size: 0.8rem;
-  }
-}
-.conservationContainer{
-  gap: none;
-  width: 100%;
-}
-.conservationContent{
-  h2 {
-    font-size: 2rem;
-  }
-  h2::after {
-    left: 6rem;
-    width: 5rem;
-  }
-  p{
-    font-size: 0.9rem;
-  }
-}
-.conservationCard{
-  .conservationInfo{
-    h3{
+  .explorationCard {
+    h3 {
       font-size: 0.9rem;
     }
-    p{
+    p {
       font-size: 0.8rem;
     }
   }
-  img{
-    height: 8rem;
+  .conservationContainer {
+    gap: none;
+    width: 100%;
   }
-}
-.adventure{
-  h2 {
-    font-size: 2rem;
+  .conservationContent {
+    h2 {
+      font-size: 2rem;
+    }
+    h2::after {
+      left: 6rem;
+      width: 5rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
   }
-  h2::after {
-    left: 25rem;
-    width: 5rem;
+  .conservationCard {
+    .conservationInfo {
+      h3 {
+        font-size: 0.9rem;
+      }
+      p {
+        font-size: 0.8rem;
+      }
+    }
+    img {
+      height: 8rem;
+    }
   }
-  p{
-    font-size: 0.9rem;
+  .adventure {
+    h2 {
+      font-size: 2rem;
+    }
+    h2::after {
+      left: 25rem;
+      width: 5rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
   }
-}
-.adventureContainer{
-  figcaption{
-    font-size: 0.8rem;
+  .adventureContainer {
+    figcaption {
+      font-size: 0.8rem;
+    }
+    p {
+      font-size: 3.5rem;
+    }
   }
-  p{
-    font-size: 3.5rem;
-  }
-}
 }

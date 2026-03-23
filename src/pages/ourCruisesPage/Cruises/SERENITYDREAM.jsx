@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import OEimage from "../../../assets/SERENITYDREAM/SDpagehead.png";
-import Imagea from "../../../assets/Cruises/OE.PNG";
-import Imageb from "../../../assets/Cruises/SD.PNG";
-import Imagec from "../../../assets/Cruises/SG.PNG";
+import Imagea from "../../../assets/Cruises/OE.webp";
+import Imageb from "../../../assets/Cruises/SD.webp";
+import Imagec from "../../../assets/Cruises/SG.webp";
 import SDsum from "../../../assets/SERENITYDREAM/SD2.jpg";
 import SDsum1 from "../../../assets/SERENITYDREAM/SDsum1.png";
 import SDsum2 from "../../../assets/SERENITYDREAM/SDsum2.png";

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-import Imagea from "../../../assets/Cruises/OE.PNG";
-import Imageb from "../../../assets/Cruises/SD.PNG";
-import Imagec from "../../../assets/Cruises/SG.PNG";
+import Imagea from "../../../assets/Cruises/OE.webp";
+import Imageb from "../../../assets/Cruises/SD.webp";
+import Imagec from "../../../assets/Cruises/SG.webp";
 // FIX 1: Ensure SEsum is imported
 import SG2 from "../../../assets/SEAGUARDIAN/SG2.jpg";
 import SGsum from "../../../assets/SEAGUARDIAN/SGsum.png";

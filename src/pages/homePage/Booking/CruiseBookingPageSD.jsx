@@ -136,9 +136,9 @@ const CruiseBookingPageSD = () => {
     );
 
   const isPaymentReady =
-    paymentDetails.cardName.trim().length >= 3 && // Ensure name is at least 3 chars
-    paymentDetails.cardNumber.length === 16 && // Changed to exactly 16
-    paymentDetails.expiry.length === 5 && // Assuming MM/YY format
+    paymentDetails.cardName.trim().length >= 3 &&
+    paymentDetails.cardNumber.length === 16 && // Button only lights up at 16 digits
+    paymentDetails.expiry.length >= 5 &&
     paymentDetails.cvv.length >= 3 &&
     isPaxInfoComplete;
 
@@ -508,61 +508,61 @@ const CruiseBookingPageSD = () => {
             <div className={styles.paymentBox}>
               <h4>COMPLETE YOUR BOOKING</h4>
               <div className={styles.payGrid}>
-                {/* Card Name Input */}
+                {/* Card Name: Letters & Spaces only */}
                 <input
                   placeholder="Name on Card"
                   className={styles.fullWidth}
                   value={paymentDetails.cardName}
                   onChange={(e) => {
-                    // 1. Only allow letters and spaces (removes numbers/symbols)
                     const val = e.target.value.replace(/[^a-zA-Z\s]/g, "");
-
-                    // 2. Optional: Limit name length (e.g., 50 chars)
                     if (val.length <= 50) {
-                      setPaymentDetails({
-                        ...paymentDetails,
-                        cardName: val,
-                      });
+                      setPaymentDetails({ ...paymentDetails, cardName: val });
                     }
                   }}
                 />
+
+                {/* Card Number: Numbers only, max 16 */}
                 <input
                   type="text"
                   placeholder="Card Number"
                   className={styles.fullWidth}
                   value={paymentDetails.cardNumber}
                   onChange={(e) => {
-                    // Removes all non-digit characters
                     const val = e.target.value.replace(/\D/g, "");
-
-                    // Only update state if length is 16 or less
                     if (val.length <= 16) {
+                      setPaymentDetails({ ...paymentDetails, cardNumber: val });
+                    }
+                  }}
+                />
+
+                {/* Expiry: Needs value prop to stay in sync */}
+                <input
+                  placeholder="MM/YY"
+                  value={paymentDetails.expiry}
+                  onChange={(e) => {
+                    // Simple length check for MM/YY (5 chars)
+                    if (e.target.value.length <= 5) {
                       setPaymentDetails({
                         ...paymentDetails,
-                        cardNumber: val,
+                        expiry: e.target.value,
                       });
                     }
                   }}
                 />
-                <input
-                  placeholder="MM/YY"
-                  onChange={(e) =>
-                    setPaymentDetails({
-                      ...paymentDetails,
-                      expiry: e.target.value,
-                    })
-                  }
-                />
+
+                {/* CVV: Numbers only, max 3 or 4 */}
                 <input
                   placeholder="CVV"
-                  onChange={(e) =>
-                    setPaymentDetails({
-                      ...paymentDetails,
-                      cvv: e.target.value,
-                    })
-                  }
+                  value={paymentDetails.cvv}
+                  onChange={(e) => {
+                    const val = e.target.value.replace(/\D/g, "");
+                    if (val.length <= 4) {
+                      setPaymentDetails({ ...paymentDetails, cvv: val });
+                    }
+                  }}
                 />
               </div>
+
               <button
                 className={
                   isPaymentReady ? styles.confirmBtn : styles.disabledBtn

@@ -12,25 +12,14 @@ const OurCruisesPage = () => {
   return (
     <div>
       <div  className={styles.heroContainer}>
-        {/* 1. Main Hero Image */}
         <img
           src={Image}
           className={styles.heroImage}
           alt="Cruise Hero"
         />
-
-        {/* 2. Join Now Button - Exactly Centred */}
-        <button
-        className={styles.joinButton}
-        >
-          Join Now
-        </button>
-
-        {/* 3. Bottom Images - Centred horizontally at the bottom of the hero */}
         <div
         className={styles.thumbWrapper}
         >
-          {/* Item 1 */}
           <div
           className={styles.thumbItem}
           >
@@ -41,8 +30,6 @@ const OurCruisesPage = () => {
               </p>
             </Link>
           </div>
-
-          {/* Item 2 */}
           <div
           className={styles.thumbItem}>
             <Link to="/SEAGUARDIAN">
@@ -52,8 +39,6 @@ const OurCruisesPage = () => {
               </p>
             </Link>
           </div>
-
-          {/* Item 3 */}
           <div
           className={styles.thumbItem}>
             <Link to="/SERENITYDREAM">

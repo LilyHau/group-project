@@ -136,7 +136,9 @@ const CruiseBookingPageSD = () => {
     );
 
   const isPaymentReady =
-    paymentDetails.cardNumber.length >= 13 &&
+    paymentDetails.cardName.trim().length >= 3 && // Ensure name is at least 3 chars
+    paymentDetails.cardNumber.length === 16 && // Changed to exactly 16
+    paymentDetails.expiry.length === 5 && // Assuming MM/YY format
     paymentDetails.cvv.length >= 3 &&
     isPaxInfoComplete;
 
@@ -151,7 +153,18 @@ const CruiseBookingPageSD = () => {
     updated[i] = { ...updated[i], [field]: val };
     setPassengers(updated);
   };
+  const handleCardChange = (e) => {
+    // 1. Remove anything that isn't a number (\D matches non-digits)
+    const numericValue = e.target.value.replace(/\D/g, "");
 
+    // 2. Only update state if it's 16 digits or fewer
+    if (numericValue.length <= 16) {
+      setPaymentDetails({
+        ...paymentDetails,
+        cardNumber: numericValue,
+      });
+    }
+  };
   return (
     <>
       <div className={styles.heroContainer}>
@@ -495,17 +508,44 @@ const CruiseBookingPageSD = () => {
             <div className={styles.paymentBox}>
               <h4>COMPLETE YOUR BOOKING</h4>
               <div className={styles.payGrid}>
+                {/* Card Name Input */}
+                <input
+                  placeholder="Name on Card"
+                  className={styles.fullWidth}
+                  value={paymentDetails.cardName}
+                  onChange={(e) => {
+                    // 1. Only allow letters and spaces (removes numbers/symbols)
+                    const val = e.target.value.replace(/[^a-zA-Z\s]/g, "");
+
+                    // 2. Optional: Limit name length (e.g., 50 chars)
+                    if (val.length <= 50) {
+                      setPaymentDetails({
+                        ...paymentDetails,
+                        cardName: val,
+                      });
+                    }
+                  }}
+                />
                 <input
                   type="text"
                   placeholder="Card Number"
                   className={styles.fullWidth}
-                  // Added value prop to make it a controlled component
                   value={paymentDetails.cardNumber}
-                  onChange={handleCardChange}
+                  onChange={(e) => {
+                    // Removes all non-digit characters
+                    const val = e.target.value.replace(/\D/g, "");
+
+                    // Only update state if length is 16 or less
+                    if (val.length <= 16) {
+                      setPaymentDetails({
+                        ...paymentDetails,
+                        cardNumber: val,
+                      });
+                    }
+                  }}
                 />
                 <input
                   placeholder="MM/YY"
-                  value={paymentDetails.expiry}
                   onChange={(e) =>
                     setPaymentDetails({
                       ...paymentDetails,
@@ -515,13 +555,12 @@ const CruiseBookingPageSD = () => {
                 />
                 <input
                   placeholder="CVV"
-                  value={paymentDetails.cvv}
-                  onChange={(e) => {
-                    const val = e.target.value.replace(/\D/g, "");
-                    if (val.length <= 4) {
-                      setPaymentDetails({ ...paymentDetails, cvv: val });
-                    }
-                  }}
+                  onChange={(e) =>
+                    setPaymentDetails({
+                      ...paymentDetails,
+                      cvv: e.target.value,
+                    })
+                  }
                 />
               </div>
               <button

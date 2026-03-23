@@ -45,20 +45,26 @@
 
 @media (max-width: 992px) {
   .wrapper {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
   }
   .mainText {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
+  .image {
+  height: 7rem;
+}
 }
 
 @media (max-width: 768px) {
   .wrapper {
-    padding: 1.5rem 0;
+    padding: 1rem 0;
   }
   .mainText {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
+  .image {
+  height: 5rem;
+}
 }
 
 @keyframes moveLeftFull {

@@ -1,6 +1,6 @@
 .wrapper {
   background: #f7f7f7;
-  padding: 40px 0;
+  padding: 30px 0;
   overflow: hidden;
   width: 100%;
 }
@@ -12,7 +12,7 @@
   white-space: nowrap;
   color: #118da8;
   padding: 0;
-  gap: 80px;
+  gap: 40px;
   animation: moveLeftFull linear infinite;
 }
 
@@ -24,20 +24,20 @@
 }
 
 .mainText {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   font-family: "Joti One", sans-serif;
-  line-height: 1.1;
+  line-height: 1;
 }
 
 .subText {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: normal;
   margin-top: 10px;
 }
 
 .image {
-  height: 200px;
+  height: 150px;
   width: auto;
   border-radius: 20px;
   object-fit: contain;
@@ -45,20 +45,20 @@
 
 @media (max-width: 992px) {
   .wrapper {
-  padding: 2rem 0;
-}
+    padding: 2rem 0;
+  }
   .mainText {
-  font-size: 2.5rem;
-}
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 768px) {
   .wrapper {
-  padding: 1.5rem 0;
-}
+    padding: 1.5rem 0;
+  }
   .mainText {
-  font-size: 2.2rem;
-}
+    font-size: 2.2rem;
+  }
 }
 
 @keyframes moveLeftFull {

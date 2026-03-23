@@ -55,6 +55,7 @@ const Footer = () => {
           <i class="fa-brands fa-x-twitter fa-xl"></i>
         </div>
       </div>
+      <div className={styles.toTopBtn}><a href="#navbar">Back to top</a></div>
       <div className={styles.bottom}>
         <p>© 2026 Ocean Park HK Cruise Line. All rights reserved.</p>
       </div>

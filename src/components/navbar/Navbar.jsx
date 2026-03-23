@@ -11,7 +11,7 @@ const Navbar = ({cartItems}) => {
     setIsActive(!isActive);
   };
   return (
-    <div>
+    <div id="navbar">
       <span className={styles.blueBlock}></span>
           <nav className={styles.logIn}>
             <div className={styles.logInList}>

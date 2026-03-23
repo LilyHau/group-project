@@ -89,7 +89,10 @@
     padding: 0px 20px;
   }
 }
-
+.toTopBtn{
+  color: var(--text-gray);
+  text-align: right;
+}
 /* bottom footer */
 .bottom {
   text-align: center;

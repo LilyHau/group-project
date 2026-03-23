@@ -18,7 +18,12 @@ import CruiseBookingPageSD from "./pages/homePage/Booking/CruiseBookingPageSD";
 import OEInfo from "./pages/ourCruisesPage/CruisesInfo/OEInfo";
 import SGInfo from "./pages/ourCruisesPage/CruisesInfo/SGInfo";
 import SDInfo from "./pages/ourCruisesPage/CruisesInfo/SDInfo";
+<<<<<<< Updated upstream
 import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
+=======
+import Onboardactivities from "../src/pages/ourCruisesPage/Onboardactivities";
+
+>>>>>>> Stashed changes
 function App() {
   const cartItemsFromLocalStorage =
     JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -93,6 +98,7 @@ function App() {
           <Route path="CruiseBookingPageSG" element={<CruiseBookingPageSG />} />
           <Route path="CruiseBookingPageSD" element={<CruiseBookingPageSD />} />
           <Route path="FAQSection" element={<FAQSection />} />
+          <Route path="Onboardactivities" element={<Onboardactivities />} />
           <Route
             path="shop"
             element={<Shop handleAddToCart={handleAddToCart} />}

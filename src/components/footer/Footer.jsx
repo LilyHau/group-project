@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
           <div className={styles.link}>
             <h2>Support</h2>
-            <Link to="/FAQSection">Contact</Link>
+            <Link to="/Help">Contact</Link>
             <Link to="/FAQSection">Support</Link>
             <Link to="/privacy">Legal</Link>
             {/* <p>Contact</p>
@@ -55,7 +55,9 @@ const Footer = () => {
           <i class="fa-brands fa-x-twitter fa-xl"></i>
         </div>
       </div>
-      <div className={styles.toTopBtn}><a href="#navbar">Back to top</a></div>
+      <div className={styles.toTopBtn}>
+        <a href="#navbar">Back to top</a>
+      </div>
       <div className={styles.bottom}>
         <p>© 2026 Ocean Park HK Cruise Line. All rights reserved.</p>
       </div>

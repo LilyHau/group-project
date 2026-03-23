@@ -18,7 +18,7 @@ import CruiseBookingPageSD from "./pages/homePage/Booking/CruiseBookingPageSD";
 import OEInfo from "./pages/ourCruisesPage/CruisesInfo/OEInfo";
 import SGInfo from "./pages/ourCruisesPage/CruisesInfo/SGInfo";
 import SDInfo from "./pages/ourCruisesPage/CruisesInfo/SDInfo";
-
+import Help from "./pages/Helpcenter/Help.jsx";
 import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
 
 function App() {
@@ -111,6 +111,7 @@ function App() {
             }
           />
           <Route path="privacy" element={<PrivacyPolicy />} />
+          <Route path="Help" element={<Help />} />
         </Route>
       </Routes>
     </BrowserRouter>

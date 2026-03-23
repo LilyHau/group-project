@@ -1,0 +1,246 @@
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: auto;
+  position: fixed;
+  right: 1rem;
+  img {
+    width: 100%;
+    background-color: var(--oe-main);
+    border-radius: 30px;
+    object-fit: contain;
+  }
+  img:hover {
+    transform: scale(1.1);
+  }
+  li:nth-of-type(2) img {
+    background-color: var(--sg-main);
+  }
+  li:nth-of-type(3) img {
+    background-color: var(--sd-main);
+  }
+  p {
+    text-align: center;
+    line-height: 1;
+    font-weight: 600;
+    color: var(--text-blue);
+  }
+}
+.helpCenterPage {
+  background-color: #edfaff;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Nav Logos */
+.buttonContainer {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.logoList {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  align-items: center;
+}
+.logoList img {
+  height: 40px;
+}
+
+/* Header */
+.helpHeader {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 50px;
+}
+.mainTitle {
+  color: #4372b8;
+  font-family: "Joti One";
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.sectionHeading {
+  font-family: "Inter";
+}
+
+.subtitle {
+  color: #64748b;
+  line-height: 1.6;
+  font-family: "Inter";
+}
+
+/* Contact Card */
+.sectionContainer {
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 40px;
+}
+.contactCard {
+  display: flex;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 40%;
+  background: #4372b8;
+  color: white;
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+}
+.sidebarTitle {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+}
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+  color: white;
+}
+.socialLinks {
+  display: flex;
+  gap: 15px;
+  margin-top: 50px;
+  z-index: 5;
+  position: relative;
+}
+.fa-solid,
+.fa-brands {
+  color: white;
+}
+.socialIcon {
+  width: 35px;
+  height: 35px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.socialIcon:hover {
+  background: rgb(255, 255, 255);
+}
+
+/* Form Side */
+.contactForm {
+  width: 60%;
+  padding: 50px;
+}
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #e2e8f0;
+}
+.inputGroup label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+.inputGroup input,
+.inputGroup textarea {
+  border: none;
+  padding: 10px 0;
+  outline: none;
+  font-size: 0.95rem;
+}
+.sendBtn {
+  background: #011c2b;
+  color: white;
+  padding: 12px 35px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  float: right;
+}
+
+/* Radio Buttons */
+.radioGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 15px 0 30px;
+}
+.radioItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* Decorative Circles */
+.decorationCircleLg {
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+.decorationCircleSm {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+/* Footer */
+.divider {
+  width: 100%;
+  max-width: 1000px;
+  border: 0.5px solid #cbd5e0;
+  margin: 40px 0;
+}
+.brandingFooter {
+  text-align: center;
+  max-width: 850px;
+}
+.brandName {
+  color: #64748b;
+  margin-bottom: 15px;
+}
+.brandStory {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* More Help Links Grid */
+.linksGrid {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-around;
+}
+.linksGrid a {
+  color: #4372b8;
+  text-decoration: none;
+  font-weight: 600;
+}

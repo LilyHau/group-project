@@ -26,7 +26,7 @@ import SDTAG from "../../../src/assets/SERENITYDREAM/SDTAG.png";
 
 // Main component
 const DiningPage = () => {
-  const [activeTab, setActiveTab] = useState({ diningTabs });
+  const [activeTab, setActiveTab] = useState("Main Dining");
 
   // Map tab names to header images
   const headerImages = {

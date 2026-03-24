@@ -1,16 +1,16 @@
 import React from "react";
 import styles from "./Dining.module.css";
+// If using React Router, import { Link } from "react-router-dom";
 
-// Replace with your actual image paths
 import RestaurantImg from "../../assets/Whycruise/Rectangle40.png";
 import CafeImg from "../../assets/Whycruise/Rectangle39.png";
 import ShopImg from "../../assets/Whycruise/Rectangle41.png";
 
 const DiningShop = () => {
   const categories = [
-    { title: "Restaurant", img: RestaurantImg },
-    { title: "Cafe", img: CafeImg },
-    { title: "Shop", img: ShopImg },
+    { title: "Restaurant", img: RestaurantImg, link: "/Dining#Café" },
+    { title: "Cafe", img: CafeImg, link: "/cafe" },
+    { title: "Shop", img: ShopImg, link: "/shop" },
   ];
 
   return (
@@ -21,12 +21,13 @@ const DiningShop = () => {
 
       <div className={styles.cardWrapper}>
         {categories.map((item, index) => (
-          <div key={index} className={styles.card}>
+          /* Use <Link to={item.link}> if using React Router */
+          <a key={index} href={item.link} className={styles.card}>
             <img src={item.img} alt={item.title} className={styles.cardImg} />
             <div className={styles.overlay}>
               <h3 className={styles.cardTitle}>{item.title}</h3>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>

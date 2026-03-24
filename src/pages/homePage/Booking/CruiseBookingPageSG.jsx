@@ -5,6 +5,7 @@ import Info from "../../../assets/Cruises/Info.png";
 import CRUISEregular from "../../../assets/Cruises/CRUISEregularsuitewithnoseaview.jpg";
 import CRUISEluxrysuite2 from "../../../assets/Cruises/CRUISEluxrysuite2.jpg";
 import CRUISEluxrysuiteforfamily from "../../../assets/Cruises/CRUISEluxrysuiteforfamily4people.jpg";
+import confetti from "canvas-confetti";
 
 const CruiseBookingPageSG = () => {
   const [showTable, setShowTable] = useState(false);

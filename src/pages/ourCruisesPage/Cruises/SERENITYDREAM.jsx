@@ -144,13 +144,17 @@ const SERENITYDREAM = () => {
 
       {/* Footer Images */}
       <div>
-        <img src={SDsum1} style={{ width: "100%" }} alt="" />
+        <img src={SDsum1} style={{ width: "100%", display: "block" }} alt="" />
       </div>
       <div>
-        <img src={SDsum2} style={{ width: "100%" }} alt="" />
+        <img src={SDsum2} style={{ width: "100%", display: "block" }} alt="" />
       </div>
       <div>
-        <img src={SDfooter} style={{ width: "100%" }} alt="" />
+        <img
+          src={SDfooter}
+          style={{ width: "100%", display: "block" }}
+          alt=""
+        />
       </div>
     </div>
   );

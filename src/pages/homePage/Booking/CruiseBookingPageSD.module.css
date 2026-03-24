@@ -417,3 +417,49 @@
     }
   }
 }
+.infoContainers {
+  position: relative;
+  display: inline-block;
+}
+
+.icon {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+/* The hidden table box */
+.tableBox {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  z-index: 100;
+  background: white;
+  border: 1px solid #000;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 500px;
+
+  /* Start hidden for animation */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Class added via React State */
+.isVisible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.insuranceTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.insuranceTable th,
+.insuranceTable td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}

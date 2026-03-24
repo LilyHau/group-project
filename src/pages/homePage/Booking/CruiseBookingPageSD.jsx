@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CruiseBookingPageSD.module.css";
 import { Link } from "react-router-dom";
-
+import Info from "../../../assets/Cruises/Info.png";
 import CRUISEregular from "../../../assets/Cruises/CRUISEregularsuitewithnoseaview.jpg";
 import CRUISEluxrysuite2 from "../../../assets/Cruises/CRUISEluxrysuite2.jpg";
 import CRUISEluxrysuiteforfamily from "../../../assets/Cruises/CRUISEluxrysuiteforfamily4people.jpg";
 
 const CruiseBookingPageSD = () => {
+  const [showTable, setShowTable] = useState(false);
   const [step, setStep] = useState(1);
   const [dates, setDates] = useState("");
   const [party, setParty] = useState({ adults: 1, children: 0 });
@@ -292,6 +293,50 @@ const CruiseBookingPageSD = () => {
                 <section className={styles.formSection}>
                   <h3 className={styles.sectionTitle}>
                     4. Optional Basic Travel Insurance
+                    <div className={styles.infoContainers}>
+                      {/* 1. The Trigger Icon */}
+                      <img
+                        src={Info}
+                        alt="Info"
+                        className={styles.icon}
+                        onMouseEnter={() => setShowTable(true)}
+                        onMouseLeave={() => setShowTable(false)}
+                      />
+
+                      {/* 2. The Hover Table Box */}
+                      <div
+                        className={`${styles.tableBox} ${showTable ? styles.isVisible : ""}`}
+                      >
+                        <h3>Optional Basic Travel Insurance</h3>
+                        <table className={styles.insuranceTable}>
+                          <thead>
+                            <tr>
+                              <th>Plan</th>
+                              <th>Trip Cancellation</th>
+                              <th>Medical Emergencies</th>
+                              <th>Adds Dive Accident</th>
+                              <th>Lost Luggage</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Basic Coverage</td>
+                              <td>✔</td>
+                              <td>✔</td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>Premium Coverage</td>
+                              <td>✔</td>
+                              <td>✔</td>
+                              <td>✔</td>
+                              <td>✔</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
                   </h3>
                   <select
                     className={styles.inputField}

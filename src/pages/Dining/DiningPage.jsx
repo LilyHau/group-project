@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./DiningPage.module.css";
 
-// Import header images for each tab (adjust paths accordingly)
+// Import images & icons...
 import MainDiningHeader from "../../../src/assets/Cruises/miana.png";
-import CafeHeader from "../../../src/assets/Cruises/cafe.png";
+import CafeHeader from "../../assets/Cruises/cafe.png";
 import LoungeHeader from "../../../src/assets/Cruises/club.png";
 
-// Image assets (update paths as per your project structure)
 import EXimga from "../../../src/assets/OCEANEXPLORER/Expedition1.png";
 import SGimga from "../../../src/assets/SEAGUARDIAN/SGR3.jpg";
 import SDimga from "../../../src/assets/SERENITYDREAM/generatedimage.png";
@@ -23,21 +22,53 @@ import SDimgc from "../../../src/assets/SERENITYDREAM/generatedimagec.png";
 import OETAG from "../../../src/assets/OCEANEXPLORER/OETAG.png";
 import SGTAG from "../../../src/assets/SEAGUARDIAN/SGTAG.png";
 import SDTAG from "../../../src/assets/SERENITYDREAM/SDTAG.png";
+import { Link } from "react-router-dom";
+import AbyssGrill from "../../assets/Dining/AbyssGrill.png";
+import CoralCommon from "../../assets/Dining/CoralCommon.png";
+import DepthDebrief from "../../assets/Dining/DepthDebrief.png";
+import GuardianGrind from "../../assets/Dining/GuardianGrind.png";
+import PlanktonPitStop from "../../assets/Dining/PlanktonPitStop.png";
+import ReefnRoot from "../../assets/Dining/ReefnRoot.png";
+import StellarDeck from "../../assets/Dining/StellarDeck.png";
+import SunsetSips from "../../assets/Dining/SunsetSips.png";
+import TidenTable from "../../assets/Dining/TidenTable.png";
 
-// Main component
 const DiningPage = () => {
   const [activeTab, setActiveTab] = useState("Main Dining");
 
-  // Map tab names to header images
+  // Hash change handler to switch tabs
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash === "#Cafeshop") {
+        setActiveTab("Cafeshop");
+        document
+          .getElementById("Cafeshop")
+          ?.scrollIntoView({ behavior: "smooth" });
+      } else if (hash === "#main-dining") {
+        setActiveTab("Main Dining");
+        document
+          .getElementById("main-dining")
+          ?.scrollIntoView({ behavior: "smooth" });
+      } else if (hash === "#lounge") {
+        setActiveTab("Lounge");
+        document
+          .getElementById("lounge")
+          ?.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+    window.addEventListener("hashchange", handleHashChange);
+    handleHashChange(); // run on load
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
   const headerImages = {
     "Main Dining": MainDiningHeader,
-    Café: CafeHeader,
-    "Club/Lounge": LoungeHeader,
+    Cafeshop: CafeHeader,
+    Lounge: LoungeHeader,
   };
 
-  const currentHeaderImage = headerImages[activeTab];
-
-  // Define your tabs data
+  // Data for each tab
   const diningTabs = {
     "Main Dining": {
       sections: [
@@ -57,6 +88,7 @@ const DiningPage = () => {
           themeColor: "#E3F2FD",
           buttoncolor: "#13406D",
           shipIcon: OETAG,
+          menuImage: AbyssGrill,
         },
         {
           title: "🍽️Reef & Root",
@@ -73,9 +105,10 @@ const DiningPage = () => {
           themeColor: "#E8F5E9",
           buttoncolor: "#2E7D32",
           shipIcon: SDTAG,
+          menuImage: ReefnRoot,
         },
         {
-          title: "🍽️ Tide & Table",
+          title: "🍽️ Tide & Table",
           description:
             "The signature underwater restaurant with marine character dinner shows, serving kid-approved classics and gourmet seafood",
           offerings: [
@@ -90,10 +123,11 @@ const DiningPage = () => {
           themeColor: "#fff6ea",
           buttoncolor: "#ffd413",
           shipIcon: SGTAG,
+          menuImage: TidenTable,
         },
       ],
     },
-    Café: {
+    Cafeshop: {
       sections: [
         {
           title: "☕Plankton Pit Stop",
@@ -111,6 +145,7 @@ const DiningPage = () => {
           themeColor: "#E3F2FD",
           buttoncolor: "#13406D",
           shipIcon: OETAG,
+          menuImage: PlanktonPitStop,
         },
         {
           title: "☕Guardian Grind",
@@ -127,6 +162,7 @@ const DiningPage = () => {
           themeColor: "#E8F5E9",
           buttoncolor: "#2E7D32",
           shipIcon: SDTAG,
+          menuImage: ReefnRoot,
         },
         {
           title: "☕Sunset Sips",
@@ -143,10 +179,11 @@ const DiningPage = () => {
           themeColor: "#fff6ea",
           buttoncolor: "#ffd413",
           shipIcon: SGTAG,
+          menuImage: SunsetSips,
         },
       ],
     },
-    "Club/Lounge": {
+    Lounge: {
       sections: [
         {
           title: "🍽️Depth Debrief ",
@@ -164,6 +201,7 @@ const DiningPage = () => {
           themeColor: "#E3F2FD",
           buttoncolor: "#13406D",
           shipIcon: OETAG,
+          menuImage: DepthDebrief,
         },
         {
           title: "🍵Coral Commons",
@@ -180,6 +218,7 @@ const DiningPage = () => {
           themeColor: "#E8F5E9",
           buttoncolor: "#2E7D32",
           shipIcon: OETAG,
+          menuImage: CoralCommon,
         },
         {
           title: "🍹Stellar Deck",
@@ -197,6 +236,7 @@ const DiningPage = () => {
           themeColor: "#fff6ea",
           buttoncolor: "#ffd413",
           shipIcon: OETAG,
+          menuImage: StellarDeck,
         },
       ],
     },
@@ -204,7 +244,7 @@ const DiningPage = () => {
 
   return (
     <div className={styles.pageWrapper}>
-      {/* Dynamic header image based on active tab */}
+      {/* Header Image */}
       <div className={styles.headerImageContainer}>
         <img
           src={headerImages[activeTab]}
@@ -213,7 +253,7 @@ const DiningPage = () => {
         />
       </div>
 
-      {/* Main title */}
+      {/* Title & Description */}
       <header className={styles.header}>
         <h1>Dining That Sails With Your Vibe</h1>
         <p>
@@ -226,38 +266,51 @@ const DiningPage = () => {
         </p>
       </header>
 
-      {/* Navigation Tabs */}
+      {/* Navigation Buttons */}
       <nav className={styles.filterNav}>
         {Object.keys(diningTabs).map((tab) => (
           <button
             key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`${styles.navBtn} ${activeTab === tab ? styles.active : ""}`}
+            onClick={() => {
+              setActiveTab(tab);
+              if (tab === "Main Dining") window.location.hash = "#main-dining";
+              else if (tab === "Cafeshop") window.location.hash = "#Cafeshop";
+              else if (tab === "Lounge") window.location.hash = "#lounge";
+            }}
+            className={`${styles.navBtn} ${
+              activeTab === tab ? styles.active : ""
+            }`}
           >
-            {tab === "Main Dining" ? "🍽️ " : tab === "Café" ? "☕ " : "🍹 "}
+            {tab === "Main Dining" ? "🍽️" : tab === "CafeShop" ? "☕" : "🍹"}{" "}
             {tab}
           </button>
         ))}
       </nav>
 
-      {/* Sections for active tab */}
-      <div className={styles.tabContent}>
-        {diningTabs[activeTab].sections.map((section, index) => (
-          <DiningSection
-            key={index}
-            {...section}
-            isFirst={index === 0}
-            categoryIcon={
-              /* directly pass the image source here */ "../../../src/assets/Cruises/miana.png"
-            }
-          />
-        ))}
+      {/* Sections with IDs for scroll & highlight */}
+      <div id="main-dining">
+        {activeTab === "Main Dining" &&
+          diningTabs["Main Dining"].sections.map((section, index) => (
+            <DiningSection key={index} {...section} />
+          ))}
+      </div>
+      <div id="Cafeshop">
+        {activeTab === "Cafeshop" &&
+          diningTabs.Cafeshop.sections.map((section, index) => (
+            <DiningSection key={index} {...section} />
+          ))}
+      </div>
+      <div id="lounge">
+        {activeTab === "Lounge" &&
+          diningTabs["Lounge"].sections.map((section, index) => (
+            <DiningSection key={index} {...section} />
+          ))}
       </div>
     </div>
   );
 };
 
-// DiningSection component
+// Each section with modal popup
 const DiningSection = ({
   title,
   description,
@@ -268,65 +321,70 @@ const DiningSection = ({
   themeColor,
   buttoncolor,
   shipIcon,
-  isFirst,
-  categoryIcon,
-}) => (
-  <div
-    className={styles.sectionContainer}
-    style={{ backgroundColor: themeColor }}
-  >
-    {isFirst && (
-      <div className={styles.decorationWrapper}>
-        <img
-          src={categoryIcon}
-          alt="category icon"
-          style={{
-            width: "50px",
-            height: "50px",
-            borderRadius: "50%",
-            border: "2px solid #ccc",
-            boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
-            backgroundColor: "#fff",
-            padding: "5px",
-          }}
-        />
+  menuImage,
+}) => {
+  const [showModal, setShowModal] = useState(false);
+  return (
+    <div
+      className={styles.sectionContainer}
+      style={{ backgroundColor: themeColor }}
+    >
+      {/* Ship Tag */}
+      <div className={styles.shipTag}>
+        <img src={shipIcon} alt="Ship Tag" className={styles.tagImage} />
       </div>
-    )}
 
-    {/* Ship Tag */}
-    <div className={styles.shipTag}>
-      <img src={shipIcon} alt="Ship Tag" className={styles.tagImage} />
-    </div>
-
-    {/* Content */}
-    <div className={styles.sectionContent}>
-      <div className={styles.textContent}>
-        <h2 className={styles.restaurantTitle}>{title}</h2>
-        <p className={styles.description}>{description}</p>
-        <div className={styles.details}>
-          <strong>Signature Offerings:</strong>
-          <ul>
-            {offerings.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
+      {/* Content */}
+      <div className={styles.sectionContent}>
+        {/* Text info */}
+        <div className={styles.textContent}>
+          <h2 className={styles.restaurantTitle}>{title}</h2>
+          <p className={styles.description}>{description}</p>
+          <div className={styles.details}>
+            <strong>Signature Offerings:</strong>
+            <ul>
+              {offerings.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div className={styles.dietary}>
+            <strong>{dietarytitle}</strong>
+            <p className={styles.dietaryText}>{dietaryOptions}</p>
+          </div>
         </div>
-        <div className={styles.dietary}>
-          <strong>{dietarytitle}</strong>
-          <p className={styles.dietaryText}>{dietaryOptions}</p>
+        {/* Image & button */}
+        <div className={styles.imageCard}>
+          <img src={imageSrc} alt={title} className={styles.restaurantImage} />
+          {/* Button to trigger modal */}
+          <button
+            onClick={() => setShowModal(true)}
+            className={styles.menuButton}
+            style={{ backgroundColor: buttoncolor, color: "white" }}
+          >
+            View Menu
+          </button>
+          {/* Modal popup */}
+          {showModal && (
+            <div className={styles.overlay} onClick={() => setShowModal(false)}>
+              <div
+                className={styles.modal}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className={styles.closeBtn}
+                  onClick={() => setShowModal(false)}
+                >
+                  &times;
+                </button>
+                <img src={menuImage} alt="Menu" className={styles.popupImage} />
+              </div>
+            </div>
+          )}
         </div>
       </div>
-      <div className={styles.imageCard}>
-        <img src={imageSrc} alt={title} className={styles.restaurantImage} />
-        <button
-          className={styles.menuButton}
-          style={{ backgroundColor: buttoncolor, color: "white" }}
-        >
-          View Menu
-        </button>
-      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default DiningPage;

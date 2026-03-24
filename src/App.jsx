@@ -24,7 +24,7 @@ import Contact from "./pages/Contactus/Contact.jsx";
 
 import AccommodationDetail from "./pages/AccommodationDetail/AccommodationDetail.jsx";
 
-import Dining from "./pages/Dining/Dining.jsx";
+import Dining from "./pages/Dining/DiningPage.jsx";
 
 function App() {
   const cartItemsFromLocalStorage =

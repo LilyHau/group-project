@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Help.module.css";
-
-// Assets (Ensure these paths are correct in your project)
+import { useNavigate } from "react-router-dom";
 import oeLogo from "../../assets/Cruises/OE-Logo.png";
 import sgLogo from "../../assets/Cruises/SG-Logo.png";
 import sdLogo from "../../assets/Cruises/SD-Logo.png";
 
 const Help = () => {
+  const navigate = useNavigate();
   return (
     <div className={styles.helpCenterPage}>
       {/* Font Awesome CDN */}
@@ -135,7 +135,11 @@ const Help = () => {
             </div>
 
             <div className={styles.btnContainer}>
-              <button type="submit" className={styles.sendBtn}>
+              <button
+                type="submit"
+                className={styles.sendBtn}
+                onClick={() => navigate("/HomePage")}
+              >
                 Send Message
               </button>
             </div>

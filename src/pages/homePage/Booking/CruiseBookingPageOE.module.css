@@ -19,458 +19,306 @@
     var(--oe-main); */
   background: url(../../../assets/OCEANEXPLORER/OEherovideo_000.webp) bottom;
 }
+
 .heroContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: var(--white);
-  h1 {
-    font-family: "Joti One";
-    font-size: 4rem;
-  }
-  h2 {
-    transform: translateX(-10rem);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  p {
-    font-size: 1.5rem;
-  }
-  a {
-    background-color: #50c9ff;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    margin-top: 0.5rem;
-    font-weight: 500;
-  }
-}
-.ovalEffect {
-  width: 120%;
-  height: 120%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+  color: #fff;
   text-align: center;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
+
+.ovalEffect {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 40px;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+}
+
+.pageContainer {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
 .mainTitle {
   text-align: center;
-  color: #5bc0de;
-  font-family: "Irish Grover", cursive;
-  font-size: 2.8rem;
-  margin-bottom: 40px;
+  font-size: 2em;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
-/* --- Layout --- */
 .mainLayout {
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 30px;
-  max-width: 1250px;
-  margin: 0 auto;
-}
-
-/* --- Form Sections --- */
-.formSection {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 8px;
-  margin-bottom: 25px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.sectionTitle {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-/* --- Activities Section (Specific Style) --- */
-.activityGroup {
-  margin-bottom: 20px;
-}
-
-.activityGroupTitle {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #444;
-  margin-bottom: 10px;
-  display: block;
-}
-
-.activityRow {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 10px 0;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.activityRow:last-child {
-  border-bottom: none;
-}
-
-.activityLabel {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  cursor: pointer;
-  flex: 1;
-}
-
-.activityLabel input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-}
-
-.activityInfoText {
-  display: flex;
-  flex-direction: column;
-}
-
-.activityName {
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.activitySubText {
-  font-size: 0.8rem;
-  color: #888;
-  margin-top: 2px;
-}
-
-.activityPrice {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: #555;
-  white-space: nowrap;
-  padding-left: 15px;
-}
-
-/* --- Stateroom Cards --- */
-.cabinCard {
-  display: flex;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  padding: 15px;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
-.cabinImg {
-  width: 130px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 6px;
+.formArea {
+  flex: 3;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-/* --- Buttons (Match Proceed to Confirm Payment) --- */
-.confirmBtn {
-  background-color: #5bc0de;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  width: 100%;
-  max-width: 300px; /* For the 'Add/Proceed' buttons in main form */
-  border-radius: 50px; /* Pill shape */
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.3s;
-  display: block;
-  margin: 20px 0;
-}
-.modalConfirmBtn {
-  display: block; /* Required for auto margins to work */
-  margin: 20px auto; /* Centering: 20px top/bottom, auto left/right */
-
-  background-color: #5bc0de;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  width: 100%;
-  max-width: 300px;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.3s;
-  /* Removed align-items: center; as it only applies to flex/grid containers */
-}
-.confirmBtnFull {
-  background-color: #5bc0de;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  width: 100%;
-  max-width: 100%; /* For sidebar payment */
-  border-radius: 50px; /* Pill shape */
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.3s;
-  display: block;
-  margin: 20px 0;
-}
-
-.disabledBtn {
-  background-color: #cbd5e0;
-  color: #fff;
-  border: none;
-  padding: 15px 30px;
-  width: 100%;
-  max-width: 300px;
-  border-radius: 50px;
-  cursor: not-allowed;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-/* --- Sidebar: Summary & Payment --- */
 .sidebar {
-  position: sticky;
-  top: 20px;
+  flex: 1;
+  background: #f0f8ff;
+  padding: 20px;
+  border-radius: 10px;
   height: fit-content;
 }
 
-.summaryBox,
-.policyBox,
-.paymentBox {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  border: 1px solid #ddd;
+/* Form Sections */
+.formSection {
   margin-bottom: 20px;
 }
 
-.summaryRoomItem {
+.sectionTitle {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.inputGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.cabinList {
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cabinCard {
+  flex: 1 1 200px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
+  padding: 10px;
+}
+
+.cabinImg {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.cabinInfo {
+  text-align: center;
+}
+
+.subInfo {
+  display: block;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.priceHighlight {
+  display: block;
+  font-weight: bold;
+  margin: 5px 0;
+  color: #007bff;
+}
+
+.confirmBtn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirmBtn:hover {
+  background-color: #0056b3;
+}
+
+.cabinInput {
+  width: 50px;
+}
+
+.rowItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.paxBox {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
   margin-bottom: 15px;
 }
 
-.summaryThumb {
-  width: 65px;
-  height: 45px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-.sumRoomImg {
-  padding-top: 10px;
-  width: 130px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-.summaryRow {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.85rem;
-  margin-bottom: 8px;
-  color: #666;
+.paxHeader {
+  margin: 0 0 10px 0;
+  font-weight: bold;
 }
 
-.totalRow {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 800;
-  color: #5bc0de;
-  font-size: 1.4rem;
-  padding-top: 15px;
-  border-top: 2px solid #5bc0de;
-}
-
-/* --- Passenger Forms --- */
 .paxGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.emailCol {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.inputError {
+  border-color: red;
+}
+
+.errorLabel {
+  color: red;
+  font-size: 0.8em;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
   gap: 15px;
+}
+
+.policyBox {
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.policyRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.summaryBox {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.summaryTitle {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.summaryCruise,
+.summaryDates,
+.summaryRow,
+.totalAmountRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.sumLabel {
+  font-weight: bold;
+}
+
+.sumValueBlue {
+  color: #007bff;
+}
+
+.totalLabel {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.totalValue {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.paymentBox {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.payGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
 .fullWidth {
   grid-column: span 2;
 }
-/* Dark background that covers the whole screen */
+
+.confirmBtn {
+  width: 100%;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirmBtn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Modal styles */
 .modalOverlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.75); /* Dim the background */
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Higher than any sidebar or header */
-  backdrop-filter: blur(4px); /* Modern blur effect */
+  z-index: 9999;
 }
 
-/* The actual white box */
 .modalWindow {
-  background: white;
-  width: 90%;
-  max-width: 420px;
-  border-radius: 24px;
+  background: #fff;
   padding: 30px;
+  border-radius: 10px;
+  width: 300px;
   text-align: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  animation: modalPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
 }
 
-.successCircle {
-  width: 70px;
-  height: 70px;
-  background: #5bc0de;
-  color: white;
-  font-size: 35px;
-  line-height: 70px;
-  border-radius: 50%;
-  margin: 0 auto 20px;
-}
-
-.modalBody h2 {
-  font-size: 1.8rem;
-  color: #333;
+.modalHeader {
+  font-size: 2em;
   margin-bottom: 10px;
 }
 
-.modalBody p {
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 30px;
+.successIcon {
+  font-size: 3em;
+  color: green;
 }
 
-.modalOkBtn {
-  background: #5bc0de;
-  color: white;
+.modalBody {
+  margin-bottom: 20px;
+}
+
+.modalConfirmBtn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
   border: none;
-  width: 100%;
-  padding: 14px;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 1.1rem;
+  border-radius: 5px;
   cursor: pointer;
-  transition: 0.2s;
-}
-
-.modalOkBtn:hover {
-  background: #46b8da;
-  transform: translateY(-2px);
-}
-
-/* Animation for the "Pop" effect */
-@keyframes modalPop {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-/* --- Responsive --- */
-@media (max-width: 992px) {
-  .mainLayout {
-    grid-template-columns: 1fr;
-  }
-  .sidebar {
-    position: static;
-    order: -1;
-  }
-  .heroContent {
-    h1 {
-      font-size: 3rem;
-    }
-    h2 {
-      transform: translateX(0);
-      font-size: 1.25rem;
-      text-align: center;
-    }
-  }
-
-  .infoContainer {
-    width: 90%;
-    margin: 2rem auto;
-  }
-}
-.infoContainers {
-  position: relative;
-  display: inline-block;
-}
-
-.icon {
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
-}
-
-/* The hidden table box */
-.tableBox {
-  position: absolute;
-  top: 30px;
-  left: 0;
-  z-index: 100;
-  background: white;
-  border: 1px solid #000;
-  padding: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  min-width: 500px;
-
-  /* Start hidden for animation */
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s ease-in-out;
-}
-
-/* Class added via React State */
-.isVisible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.insuranceTable {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.insuranceTable th,
-.insuranceTable td {
-  border: 1px solid black;
-  padding: 8px;
-  text-align: center;
-}
-.modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999; /* This is lower than 10000, so confetti stays on top */
-}
-
-.modalWindow {
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
-  text-align: center;
-  z-index: 1000; /* This is also lower than 10000 */
 }

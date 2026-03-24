@@ -3,6 +3,10 @@ import { merch } from "../../../data.js";
 import { trinkets } from "../../../data.js";
 import styles from "./Shop.module.css";
 import { toast } from "react-toastify";
+import oeLogo from "../../assets/Cruises/OE-Logo.png";
+import sgLogo from "../../assets/Cruises/SG-Logo.png";
+import sdLogo from "../../assets/Cruises/SD-Logo.png";
+import { Link } from "react-router-dom";
 
 const Shop = ({ handleAddToCart }) => {
   const notify = () => {
@@ -18,6 +22,26 @@ const Shop = ({ handleAddToCart }) => {
         <h2 className={styles.heroSubheader}>FROM THE HEART OF SAILING</h2>
         <a href="#merch" className={styles.btn}>SHOP NOW</a>
       </div>
+      <nav className={styles.buttonContainer}>
+          <p>Book Now</p>
+          <ul>
+            <li>
+              <Link to="/CruiseBookingPageOE">
+                <img src={oeLogo} />
+              </Link>
+            </li>
+            <li>
+              <Link to="/SEAGUARDIAN">
+                <img src={sgLogo} />
+              </Link>
+            </li>
+            <li>
+              <Link to="/SERENITYDREAM">
+                <img src={sdLogo} />
+              </Link>
+            </li>
+          </ul>
+        </nav>
       <div className={styles.clothContainer} id="merch">
         <div className={styles.products}>
           {clothes.map((singleProduct) => {

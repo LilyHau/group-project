@@ -3,10 +3,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  top: 55%;
   width: 3rem;
   height: auto;
   position: fixed;
   right: 1rem;
+  z-index: 99999;
   img {
     width: 100%;
     background-color: var(--oe-main);

@@ -41,7 +41,7 @@ const Navbar = ({cartItems}) => {
             <Link to="/Cart"><img className={styles.cartLink} src={CartIcon} alt="cart icon" />{cartItems.length > 0 && <p>{cartItems.length}</p>}</Link>
             </span>
             <span>
-              <Link to="/about" className={styles.planBtn}>Start Planning</Link>
+              <Link to="/cruises" className={styles.planBtn}>Start Planning</Link>
             </span>
             <nav className={styles.mobileMenu}>
             <div className={styles.mobileMenuToggle}>

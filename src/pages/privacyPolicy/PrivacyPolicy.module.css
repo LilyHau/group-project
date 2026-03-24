@@ -19,7 +19,9 @@
   width: 3rem;
   height: auto;
   position: fixed;
+  top: 55%;
   right: 1rem;
+  z-index: 99999;
   img{
     width: 100%;
     background-color: var(--oe-main);

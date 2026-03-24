@@ -86,7 +86,7 @@ const Hero = () => {
         </h1>
       </div>
       <div>
-        <Link to="/about"><button
+        <Link to="/cruises"><button
           style={{
             position: "absolute",
             bottom: "39px",

@@ -1,4 +1,4 @@
-.buttonContainer{
+.buttonContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,22 +7,22 @@
   height: auto;
   position: fixed;
   right: 1rem;
-  img{
+  img {
     width: 100%;
     background-color: var(--oe-main);
     border-radius: 30px;
     object-fit: contain;
   }
-  img:hover{
+  img:hover {
     transform: scale(1.1);
   }
-  li:nth-of-type(2) img{
+  li:nth-of-type(2) img {
     background-color: var(--sg-main);
   }
-  li:nth-of-type(3) img{
+  li:nth-of-type(3) img {
     background-color: var(--sd-main);
   }
-  p{
+  p {
     text-align: center;
     line-height: 1;
     font-weight: 600;
@@ -67,6 +67,7 @@
 }
 .sectionHeading {
   font-family: "Inter";
+  color: #4271b7;
 }
 
 .subtitle {
@@ -239,18 +240,18 @@
 }
 @media (max-width: 992px) {
   .sidebar {
-  padding: 3rem;
-  span{
-    overflow-wrap: anywhere;
+    padding: 3rem;
+    span {
+      overflow-wrap: anywhere;
+    }
   }
-}
 }
 @media (max-width: 768px) {
   .formGrid {
     display: flex;
     flex-direction: column;
-}
-.linksGrid{
-  font-size: 0.9rem;
-}
+  }
+  .linksGrid {
+    font-size: 0.9rem;
+  }
 }

@@ -60,15 +60,15 @@ const Help = () => {
             <h3 className={styles.sidebarTitle}>How we help</h3>
             <div className={styles.contactInfoList}>
               <div className={styles.infoItem}>
-                <i className="fa-solid fa-phone"></i>
+                <i className="fa-brands fa-phone"></i>
                 <span>+852 3923 2323</span>
               </div>
               <div className={styles.infoItem}>
-                <i className="fa-solid fa-envelope"></i>
+                <i className="fa-brands fa-envelope"></i>
                 <span>bookings@oceanparkcruise.com.hk</span>
               </div>
               <div className={styles.infoItem}>
-                <i className="fa-solid fa-location-dot"></i>
+                <i className="fa-brands fa-location-dot"></i>
                 <span>180 Wong Chuk Hang Road, Aberdeen</span>
               </div>
             </div>

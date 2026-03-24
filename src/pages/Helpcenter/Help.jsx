@@ -21,21 +21,21 @@ const Help = () => {
 
       {/* Top Navigation / Logo Section */}
       <nav className={styles.buttonContainer}>
-        <p className={styles.bookNowLabel}>Book Now</p>
-        <ul className={styles.logoList}>
+        <p>Book Now</p>
+        <ul>
           <li>
             <Link to="/CruiseBookingPageOE">
-              <img src={oeLogo} alt="OE" />
+              <img src={oeLogo} />
             </Link>
           </li>
           <li>
             <Link to="/SEAGUARDIAN">
-              <img src={sgLogo} alt="SG" />
+              <img src={sgLogo} />
             </Link>
           </li>
           <li>
             <Link to="/SERENITYDREAM">
-              <img src={sdLogo} alt="SD" />
+              <img src={sdLogo} />
             </Link>
           </li>
         </ul>

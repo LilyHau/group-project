@@ -1,5 +1,9 @@
 import React from "react";
-import styles from "./ContactUs.module.css"; // Ensure the filename matches exactly
+import styles from "./ContactUs.module.css";
+import oeLogo from "../../assets/Cruises/OE-Logo.png";
+import sgLogo from "../../assets/Cruises/SG-Logo.png";
+import sdLogo from "../../assets/Cruises/SD-Logo.png";
+import { Link } from "react-router-dom";
 
 const sections = [
   {
@@ -80,7 +84,26 @@ const Contact = () => {
             of products.
           </p>
         </header>
-
+      <nav className={styles.buttonContainer}>
+        <p>Book Now</p>
+        <ul>
+          <li>
+            <Link to="/CruiseBookingPageOE">
+              <img src={oeLogo} />
+            </Link>
+          </li>
+          <li>
+            <Link to="/SEAGUARDIAN">
+              <img src={sgLogo} />
+            </Link>
+          </li>
+          <li>
+            <Link to="/SERENITYDREAM">
+              <img src={sdLogo} />
+            </Link>
+          </li>
+        </ul>
+      </nav>
         {/* Grid of Contact Cards */}
         <div className={styles.contactGrid}>
           {sections.map((item, index) => (
@@ -107,17 +130,14 @@ const Contact = () => {
 
         {/* Map Section */}
         <div className={styles.location}>
-          <h2 className={styles.locationTitle}>Our Headquarters Location</h2>
-          <div className={styles.mapResponsive}>
-            <iframe
-              title="Headquarters Location"
-              src="https://www.google.com"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-        </div>
+                <h2>Our Headquarters Location</h2>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14772.073523831765!2d114.16144065247951!3d22.239381375683937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3406aa98def2cb65%3A0x8e5233851dfbf1a4!2z5rW35rSL5YWs5ZyS!5e0!3m2!1szh-TW!2shk!4v1774256642152!5m2!1szh-TW!2shk"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                />
+              </div>
       </div>
     </div>
   );

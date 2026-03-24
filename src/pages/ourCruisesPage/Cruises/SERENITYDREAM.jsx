@@ -107,17 +107,14 @@ const SERENITYDREAM = () => {
 
       {/* Experience Section */}
       <div className={styles.contentContainer}>
-        <div style={{ textAlign: "center", marginBottom: "60px" }}>
+        <div>
           <h2 className={styles.experienceTitle}>
             Experience the Serenity Dream Difference
           </h2>
         </div>
 
         <div className={styles.contentBlock}>
-          <div
-            className={styles.summaryImgContainer}
-            style={{ flex: "0 0 441px" }}
-          >
+          <div className={styles.summaryImgContainer}>
             <img
               src={SDsum}
               className={styles.summaryImg}

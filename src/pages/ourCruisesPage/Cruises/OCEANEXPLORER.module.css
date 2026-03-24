@@ -487,6 +487,11 @@
     font-size: 75px;
   }
 
+  .joinBtn,
+  .infoBtn {
+    padding: 17px 35px;
+    font-size: 1.1rem;
+  }
   .descriptionText,
   .quoteLargeText,
   .gridCell {
@@ -531,10 +536,13 @@
     margin-top: 0;
     padding: 40px 20px;
   }
-  .buttonRow {
-    flex-direction: column;
-    gap: 20px;
+
+  .joinBtn,
+  .infoBtn {
+    padding: 15px 30px;
+    font-size: 1rem;
   }
+
   .btnBase {
     margin-top: 0;
     width: 100%;
@@ -552,8 +560,18 @@
   }
 
   .headerText {
-    font-size: 40px;
+    font-size: 2.3rem;
   }
+
+  .diverImage {
+    width: 100%;
+    height: 300px;
+  }
+
+  .descriptionText {
+    font-size: 1.2rem;
+  }
+
   .quoteBox {
     position: relative;
     top: 0;
@@ -591,10 +609,5 @@
     padding: 30px;
     text-align: center;
     font-size: 24px;
-  }
-
-  .diverImage {
-    width: auto;
-    height: auto;
   }
 }

@@ -48,9 +48,15 @@ const Footer = () => {
           {/* <input type="submit" value="SUBSCRIBE" /> */}
         </form>
         <div className={styles.icon}>
-          <i class="fa-brands fa-instagram fa-xl"></i>
-          <i class="fa-brands fa-linkedin-in fa-xl"></i>
-          <i class="fa-brands fa-x-twitter fa-xl"></i>
+          <Link to="#">
+            <i class="fa-brands fa-instagram fa-xl"></i>
+          </Link>
+          <Link to="#">
+            <i class="fa-brands fa-linkedin-in fa-xl"></i>
+          </Link>
+          <Link to="#">
+            <i class="fa-brands fa-x-twitter fa-xl"></i>
+          </Link>
         </div>
       </div>
       <div className={styles.toTopBtn}>

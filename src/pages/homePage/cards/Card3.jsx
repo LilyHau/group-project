@@ -8,10 +8,13 @@ const Card3 = () => {
       <div className={styles.content}>
         <h2>Ocean Guardians Interactive Programme</h2>
         <p>
-          Turn learning into action with this hands-on workshop—held in the ship’s dedicated Kids’ Club or family activity zone! Kids become “Junior Ocean Guardians” as they practice reducing waste, conserving water, and protecting marine habitats. 
+          Turn learning into action with this hands-on workshop—held in the
+          ship’s dedicated Kids’ Club or family activity zone! Kids become
+          “Junior Ocean Guardians” as they practice reducing waste, conserving
+          water, and protecting marine habitats.
         </p>
         <Link
-          to="/about"
+          to="/SEAGUARDIAN"
           style={{
             textDecoration: "none",
             maxWidth: "12rem",

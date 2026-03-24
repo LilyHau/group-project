@@ -11,10 +11,12 @@ const Card2 = () => {
       <div className={styles.content}>
         <h2>Sea Diving Adventures</h2>
         <p>
-          Embark on guided dives to explore coral reefs, underwater caves, and marine habitats, with access to onboard sea labs for hands-on learning.
+          Embark on guided dives to explore coral reefs, underwater caves, and
+          marine habitats, with access to onboard sea labs for hands-on
+          learning.
         </p>
         <Link
-          to="/cruises"
+          to="/OCEANEXPLORER"
           style={{
             textDecoration: "none",
             maxWidth: "12rem",

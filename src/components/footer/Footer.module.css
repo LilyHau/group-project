@@ -60,6 +60,7 @@
 .bar {
   display: flex;
   width: 72%;
+  margin-top: 10px;
   justify-content: space-between;
   align-items: center;
 }
@@ -86,7 +87,7 @@
 
 .icon {
   i {
-    padding: 0px 20px;
+    padding: 0px 22px;
   }
 }
 
@@ -113,7 +114,8 @@
 @media (max-width: 1250px) {
   /* bottom bar section */
   .bar {
-    width: 75%;
+    width: 76%;
+    margin-top: 50px;
   }
 
   .container {
@@ -153,7 +155,8 @@
 
   /* bottom bar section */
   .bar {
-    width: 66%;
+    width: 66.5%;
+    margin-top: 0px;
   }
 
   .form {
@@ -208,16 +211,18 @@
 
   /* bottom bar section */
   .bar {
-    width: 69%;
+    width: 70%;
   }
 
   .form {
     input {
-      padding: 9px 8px;
+      padding: 8px 7px;
+      font-size: 0.7rem;
     }
 
     button {
-      padding: 9px 8px;
+      padding: 9px 7px;
+      font-size: 0.7rem;
     }
   }
 

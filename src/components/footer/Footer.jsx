@@ -48,14 +48,26 @@ const Footer = () => {
           {/* <input type="submit" value="SUBSCRIBE" /> */}
         </form>
         <div className={styles.icon}>
-          <Link to="#">
+          <Link
+            to="https://www.instagram.com/hkoceanpark/"
+            target="_blank"
+            title="Instagram"
+          >
             <i class="fa-brands fa-instagram fa-xl"></i>
           </Link>
-          <Link to="#">
-            <i class="fa-brands fa-linkedin-in fa-xl"></i>
+          <Link
+            to="youtube.com/user/HKOceanPark"
+            target="_blank"
+            title="Youtube"
+          >
+            <i class="fa-brands fa-youtube fa-xl"></i>
           </Link>
-          <Link to="#">
-            <i class="fa-brands fa-x-twitter fa-xl"></i>
+          <Link
+            to="https://www.facebook.com/hkoceanpark"
+            target="_blank"
+            title="Facebook"
+          >
+            <i class="fa-brands fa-facebook fa-xl"></i>
           </Link>
         </div>
       </div>

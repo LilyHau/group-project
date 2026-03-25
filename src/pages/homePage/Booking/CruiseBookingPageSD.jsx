@@ -586,11 +586,11 @@ const CruiseBookingPageSD = () => {
                 <span>50% of the deposit refunded.</span>
               </div>
               <div className={styles.policyRow}>
-                <span>&lt;Within 30 days before departure:</span>
+                <span>Within 30 days before departure:</span>
                 <span>Deposit non-refundable and non-transferable.</span>
               </div>
               <div className={styles.policyRow}>
-                <span>&lt;Note:</span>
+                <span>Note:</span>
                 <span>If travel insurance is purchased,</span>
                 <span>
                   claims can be filed in accordance with the insurance terms.

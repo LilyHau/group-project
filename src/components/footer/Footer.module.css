@@ -66,6 +66,7 @@
 }
 
 .form {
+  display: flex;
   border: 1.2px solid purple;
   border-radius: var(--card-radius);
   overflow: hidden;
@@ -155,17 +156,17 @@
 
   /* bottom bar section */
   .bar {
-    width: 66.5%;
+    width: 66%;
     margin-top: 0px;
   }
 
   .form {
     input {
-      padding: 11px 16px;
+      padding: 11px 15px;
     }
 
     button {
-      padding: 11px 16px;
+      padding: 11px 15px;
     }
   }
 
@@ -216,13 +217,13 @@
 
   .form {
     input {
-      padding: 8px 7px;
-      font-size: 0.7rem;
+      padding: 7px;
+      font-size: 0.6rem;
     }
 
     button {
-      padding: 9px 7px;
-      font-size: 0.7rem;
+      padding: 7px;
+      font-size: 0.6rem;
     }
   }
 

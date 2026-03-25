@@ -107,7 +107,7 @@ const OCEANEXPLORER = () => {
         <img src={SEsum1} className={styles.mainBg} alt="Underwater" />
         <div className={styles.quoteBox}>
           <h2 style={{ fontSize: "60px", margin: "0", opacity: "0.8" }}>“</h2>
-          <h2
+          {/* <h2
             style={{
               fontSize: "clamp(32px, 4vw, 42px)",
               fontWeight: "bold",
@@ -115,7 +115,7 @@ const OCEANEXPLORER = () => {
             }}
           >
             Expert-Led Diving & Scientific Exploration
-          </h2>
+          </h2> */}
           <p className={styles.quoteLargeText}>
             Dive into uncharted underwater realms with certified dive
             instructors, explore vibrant coral walls and historic shipwrecks,
@@ -124,9 +124,9 @@ const OCEANEXPLORER = () => {
             to witness bioluminescent plankton, and exclusive access to remote
             biodiversity hotspots only accessible by this vessel!
           </p>
-          <p className={styles.quoteLink}>
+          {/* <p className={styles.quoteLink}>
             Explore Diving & Science Experiences
-          </p>
+          </p> */}
         </div>
       </div>
 
@@ -169,11 +169,11 @@ const OCEANEXPLORER = () => {
         </div>
         <div className={styles.footer}>
           <p style={{ fontSize: "40px", fontStyle: "italic" }}>And more...</p>
-          <p
+          {/* <p
             style={{ cursor: "pointer", fontWeight: "bold", fontSize: "35px" }}
           >
             [Explore Diving-Focused Menus]
-          </p>
+          </p> */}
         </div>
       </div>
 
@@ -205,12 +205,12 @@ const OCEANEXPLORER = () => {
               spaces—crafted for explorers who value utility and comfort
               equally.
             </p>
-            <p
+            {/* <p
               className={styles.quoteLink}
               style={{ marginTop: "50px", fontSize: "45px" }}
             >
               [Explore Explorer Cabins]
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

@@ -575,16 +575,25 @@ const CruiseBookingPageSG = () => {
             <div className={styles.policyBox}>
               <h4>Cancellation Policy</h4>
               <div className={styles.policyRow}>
-                <span>120+ days before departure:</span>
-                <span>Full refund</span>
+                <span> 90+ days before departure:</span>
+                <span>
+                  Full deposit refunded after deducting administrative fees.
+                </span>
               </div>
               <div className={styles.policyRow}>
-                <span>60-119 days before departure:</span>
-                <span>75% refund</span>
+                <span>30–89 days before departure:</span>
+                <span>50% of the deposit refunded.</span>
               </div>
               <div className={styles.policyRow}>
-                <span>&lt;30 days before departure:</span>
-                <span>No refund</span>
+                <span>&lt;Within 30 days before departure:</span>
+                <span>Deposit non-refundable and non-transferable.</span>
+              </div>
+              <div className={styles.policyRow}>
+                <span>&lt;Note:</span>
+                <span>If travel insurance is purchased,</span>
+                <span>
+                  claims can be filed in accordance with the insurance terms.
+                </span>
               </div>
             </div>
 

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Activities.module.css";
+import { Link } from "react-router-dom";
 
 // Asset imports (replace with your paths)
 import RollerCoaster from "../../assets/OnboardThrills/roller.webp";
@@ -20,7 +21,7 @@ const Onboardactivities = () => {
       <div className={styles.gridContainer}>
         {/* Left Column: Tall Image */}
         <div className={styles.tallImageCard}>
-          <img src={RollerCoaster} alt="Roller Coaster" />
+          <Link to="/onboard"><img src={RollerCoaster} alt="Roller Coaster" /></Link>
         </div>
 
         {/* Middle Column: Text for Roller Coaster */}
@@ -37,20 +38,18 @@ const Onboardactivities = () => {
         {/* Right Column: Conservation Content */}
         <div className={styles.conservationColumn}>
           <div className={styles.conservationHeader}>
-            <img src={Divers} alt="Divers" className={styles.diversImg} />
+            <Link to="/onboard"><img src={Divers} alt="Divers" className={styles.diversImg} /></Link>
             <h3 className={styles.sideTitle}>
-              CONSERVAT
-              <br />
-              ION & IMPACT
+              CONSERVATION & IMPACT
             </h3>
           </div>
 
           <div className={styles.turtleContainer}>
-            <img
+            <Link to="/onboard"><img
               src={Turtle}
               alt="Turtle Rescue"
               className={styles.turtleImg}
-            />
+            /></Link>
           </div>
         </div>
       </div>

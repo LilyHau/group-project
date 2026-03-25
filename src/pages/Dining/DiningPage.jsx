@@ -371,12 +371,6 @@ const DiningSection = ({
                 className={styles.modal}
                 onClick={(e) => e.stopPropagation()}
               >
-                <button
-                  className={styles.closeBtn}
-                  onClick={() => setShowModal(false)}
-                >
-                  &times;
-                </button>
                 <img src={menuImage} alt="Menu" className={styles.popupImage} />
               </div>
             </div>

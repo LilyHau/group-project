@@ -219,7 +219,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 999;
+  cursor: zoom-out;
 }
 
 .modal {
@@ -253,6 +254,11 @@ body {
   color: #214070;
   font-size: 1.6rem;
   line-height: 1.6;
+}
+.popupImage{
+  max-width: 85vw;
+  max-height: 100%;
+  cursor: default;
 }
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {

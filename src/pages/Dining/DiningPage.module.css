@@ -223,12 +223,12 @@ body {
   cursor: zoom-out;
 }
 
-.modal {
+/* .modal {
   background: white;
   padding: 20px;
   border-radius: 8px;
   position: relative;
-}
+} */
 .textBox {
   position: relative;
   z-index: 2;
@@ -255,9 +255,10 @@ body {
   font-size: 1.6rem;
   line-height: 1.6;
 }
-.popupImage{
+.popupImage {
   height: 90vh;
-  aspect-ratio: 1/2;
+  width: 100%;
+  /* aspect-ratio: 1/2; */
   cursor: default;
 }
 /* Responsive styles for smaller screens */

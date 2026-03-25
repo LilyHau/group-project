@@ -1,3 +1,27 @@
+// ShopPage images
+import clothes1Img from "./src/assets/shopPage/紀念品水手上衣1.jpg";
+import clothes2Img from "./src/assets/shopPage/紀念品水手上衣2.jpg";
+import clothes3Img from "./src/assets/shopPage/紀念品水手上衣3.jpg";
+import cupImg from "./src/assets/shopPage/紀念品杯.jpg";
+import capImg from "./src/assets/shopPage/紀念品水手帽.jpg";
+import pandaDollImg from "./src/assets/shopPage/紀念品水手衣服動物公仔.jpg";
+import turtleDollImg from "./src/assets/shopPage/紀念品水手衣服海龜.jpg";
+import watchImg from "./src/assets/shopPage/trinkets-watch.jpg";
+import braceletImg from "./src/assets/shopPage/trinkets-bracelet.jpg";
+import keychainImg from "./src/assets/shopPage/海洋公園郵輪限定紀念品鑰匙扣3.jpg";
+import stickerImg from "./src/assets/shopPage/trinkets-sticker.jpg";
+
+// Accommodation images
+import oe1Img from "./src/assets/Accommodation/oe1.jpg";
+import oe2Img from "./src/assets/Accommodation/oe2.jpg";
+import oe3Img from "./src/assets/Accommodation/oe3.jpg";
+import sg1Img from "./src/assets/Accommodation/sg1.png";
+import sg2Img from "./src/assets/Accommodation/sg2.jpg";
+import sg3Img from "./src/assets/Accommodation/sg3.png";
+import sd1Img from "./src/assets/Accommodation/sd1.jpg";
+import sd2Img from "./src/assets/Accommodation/sd2.jpg";
+import sd3Img from "./src/assets/Accommodation/sd3.jpg";
+
 export const clothes = [
   {
     id: "1",
@@ -5,7 +29,7 @@ export const clothes = [
     price: "29.90",
     limited: "limited",
     stock: "New",
-    image: "./src/assets/shopPage/紀念品水手上衣1.jpg",
+    image: clothes1Img,
   },
   {
     id: "2",
@@ -13,7 +37,7 @@ export const clothes = [
     price: "29.90",
     limited: "limited",
     stock: "New",
-    image: "./src/assets/shopPage/紀念品水手上衣2.jpg",
+    image: clothes2Img,
   },
   {
     id: "3",
@@ -21,7 +45,7 @@ export const clothes = [
     price: "29.90",
     limited: "limited",
     stock: "New",
-    image: "./src/assets/shopPage/紀念品水手上衣3.jpg",
+    image: clothes3Img,
   },
 ];
 export const merch = [
@@ -31,7 +55,7 @@ export const merch = [
     price: "369.90",
     limited: "",
     stock: "New",
-    image: "./src/assets/shopPage/紀念品杯.jpg",
+    image: cupImg,
   },
   {
     id: "5",
@@ -39,7 +63,7 @@ export const merch = [
     price: "229.90",
     limited: "",
     stock: "",
-    image: "./src/assets/shopPage/紀念品水手帽.jpg",
+    image: capImg,
   },
   {
     id: "6",
@@ -47,7 +71,7 @@ export const merch = [
     price: "174.90",
     limited: "limited",
     stock: "",
-    image: "./src/assets/shopPage/紀念品水手衣服動物公仔.jpg",
+    image: pandaDollImg,
   },
   {
     id: "7",
@@ -55,7 +79,7 @@ export const merch = [
     price: "129.90",
     limited: "limited",
     stock: "Low",
-    image: "./src/assets/shopPage/紀念品水手衣服海龜.jpg",
+    image: turtleDollImg,
   },
 ];
 export const trinkets = [
@@ -65,7 +89,7 @@ export const trinkets = [
     price: "369.90",
     limited: "",
     stock: "",
-    image: "./src/assets/shopPage/trinkets-watch.jpg",
+    image: watchImg,
   },
   {
     id: "9",
@@ -73,7 +97,7 @@ export const trinkets = [
     price: "229.90",
     limited: "",
     stock: "New",
-    image: "./src/assets/shopPage/trinkets-bracelet.jpg",
+    image: braceletImg,
   },
   {
     id: "10",
@@ -81,7 +105,7 @@ export const trinkets = [
     price: "174.90",
     limited: "limited",
     stock: "Low",
-    image: "./src/assets/shopPage/海洋公園郵輪限定紀念品鑰匙扣3.jpg",
+    image: keychainImg,
   },
   {
     id: "11",
@@ -89,7 +113,7 @@ export const trinkets = [
     price: "129.90",
     limited: "",
     stock: "",
-    image: "./src/assets/shopPage/trinkets-sticker.jpg",
+    image: stickerImg,
   },
 ];
 export const oeOverview = {
@@ -802,7 +826,7 @@ export const sdDetails = [
 export const oeRooms = [
   {
     id: "1",
-    image: "./src/assets/Accommodation/oe1.jpg",
+    image: oe1Img,
     size: "268sq ft | 2 Adults (No Children)",
     title: "Deluxe Cabin",
     points:
@@ -811,7 +835,7 @@ export const oeRooms = [
   },
   {
     id: "2",
-    image: "./src/assets/Accommodation/oe2.jpg",
+    image: oe2Img,
     size: "304sq ft | 2 Adults + 1 Child (<8)",
     title: "Deluxe Sea View Cabin",
     points:
@@ -820,7 +844,7 @@ export const oeRooms = [
   },
   {
     id: "3",
-    image: "./src/assets/Accommodation/oe3.jpg",
+    image: oe3Img,
     size: "528sq ft | 2 Adults + 2 Children",
     title: "Wall Hall Family Suite",
     points:
@@ -831,7 +855,7 @@ export const oeRooms = [
 export const sgRooms = [
   {
     id: "1",
-    image: "./src/assets/Accommodation/sg1.png",
+    image: sg1Img,
     size: "268sq ft | 2 Adults (No Children)",
     title: "Deluxe Cabin",
     points:
@@ -840,7 +864,7 @@ export const sgRooms = [
   },
   {
     id: "2",
-    image: "./src/assets/Accommodation/sg2.jpg",
+    image: sg2Img,
     size: "304sq ft | 2 Adults + 1 Child (<8)",
     title: "Deluxe Sea View Cabin",
     points:
@@ -849,7 +873,7 @@ export const sgRooms = [
   },
   {
     id: "3",
-    image: "./src/assets/Accommodation/sg3.png",
+    image: sg3Img,
     size: "528sq ft | 2 Adults + 2 Children",
     title: "Wall Hall Family Suite",
     points:
@@ -860,7 +884,7 @@ export const sgRooms = [
 export const sdRooms = [
   {
     id: "1",
-    image: "./src/assets/Accommodation/sd1.jpg",
+    image: sd1Img,
     size: "268sq ft | 2 Adults (No Children)",
     title: "Deluxe Cabin",
     points:
@@ -869,7 +893,7 @@ export const sdRooms = [
   },
   {
     id: "2",
-    image: "./src/assets/Accommodation/sd2.jpg",
+    image: sd2Img,
     size: "304sq ft | 2 Adults + 1 Child (<8)",
     title: "Deluxe Sea View Cabin",
     points:
@@ -878,7 +902,7 @@ export const sdRooms = [
   },
   {
     id: "3",
-    image: "./src/assets/Accommodation/sd3.jpg",
+    image: sd3Img,
     size: "528sq ft | 2 Adults + 2 Children",
     title: "Wall Hall Family Suite",
     points:

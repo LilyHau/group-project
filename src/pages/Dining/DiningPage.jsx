@@ -2,26 +2,26 @@ import React, { useState, useEffect } from "react";
 import styles from "./DiningPage.module.css";
 
 // Import images & icons...
-import MainDiningHeader from "../../../src/assets/Cruises/miana.png";
+import MainDiningHeader from "../../assets/Cruises/miana.png";
 import CafeHeader from "../../assets/Cruises/cafe.png";
-import LoungeHeader from "../../../src/assets/Cruises/club.png";
+import LoungeHeader from "../../assets/Cruises/club.png";
 
-import EXimga from "../../../src/assets/OCEANEXPLORER/Expedition1.png";
-import SGimga from "../../../src/assets/SEAGUARDIAN/SGR3.jpg";
-import SDimga from "../../../src/assets/SERENITYDREAM/generatedimage.png";
+import EXimga from "../../assets/OCEANEXPLORER/Expedition1.png";
+import SGimga from "../../assets/SEAGUARDIAN/SGR3.jpg";
+import SDimga from "../../assets/SERENITYDREAM/generatedimage.png";
 
-import EXimgb from "../../../src/assets/OCEANEXPLORER/Expedition2.png";
-import SGimgb from "../../../src/assets/SEAGUARDIAN/SGR2.jpg";
-import SDimgb from "../../../src/assets/SERENITYDREAM/generatedimagea.png";
+import EXimgb from "../../assets/OCEANEXPLORER/Expedition2.png";
+import SGimgb from "../../assets/SEAGUARDIAN/SGR2.jpg";
+import SDimgb from "../../assets/SERENITYDREAM/generatedimagea.png";
 
-import EXimgc from "../../../src/assets/OCEANEXPLORER/Expedition3.png";
-import SGimgc from "../../../src/assets/SEAGUARDIAN/SGR1.jpg";
-import SDimgc from "../../../src/assets/SERENITYDREAM/generatedimagec.png";
+import EXimgc from "../../assets/OCEANEXPLORER/Expedition3.png";
+import SGimgc from "../../assets/SEAGUARDIAN/SGR1.jpg";
+import SDimgc from "../../assets/SERENITYDREAM/generatedimagec.png";
 
 // Tag icons
-import OETAG from "../../../src/assets/OCEANEXPLORER/OETAG.png";
-import SGTAG from "../../../src/assets/SEAGUARDIAN/SGTAG.png";
-import SDTAG from "../../../src/assets/SERENITYDREAM/SDTAG.png";
+import OETAG from "../../assets/OCEANEXPLORER/OETAG.png";
+import SGTAG from "../../assets/SEAGUARDIAN/SGTAG.png";
+import SDTAG from "../../assets/SERENITYDREAM/SDTAG.png";
 import { Link } from "react-router-dom";
 import AbyssGrill from "../../assets/Dining/AbyssGrill.png";
 import CoralCommon from "../../assets/Dining/CoralCommon.png";

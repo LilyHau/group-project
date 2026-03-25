@@ -1,6 +1,7 @@
 import styles from "./Card1.module.css";
 import Button from "../buttons/Button";
 import { Link } from "react-router-dom";
+import explore002Img from "../../../assets/homePage/explore002.jpg";
 
 const Card1 = () => {
   return (
@@ -22,7 +23,7 @@ const Card1 = () => {
         </Link>
       </div>
       <div className={styles.image}>
-        <img src="../src/assets/homePage/explore002.jpg" alt="explore002" />
+        <img src={explore002Img} alt="explore002" />
       </div>
     </div>
   );

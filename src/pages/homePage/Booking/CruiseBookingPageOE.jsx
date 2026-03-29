@@ -82,12 +82,14 @@ const CruiseBookingPageOE = () => {
     selectedCabins.deluxe * 600 * NIGHTS +
     selectedCabins.view * 799 * NIGHTS +
     selectedCabins.suite * 1299 * NIGHTS;
+
   const activitiesTotal = selectedActivities.reduce(
     (sum, id) => sum + (activityList.find((a) => a.id === id)?.price || 0),
     0,
   );
   const grandTotal = cabinSubtotal + activitiesTotal + insurance;
 
+  // Initialize passengers with country and city IDs
   useEffect(() => {
     setPassengers((prev) =>
       Array.from(
@@ -101,7 +103,9 @@ const CruiseBookingPageOE = () => {
             gender: "",
             dob: "",
             country: "",
+            country_id: "",
             city: "",
+            city_id: "",
             addr1: "",
             addr2: "",
             state: "",
@@ -209,6 +213,41 @@ const CruiseBookingPageOE = () => {
     );
   };
 
+  // Function to get missing fields for detailed reminder
+  const getMissingFields = () => {
+    const missingFields = [];
+
+    if (passengers.length === 0 || !isPaxInfoComplete) {
+      missingFields.push("Passenger information");
+    }
+    if (paymentDetails.cardName.trim().length < 3) {
+      missingFields.push("Name on Card");
+    }
+    if (paymentDetails.cardNumber.length !== 16) {
+      missingFields.push("Card Number");
+    }
+    if (paymentDetails.expiry.length < 5) {
+      missingFields.push("Expiry Date");
+    }
+    if (paymentDetails.cvv.length < 3) {
+      missingFields.push("CVV");
+    }
+
+    // Check select staterooms
+    if (!isCapacityMet) {
+      missingFields.push("Select Stateroom Type(s) to accommodate all guests");
+    }
+
+    // Check Optional Travel Insurance
+    // Optional, but if user selected an insurance plan, no validation needed here.
+
+    // Check Activities (if necessary)
+    // No required validation, but if you want to ensure at least one activity, you can add:
+    // if (selectedActivities.length === 0) missingFields.push("Select at least one activity");
+
+    return missingFields;
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -235,11 +274,16 @@ const CruiseBookingPageOE = () => {
                 <h3 className={styles.sectionTitle}>
                   Select Your Travel Dates*
                 </h3>
+                {!dates && (
+                  <p className={styles.validationMessage}>
+                    Please select your travel dates.
+                  </p>
+                )}
                 <select
                   className={styles.inputField}
                   onChange={(e) => {
                     setDates(e.target.value);
-                    setStep(2);
+                    if (e.target.value) setStep(2);
                   }}
                   value={dates}
                 >
@@ -300,6 +344,12 @@ const CruiseBookingPageOE = () => {
                 <h3 className={styles.sectionTitle}>
                   2. Select Stateroom Type*
                 </h3>
+                {/* Validation message for cabin capacity */}
+                {!isCapacityMet && totalPeople > 0 && (
+                  <p className={styles.validationMessage}>
+                    Please select enough cabins to accommodate all guests.
+                  </p>
+                )}
                 <div className={styles.cabinList}>
                   {cabinTypes.map((c) => (
                     <div key={c.id} className={styles.cabinCard}>
@@ -346,6 +396,9 @@ const CruiseBookingPageOE = () => {
                   <h3 className={styles.sectionTitle}>
                     3. Additional Activities & Dive Courses
                   </h3>
+                  {/*
+                  Optional validation: no specific validation here.
+                  */}
                   {activityList.map((act) => (
                     <div key={act.id} className={styles.rowItem}>
                       <label>
@@ -427,7 +480,7 @@ const CruiseBookingPageOE = () => {
                     }}
                     value={insurance}
                   >
-                    <option value="0">-- Select Option --</option>
+                    <option value="----">-- Select Option --</option>
                     <option value="0">No Insurance</option>
                     <option value="250">Basic Coverage ($250)</option>
                     <option value="500">Premium Coverage ($500)</option>
@@ -442,6 +495,11 @@ const CruiseBookingPageOE = () => {
                 <h3 className={styles.sectionTitle}>
                   5. Passenger Information*
                 </h3>
+                {!isPaxInfoComplete && (
+                  <p className={styles.validationMessage}>
+                    Please fill out all passenger information correctly.
+                  </p>
+                )}
                 <p>Please enter N/A for not applicable.</p>
                 {passengers.map((p, i) => (
                   <div key={i} className={styles.paxBox}>
@@ -668,6 +726,7 @@ const CruiseBookingPageOE = () => {
             <div className={styles.paymentBox}>
               <h4>COMPLETE YOUR BOOKING</h4>
               <div className={styles.payGrid}>
+                {/* Name on Card */}
                 <input
                   placeholder="Name on Card"
                   className={styles.styledTextbox}
@@ -680,6 +739,7 @@ const CruiseBookingPageOE = () => {
                   }}
                 />
 
+                {/* Card Number */}
                 <input
                   type="text"
                   inputMode="numeric"
@@ -690,20 +750,64 @@ const CruiseBookingPageOE = () => {
                   maxLength="16"
                 />
 
-                <input
-                  placeholder="MM/YY"
-                  className={styles.styledTextbox}
-                  value={paymentDetails.expiry}
-                  onChange={(e) => {
-                    if (e.target.value.length <= 5) {
+                {/* Expiry Date Split */}
+                <div className={styles.expiryContainer}>
+                  {/* Month Selection */}
+                  <select
+                    className={styles.styledTextbox}
+                    value={paymentDetails.expiry.split("/")[0] || ""}
+                    onChange={(e) => {
+                      const month = e.target.value;
+                      const year = paymentDetails.expiry.split("/")[1] || "";
                       setPaymentDetails({
                         ...paymentDetails,
-                        expiry: e.target.value,
+                        expiry: `${month}/${year}`,
                       });
-                    }
-                  }}
-                />
+                    }}
+                  >
+                    <option value="" disabled>
+                      MM
+                    </option>
+                    {Array.from({ length: 12 }, (_, i) => (
+                      <option
+                        key={i + 1}
+                        value={(i + 1).toString().padStart(2, "0")}
+                      >
+                        {(i + 1).toString().padStart(2, "0")}
+                      </option>
+                    ))}
+                  </select>
 
+                  {/* Year Selection */}
+                  <select
+                    className={styles.styledTextbox}
+                    value={paymentDetails.expiry.split("/")[1] || ""}
+                    onChange={(e) => {
+                      const month = paymentDetails.expiry.split("/")[0] || "";
+                      const year = e.target.value;
+                      setPaymentDetails({
+                        ...paymentDetails,
+                        expiry: `${month}/${year}`,
+                      });
+                    }}
+                  >
+                    <option value="" disabled>
+                      YY
+                    </option>
+                    {Array.from({ length: 10 }, (_, i) => {
+                      const year = (new Date().getFullYear() + i)
+                        .toString()
+                        .slice(-2);
+                      return (
+                        <option key={year} value={year}>
+                          {year}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+
+                {/* CVV */}
                 <input
                   placeholder="CVV"
                   className={styles.styledTextbox}
@@ -716,12 +820,31 @@ const CruiseBookingPageOE = () => {
                   }}
                 />
               </div>
+
+              {/* Show validation message if not ready */}
+              {!isPaymentReady && (
+                <p
+                  className={styles.validationMessage}
+                  style={{ color: "red", marginTop: "10px" }}
+                >
+                  Please complete the following fields before confirming:{" "}
+                  {getMissingFields().join(", ")}.
+                </p>
+              )}
+
+              {/* Confirm Button */}
               <button
                 className={
                   isPaymentReady ? styles.confirmBtn : styles.disabledBtn
                 }
                 disabled={!isPaymentReady}
-                onClick={() => setShowModal(true)}
+                onClick={() => {
+                  if (isPaymentReady) {
+                    setShowModal(true);
+                  } else {
+                    alert("Please fill all required fields correctly.");
+                  }
+                }}
               >
                 Confirm Booking
               </button>
@@ -737,3 +860,5 @@ const CruiseBookingPageOE = () => {
 };
 
 export default CruiseBookingPageOE;
+
+/* Make sure your CSS includes styles for validationMessage, confirmBtn, disabledBtn, etc. */

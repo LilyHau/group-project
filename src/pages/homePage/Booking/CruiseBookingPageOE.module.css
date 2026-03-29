@@ -123,6 +123,25 @@
   display: block;
   margin: 20px 0;
 }
+.confirmBtn1 {
+  background-color: #42c2fb;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: block;
+  position: absolute;
+  margin: 20px 0;
+}
 .disabledBtn {
   background-color: #cbd5e0;
   color: #fff;
@@ -134,6 +153,17 @@
   cursor: not-allowed;
   font-weight: 700;
   text-transform: uppercase;
+}
+.modalConfirmBtn {
+  background-color: #42c2fb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 /* --- Sidebar --- */
 .sidebar {

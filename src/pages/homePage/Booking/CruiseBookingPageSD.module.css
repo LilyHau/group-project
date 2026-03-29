@@ -46,6 +46,17 @@
     font-weight: 500;
   }
 }
+.modalConfirmBtn {
+  background-color: #42c2fb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
 .ovalEffect {
   width: 120%;
   height: 120%;
